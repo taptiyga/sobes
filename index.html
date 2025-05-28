@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Трехуровневый Аккордеон</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="accordion">
+        <!-- HTML -->
+        <div class="accordion-header level-1">HTML</div>
+        <div class="accordion-content">
+            <!-- Основы HTML -->
+            <div class="accordion-header level-2">Основы HTML</div>
+            <div class="accordion-content">
+                <!-- Что такое HTML и для чего он используется? -->
+                <div class="accordion-header level-3">Что такое HTML и для чего он используется?</div>
+                <div class="accordion-content">
+                    <section>
+                        <h2>Что такое HTML и для чего он используется?</h2>
+
+                        <div>
+                            <p><abbr title="HyperText Markup Language">HTML</abbr> — стандартный язык разметки для
+                                создания
+                                веб-страниц и
+                                приложений.</p>
+
+                            <div>
+                                <h3>Основные функции HTML:</h3>
+                                <ul>
+                                    <li>Структурирование контента (заголовки, абзацы, списки)</li>
+                                    <li>Вставка мультимедиа (изображения, видео, аудио)</li>
+                                    <li>Создание гиперссылок и навигации</li>
+                                    <li>Формирование документов с семантической структурой</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p>⚠️ HTML <strong>не является</strong> языком программирования — это язык разметки,
+                                    который
+                                    браузер
+                                    интерпретирует для отображения страницы.</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3>Полезные ресурсы:</h3>
+                            <ul>
+                                <li>
+                                    <a href="https://developer.mozilla.org/ru/docs/Web/HTML" target="_blank"
+                                        rel="noopener noreferrer">
+                                        📚 MDN Web Docs: HTML (официальная документация)
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.w3schools.com/html/" target="_blank" rel="noopener noreferrer">
+                                        🎓 W3Schools: HTML Tutorial (обучение с примерами)
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+                <!-- Что такое HTML и для чего он используется? конец-->
+                <!-- Какая текущая версия HTML? -->
+                <div class="accordion-header level-3">Какая текущая версия HTML?</div>
+                <div class="accordion-content">
+                    <section>
+                        <h2>Какая текущая версия HTML?</h2>
+
+                        <p><strong>HTML5</strong> — это последняя стабильная версия HTML (по состоянию на 2024 год).</p>
+
+                        <p>Основные характеристики HTML5:</p>
+                        <ul>
+                            <li>Официально принята в 2014 году консорциумом W3C</li>
+                            <li>Добавлены новые семантические теги (header, footer, section, article)</li>
+                            <li>Встроенная поддержка мультимедиа (video, audio, canvas)</li>
+                            <li>Новые API для работы с геолокацией, локальным хранилищем</li>
+                            <li>Улучшенная поддержка мобильных устройств</li>
+                            <li>Обратная совместимость с предыдущими версиями</li>
+                        </ul>
+
+                        <h3>Полезные ресурсы:</h3>
+                        <ul>
+                            <li>
+                                <a href="https://html.spec.whatwg.org/" target="_blank" rel="noopener">
+                                    Официальная спецификация HTML (WHATWG)
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://developer.mozilla.org/ru/docs/Web/Guide/HTML/HTML5" target="_blank"
+                                    rel="noopener">
+                                    Документация HTML5 на MDN
+                                </a>
+                            </li>
+                        </ul>
+
+                        <p>HTML5 продолжает развиваться через систему "живого стандарта" (LivingStandard).</p>
+                    </section>
+
+                </div>
+                <!-- Какая текущая версия HTML? конец-->
+                <!-- В чём разница между HTML и XHTML? -->
+                <div class="accordion-header level-3">В чём разница между HTML и XHTML?</div>
+                <div class="accordion-content">
+                    <section>
+                        <h2>В чём разница между HTML и XHTML?</h2>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Критерий</th>
+                                    <th>HTML</th>
+                                    <th>XHTML</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Основа</strong></td>
+                                    <td>Язык разметки</td>
+                                    <td>Приложение XML</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Синтаксис</strong></td>
+                                    <td>Более свободный</td>
+                                    <td>Строгий XML-синтаксис</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Регистр тегов</strong></td>
+                                    <td>Не чувствителен</td>
+                                    <td>Только нижний регистр</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Закрытие тегов</strong></td>
+                                    <td>Не всегда обязательно</td>
+                                    <td>Обязательно для всех</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Атрибуты</strong></td>
+                                    <td>Можно без кавычек</td>
+                                    <td>Всегда в кавычках</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>MIME-тип</strong></td>
+                                    <td>text/html</td>
+                                    <td>application/xhtml+xml</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Основные различия:</h3>
+                        <ul>
+                            <li>XHTML требует строгого соблюдения XML-правил</li>
+                            <li>HTML более лоялен к ошибкам в разметке</li>
+                            <li>XHTML не обрабатывается браузерами при наличии ошибок</li>
+                            <li>HTML5 стал современной альтернативой XHTML</li>
+                        </ul>
+
+                        <p>Совет: Для новых проектов используйте HTML5, который сочетает преимущества обоих подходов.
+                        </p>
+                    </section>
+                </div>
+                <!-- В чём разница между HTML и XHTML? конец-->
+                <!-- Как объявляется DOCTYPE в HTML5? -->
+                <div class="accordion-header level-3">Как объявляется DOCTYPE в HTML5?</div>
+                <div class="accordion-content">
+                    <section>
+                        <h2>Как объявляется DOCTYPE в HTML5?</h2>
+
+                        <div>
+                            <p>В HTML5 объявление DOCTYPE значительно упрощено по сравнению с предыдущими версиями HTML.
+                            </p>
+
+                            <h3>Синтаксис DOCTYPE:</h3>
+                            <pre><code>&lt;!DOCTYPE html&gt;</code></pre>
+
+                            <h3>Особенности:</h3>
+                            <ul>
+                                <li>Самая короткая возможная форма объявления</li>
+                                <li>Не требует указания версии или DTD</li>
+                                <li>Регистр не имеет значения (но традиционно пишется заглавными буквами)</li>
+                                <li>Должен быть первым в документе, перед тегом &lt;html&gt;</li>
+                            </ul>
+
+                            <h3>Пример полной структуры:</h3>
+                            <code>&lt;!DOCTYPE html&gt;<br>
+                                          &lt;html lang="ru"&gt;<br>
+                                          &lt;head&gt;<br>
+                                          &nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+                                          &nbsp;&nbsp;&lt;title&gt;Пример страницы&lt;/title&gt;<br>
+                                          &lt;/head&gt;<br>
+                                          &lt;body&gt;<br>
+                                          &nbsp;&nbsp;&lt;!-- Содержимое страницы --&gt;<br>
+                                          &lt;/body&gt;<br>
+                                          &lt;/html&gt;</code>
+
+                            <div>
+                                <p><strong>Важно:</strong> Браузеры используют DOCTYPE для определения режима
+                                    отображения (standards mode vs
+                                    quirks mode).</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3>Полезные ресурсы:</h3>
+                            <ul>
+                                <li>
+                                    <a href="https://html.spec.whatwg.org/multipage/syntax.html#the-doctype"
+                                        target="_blank" rel="noopener noreferrer">
+                                        Спецификация DOCTYPE в WHATWG HTML
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://developer.mozilla.org/ru/docs/Glossary/Doctype" target="_blank"
+                                        rel="noopener noreferrer">
+                                        Документация DOCTYPE на MDN
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.w3.org/QA/2002/04/valid-dtd-list.html" target="_blank"
+                                        rel="noopener noreferrer">
+                                        Список DTD для предыдущих версий HTML (W3C)
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+                <!-- Как объявляется DOCTYPE в HTML5? конец-->
+                <!-- Какие основные структуры HTML-документа? -->
+                <div class="accordion-header level-3">Какие основные структуры HTML-документа?</div>
+                <div class="accordion-content">
+                    <section>
+                        <h2>Какие основные структуры HTML-документа?</h2>
+
+                        <div>
+                            <h3>Базовая структура HTML-документа:</h3>
+                            <code>
+                                                &lt;!DOCTYPE html&gt;<br>
+                                                &lt;html&gt;<br>
+                                                &nbsp;&nbsp;&lt;head&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Заголовок страницы&lt;/title&gt;<br>
+                                                &nbsp;&nbsp;&lt;/head&gt;<br>
+                                                &nbsp;&nbsp;&lt;body&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- Основное содержимое --&gt;<br>
+                                                &nbsp;&nbsp;&lt;/body&gt;<br>
+                                                &lt;/html&gt;
+                                              </code>
+                        </div>
+
+                        <div>
+                            <h3>Основные структурные элементы:</h3>
+                            <ul>
+                                <li><code>&lt;!DOCTYPE html&gt;</code> - объявление типа документа (должен быть первой
+                                    строкой)</li>
+                                <li><code>&lt;html&gt;</code> - корневой элемент, содержит весь документ</li>
+                                <li><code>&lt;head&gt;</code> - служебная информация (метаданные, заголовок, ссылки на
+                                    стили)</li>
+                                <li><code>&lt;meta charset="UTF-8"&gt;</code> - обязательное указание кодировки символов
+                                </li>
+                                <li><code>&lt;title&gt;</code> - заголовок страницы (отображается во вкладке браузера)
+                                </li>
+                                <li><code>&lt;body&gt;</code> - видимое содержимое страницы (текст, изображения, ссылки)
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Современная семантическая структура:</h3>
+                            <code>
+                                                &lt;body&gt;<br>
+                                                &nbsp;&nbsp;&lt;header&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- Шапка сайта --&gt;<br>
+                                                &nbsp;&nbsp;&lt;/header&gt;<br>
+                                                &nbsp;&nbsp;&lt;nav&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- Навигация --&gt;<br>
+                                                &nbsp;&nbsp;&lt;/nav&gt;<br>
+                                                &nbsp;&nbsp;&lt;main&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;article&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- Основное содержимое --&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/article&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;aside&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- Боковая панель --&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/aside&gt;<br>
+                                                &nbsp;&nbsp;&lt;/main&gt;<br>
+                                                &nbsp;&nbsp;&lt;footer&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- Подвал сайта --&gt;<br>
+                                                &nbsp;&nbsp;&lt;/footer&gt;<br>
+                                                &lt;/body&gt;
+                                              </code>
+                        </div>
+
+                        <div>
+                            <h3>Полезные ресурсы:</h3>
+                            <ul>
+                                <li><a href="https://developer.mozilla.org/ru/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure"
+                                        target="_blank" rel="noopener">MDN: Структура документа</a></li>
+                                <li><a href="https://html.spec.whatwg.org/multipage/semantics.html#semantics"
+                                        target="_blank" rel="noopener">WHATWG: Семантика</a></li>
+                                <li><a href="https://www.w3schools.com/html/html5_semantic_elements.asp" target="_blank"
+                                        rel="noopener">W3Schools: Семантические элементы</a></li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+                <!-- Какие основные структуры HTML-документа? конец-->
+            </div>
+            <!-- Основы HTML конец-->
+            <!-- Теги и элементы -->
+            <div class="accordion-header level-2">Теги и элементы</div>
+            <div class="accordion-content">
+                <!-- Какие бывают виды HTML-тегов? -->
+                <div class="accordion-header level-3">Какие бывают виды HTML-тегов?</div>
+                <div class="accordion-content">
+                    <section>
+                        <h2>Какие бывают виды HTML-тегов?</h2>
+
+                        <div>
+                            <h3>1. По способу закрытия:</h3>
+                            <ul>
+                                <li>
+                                    <strong>Парные теги</strong> (контейнеры):
+                                    <code>&lt;div&gt;...&lt;/div&gt;</code>,
+                                    <code>&lt;p&gt;...&lt;/p&gt;</code>
+                                </li>
+                                <li>
+                                    <strong>Одиночные теги</strong> (самозакрывающиеся):
+                                    <code>&lt;img&gt;</code>,
+                                    <code>&lt;br&gt;</code>,
+                                    <code>&lt;input&gt;</code>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>2. По назначению:</h3>
+                            <ul>
+                                <li>
+                                    <strong>Структурные</strong>:
+                                    <code>&lt;html&gt;</code>,
+                                    <code>&lt;body&gt;</code>,
+                                    <code>&lt;div&gt;</code>
+                                </li>
+                                <li>
+                                    <strong>Текстовые</strong>:
+                                    <code>&lt;p&gt;</code>,
+                                    <code>&lt;span&gt;</code>,
+                                    <code>&lt;h1&gt;-&lt;h6&gt;</code>
+                                </li>
+                                <li>
+                                    <strong>Списки</strong>:
+                                    <code>&lt;ul&gt;</code>,
+                                    <code>&lt;ol&gt;</code>,
+                                    <code>&lt;li&gt;</code>
+                                </li>
+                                <li>
+                                    <strong>Таблицы</strong>:
+                                    <code>&lt;table&gt;</code>,
+                                    <code>&lt;tr&gt;</code>,
+                                    <code>&lt;td&gt;</code>
+                                </li>
+                                <li>
+                                    <strong>Формы</strong>:
+                                    <code>&lt;form&gt;</code>,
+                                    <code>&lt;input&gt;</code>,
+                                    <code>&lt;button&gt;</code>
+                                </li>
+                                <li>
+                                    <strong>Мультимедиа</strong>:
+                                    <code>&lt;img&gt;</code>,
+                                    <code>&lt;video&gt;</code>,
+                                    <code>&lt;audio&gt;</code>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>3. По семантике (HTML5):</h3>
+                            <ul>
+                                <li>
+                                    <strong>Семантические</strong>:
+                                    <code>&lt;header&gt;</code>,
+                                    <code>&lt;footer&gt;</code>,
+                                    <code>&lt;article&gt;</code>,
+                                    <code>&lt;section&gt;</code>
+                                </li>
+                                <li>
+                                    <strong>Несемантические</strong>:
+                                    <code>&lt;div&gt;</code>,
+                                    <code>&lt;span&gt;</code>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Полезные ресурсы:</h3>
+                            <ul>
+                                <li>
+                                    <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element" target="_blank"
+                                        rel="noopener noreferrer">
+                                        MDN: HTML-элементы
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://html.spec.whatwg.org/multipage/semantics.html" target="_blank"
+                                        rel="noopener noreferrer">
+                                        WHATWG: Семантика HTML
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+                <!-- Какие бывают виды HTML-тегов? конец-->
+                <!-- В чём разница между &lt;div&gt; и &lt;span&gt;? -->
+                <div class="accordion-header level-3">В чём разница между &lt;div&gt; и &lt;span&gt;?</div>
+                <div class="accordion-content">
+                    <section>
+                        <h2>В чём разница между &lt;div&gt; и &lt;span&gt;?</h2>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Критерий</th>
+                                    <th>&lt;div&gt;</th>
+                                    <th>&lt;span&gt;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Тип элемента</strong></td>
+                                    <td>Блочный (block)</td>
+                                    <td>Строчный (inline)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Перенос строки</strong></td>
+                                    <td>Начинается с новой строки</td>
+                                    <td>В пределах текущей строки</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ширина</strong></td>
+                                    <td>По умолчанию 100% ширины родителя</td>
+                                    <td>По содержимому</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Типичное применение</strong></td>
+                                    <td>Группировка блоков, разделы страницы</td>
+                                    <td>Выделение фрагментов текста</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Семантика</strong></td>
+                                    <td>Нет (несемантический)</td>
+                                    <td>Нет (несемантический)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Примеры использования:</h3>
+
+                        <div>
+                            <h4>&lt;div&gt; (блочный):</h4>
+                            <code>
+                                                &lt;div style="background: #f0f0f0; padding: 10px;"&gt;<br>
+                                                &nbsp;&nbsp;&lt;p&gt;Это отдельный блок&lt;/p&gt;<br>
+                                                &nbsp;&nbsp;&lt;p&gt;С переносом на новую строку&lt;/p&gt;<br>
+                                                &lt;/div&gt;
+                                              </code>
+                        </div>
+
+                        <div>
+                            <h4>&lt;span&gt; (строчный):</h4>
+                            <code>
+                                                &lt;p&gt;Это текст со &lt;span style="color: red;"&gt;красным&lt;/span&gt; выделением внутри строки.&lt;/p&gt;
+                                              </code>
+                        </div>
+
+                        <div>
+                            <h3>Когда что использовать:</h3>
+                            <ul>
+                                <li>Используйте <code>&lt;div&gt;</code> для создания структурных блоков и разделов</li>
+                                <li>Используйте <code>&lt;span&gt;</code> для стилизации отдельных слов или фраз внутри
+                                    текста</li>
+                                <li>Для семантической разметки предпочитайте HTML5-теги (<code>&lt;header&gt;</code>,
+                                    <code>&lt;section&gt;</code> и др.)
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Полезные ресурсы:</h3>
+                            <ul>
+                                <li>
+                                    <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/div" target="_blank"
+                                        rel="noopener noreferrer">
+                                        MDN: &lt;div&gt;
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/span"
+                                        target="_blank" rel="noopener noreferrer">
+                                        MDN: &lt;span&gt;
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+                <!-- В чём разница между &lt;div&gt; и &lt;span&gt;? конец-->
+            </div>
+            <!-- Теги и элементы конец-->
+        </div>
+        <!-- HTML конец -->
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
