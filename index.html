@@ -65,6 +65,7 @@
                     </section>
                 </div>
                 <!-- Что такое HTML и для чего он используется? конец-->
+
                 <!-- Какая текущая версия HTML? -->
                 <div class="accordion-header level-3">Какая текущая версия HTML?</div>
                 <div class="accordion-content">
@@ -103,6 +104,7 @@
 
                 </div>
                 <!-- Какая текущая версия HTML? конец-->
+
                 <!-- В чём разница между HTML и XHTML? -->
                 <div class="accordion-header level-3">В чём разница между HTML и XHTML?</div>
                 <div class="accordion-content">
@@ -164,6 +166,7 @@
                     </section>
                 </div>
                 <!-- В чём разница между HTML и XHTML? конец-->
+
                 <!-- Как объявляется DOCTYPE в HTML5? -->
                 <div class="accordion-header level-3">Как объявляется DOCTYPE в HTML5?</div>
                 <div class="accordion-content">
@@ -230,6 +233,7 @@
                     </section>
                 </div>
                 <!-- Как объявляется DOCTYPE в HTML5? конец-->
+
                 <!-- Какие основные структуры HTML-документа? -->
                 <div class="accordion-header level-3">Какие основные структуры HTML-документа?</div>
                 <div class="accordion-content">
@@ -308,8 +312,12 @@
                     </section>
                 </div>
                 <!-- Какие основные структуры HTML-документа? конец-->
+
             </div>
             <!-- Основы HTML конец-->
+
+
+
             <!-- Теги и элементы -->
             <div class="accordion-header level-2">Теги и элементы</div>
             <div class="accordion-content">
@@ -416,6 +424,7 @@
                     </section>
                 </div>
                 <!-- Какие бывают виды HTML-тегов? конец-->
+
                 <!-- В чём разница между &lt;div&gt; и &lt;span&gt;? -->
                 <div class="accordion-header level-3">В чём разница между &lt;div&gt; и &lt;span&gt;?</div>
                 <div class="accordion-content">
@@ -510,10 +519,772 @@
                     </section>
                 </div>
                 <!-- В чём разница между &lt;div&gt; и &lt;span&gt;? конец-->
+
+                <!-- Для чего используются теги &lt;header&gt;, &lt;footer&gt;, &lt;section&gt;, &lt;article&gt;? -->
+                <div class="accordion-header level-3">Для чего используются теги &lt;header&gt;, &lt;footer&gt;,
+                    &lt;section&gt;, &lt;article&gt;?</div>
+                <div class="accordion-content">
+                    <section>
+                        <h2>Для чего используются теги &lt;header&gt;, &lt;footer&gt;, &lt;section&gt;, &lt;article&gt;?
+                        </h2>
+
+                        <div>
+                            <h3>Семантические теги HTML5:</h3>
+                            <ul>
+                                <li>
+                                    <strong><code>&lt;header&gt;</code></strong> - шапка сайта или раздела:
+                                    <ul>
+                                        <li>Может содержать логотип, навигацию, заголовок</li>
+                                        <li>Может использоваться несколько раз на странице</li>
+                                        <li>Не путать с <code>&lt;head&gt;</code> (метаданные документа)</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong><code>&lt;footer&gt;</code></strong> - подвал сайта или раздела:
+                                    <ul>
+                                        <li>Содержит контактную информацию, копирайты</li>
+                                        <li>Может включать дополнительную навигацию</li>
+                                        <li>Может повторяться для каждого раздела</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong><code>&lt;section&gt;</code></strong> - тематическая группа контента:
+                                    <ul>
+                                        <li>Логически выделенный раздел документа</li>
+                                        <li>Должен содержать заголовок (h2-h6)</li>
+                                        <li>Пример: глава, вкладки в интерфейсе</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong><code>&lt;article&gt;</code></strong> - самостоятельный контент:
+                                    <ul>
+                                        <li>Может быть изъят из страницы и остаться понятным</li>
+                                        <li>Пример: новость, пост блога, комментарий</li>
+                                        <li>Может содержать собственные <code>&lt;header&gt;</code> и
+                                            <code>&lt;footer&gt;</code>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Пример структуры страницы:</h3>
+                            <code>
+                                                &lt;body&gt;<br>
+                                                &nbsp;&nbsp;&lt;header&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- Логотип и главное меню --&gt;<br>
+                                                &nbsp;&nbsp;&lt;/header&gt;<br>
+                                                <br>
+                                                &nbsp;&nbsp;&lt;main&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;article&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;header&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Заголовок статьи&lt;/h1&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/header&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;section&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Первая часть&lt;/h2&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Содержание раздела...&lt;/p&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/section&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/article&gt;<br>
+                                                &nbsp;&nbsp;&lt;/main&gt;<br>
+                                                <br>
+                                                &nbsp;&nbsp;&lt;footer&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- Информация о сайте --&gt;<br>
+                                                &nbsp;&nbsp;&lt;/footer&gt;<br>
+                                                &lt;/body&gt;
+                                              </code>
+                        </div>
+
+                        <div>
+                            <h3>Почему это важно:</h3>
+                            <ul>
+                                <li>Улучшает доступность (скринридеры лучше понимают структуру)</li>
+                                <li>Помогает SEO (поисковые системы лучше анализируют контент)</li>
+                                <li>Упрощает стилизацию через CSS</li>
+                                <li>Делает код более читаемым и поддерживаемым</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Полезные ресурсы:</h3>
+                            <ul>
+                                <li>
+                                    <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element#Content_sectioning"
+                                        target="_blank" rel="noopener noreferrer">
+                                        MDN: Секционирование контента
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://html.spec.whatwg.org/multipage/sections.html" target="_blank"
+                                        rel="noopener noreferrer">
+                                        WHATWG: Секции и заголовки
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+                <!-- Для чего используются теги &lt;header&gt;, &lt;footer&gt;, &lt;section&gt;, &lt;article&gt;? конец-->
+
+                <!--  Как создать гиперссылку в HTML? -->
+                <div class="accordion-header level-3"> Как создать гиперссылку в HTML?</div>
+                <div class="accordion-content">
+                    <section>
+                        <h2>Как создать гиперссылку в HTML?</h2>
+
+                        <div>
+                            <h3>Базовый синтаксис ссылки:</h3>
+                            <code>
+                                                &lt;a href="URL"&gt;Текст ссылки&lt;/a&gt;
+                                              </code>
+                        </div>
+
+                        <div>
+                            <h3>Основные атрибуты:</h3>
+                            <ul>
+                                <li>
+                                    <strong>href</strong> - указывает URL-адрес или якорь:
+                                    <ul>
+                                        <li>Абсолютный путь: <code>href="https://example.com/page.html"</code></li>
+                                        <li>Относительный путь: <code>href="about.html"</code></li>
+                                        <li>Якорь на странице: <code>href="#section1"</code></li>
+                                        <li>Почтовая ссылка: <code>href="mailto:email@example.com"</code></li>
+                                        <li>Телефонная ссылка: <code>href="tel:+1234567890"</code></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>target</strong> - определяет где открыть ссылку:
+                                    <ul>
+                                        <li><code>target="_self"</code> - в текущей вкладке (по умолчанию)</li>
+                                        <li><code>target="_blank"</code> - в новой вкладке</li>
+                                        <li><code>target="_parent"</code> - в родительском фрейме</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>rel</strong> - определяет отношения между документами:
+                                    <ul>
+                                        <li><code>rel="nofollow"</code> - не передавать вес SEO</li>
+                                        <li><code>rel="noopener noreferrer"</code> - для безопасности при
+                                            target="_blank"</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Примеры ссылок:</h3>
+                            <code>
+                                                &lt;!-- Внешняя ссылка --&gt;<br>
+                                                &lt;a href="https://example.com" target="_blank" rel="noopener noreferrer"&gt;<br>
+                                                &nbsp;&nbsp;Посетите Example.com<br>
+                                                &lt;/a&gt;<br><br>
+                                                
+                                                &lt;!-- Внутренняя ссылка --&gt;<br>
+                                                &lt;a href="/about.html"&gt;О нас&lt;/a&gt;<br><br>
+                                                
+                                                &lt;!-- Якорная ссылка --&gt;<br>
+                                                &lt;a href="#contacts"&gt;Контактная информация&lt;/a&gt;<br><br>
+                                                
+                                                &lt;!-- Ссылка на изображение --&gt;<br>
+                                                &lt;a href="photo.jpg"&gt;<br>
+                                                &nbsp;&nbsp;&lt;img src="thumbnail.jpg" alt="Фото"&gt;<br>
+                                                &lt;/a&gt;
+                                              </code>
+                        </div>
+
+                        <div>
+                            <h3>Особенности:</h3>
+                            <ul>
+                                <li>Ссылки могут содержать текст, изображения или другие элементы</li>
+                                <li>Для внешних ссылок рекомендуется использовать <code>rel="noopener noreferrer"</code>
+                                </li>
+                                <li>Якорные ссылки требуют элемента с соответствующим <code>id</code></li>
+                                <li>Ссылки можно стилизовать с помощью CSS (цвет, подчеркивание и т.д.)</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Полезные ресурсы:</h3>
+                            <ul>
+                                <li>
+                                    <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/a" target="_blank"
+                                        rel="noopener noreferrer">
+                                        MDN: Элемент &lt;a&gt;
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://html.spec.whatwg.org/multipage/links.html" target="_blank"
+                                        rel="noopener noreferrer">
+                                        WHATWG: Спецификация ссылок
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+                <!--  Как создать гиперссылку в HTML? конец-->
+
+                <!-- Как вставить изображение в HTML? -->
+                <div class="accordion-header level-3">Как вставить изображение в HTML?</div>
+                <div class="accordion-content">
+                    <section>
+                        <h2>Как вставить изображение в HTML?</h2>
+                        <div>
+                            <h3>Базовый синтаксис:</h3>
+                            <code>&lt;img src="путь-к-изображению" alt="альтернативный текст"&gt;</code>
+                        </div>
+
+                        <div>
+                            <h3>Обязательные атрибуты:</h3>
+                            <ul>
+                                <li>
+                                    <strong>src</strong> - путь к изображению:
+                                    <ul>
+                                        <li>Абсолютный URL: <code>src="https://example.com/image.jpg"</code></li>
+                                        <li>Относительный путь: <code>src="images/photo.png"</code></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>alt</strong> - альтернативный текст:
+                                    <ul>
+                                        <li>Описание изображения для доступности и SEO</li>
+                                        <li>Обязателен для валидного HTML</li>
+                                        <li>Для декоративных изображений можно использовать пустое значение:
+                                            <code>alt=""</code>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Дополнительные атрибуты:</h3>
+                            <ul>
+                                <li><strong>width</strong> и <strong>height</strong> - размеры изображения в пикселях
+                                </li>
+                                <li><strong>loading</strong> - управление загрузкой (<code>lazy</code> для отложенной
+                                    загрузки)</li>
+                                <li><strong>srcset</strong> и <strong>sizes</strong> - для адаптивных изображений</li>
+                                <li><strong>title</strong> - всплывающая подсказка</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Примеры:</h3>
+                            <code>
+                                                &lt;!-- Простое изображение --&gt;<br>
+                                                &lt;img src="logo.png" alt="Логотип компании"&gt;<br><br>
+                                                
+                                                &lt;!-- С размерами --&gt;<br>
+                                                &lt;img src="photo.jpg" alt="Фотография продукта" width="400" height="300"&gt;<br><br>
+                                                
+                                                &lt;!-- С отложенной загрузкой --&gt;<br>
+                                                &lt;img src="banner.jpg" alt="Рекламный баннер" loading="lazy"&gt;<br><br>
+                                                
+                                                &lt;!-- Адаптивное изображение --&gt;<br>
+                                                &lt;img src="small.jpg"<br>
+                                                     srcset="small.jpg 480w, medium.jpg 768w, large.jpg 1200w"<br>
+                                                     sizes="(max-width: 600px) 480px, 800px"<br>
+                                                     alt="Адаптивное изображение"&gt;
+                                              </code>
+                        </div>
+
+                        <div>
+                            <h3>Рекомендации:</h3>
+                            <ul>
+                                <li>Всегда указывайте атрибут <code>alt</code></li>
+                                <li>Для адаптивности используйте <code>srcset</code> и <code>sizes</code></li>
+                                <li>Оптимизируйте изображения перед загрузкой на сервер</li>
+                                <li>Для фоновых изображений лучше использовать CSS</li>
+                                <li>Для сложных изображений используйте элемент <code>&lt;picture&gt;</code></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Полезные ресурсы:</h3>
+                            <ul>
+                                <li>
+                                    <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/img" target="_blank"
+                                        rel="noopener noreferrer">
+                                        MDN: Элемент &lt;img&gt;
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://web.dev/learn/html/images/" target="_blank"
+                                        rel="noopener noreferrer">
+                                        Web.dev: Изображения в HTML
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+                <!-- Как вставить изображение в HTML? конец-->
+
+                <!-- Как создать списки в HTML? -->
+                <div class="accordion-header level-3">Как создать списки в HTML?</div>
+                <div class="accordion-content">
+                    <section>
+                        <h2>11. Как создать списки в HTML?</h2>
+
+                        <div>
+                            <h3>1. Маркированный список (&lt;ul&gt;):</h3>
+                            <code>
+                                                &lt;ul&gt;<br>
+                                                &nbsp;&nbsp;&lt;li&gt;Первый пункт&lt;/li&gt;<br>
+                                                &nbsp;&nbsp;&lt;li&gt;Второй пункт&lt;/li&gt;<br>
+                                                &nbsp;&nbsp;&lt;li&gt;Третий пункт&lt;/li&gt;<br>
+                                                &lt;/ul&gt;
+                                              </code>
+                            <p>Результат:</p>
+                            <ul style="margin-left: 20px;">
+                                <li>Первый пункт</li>
+                                <li>Второй пункт</li>
+                                <li>Третий пункт</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>2. Нумерованный список (&lt;ol&gt;):</h3>
+                            <code>
+                                                &lt;ol&gt;<br>
+                                                &nbsp;&nbsp;&lt;li&gt;Первый пункт&lt;/li&gt;<br>
+                                                &nbsp;&nbsp;&lt;li&gt;Второй пункт&lt;/li&gt;<br>
+                                                &nbsp;&nbsp;&lt;li&gt;Третий пункт&lt;/li&gt;<br>
+                                                &lt;/ol&gt;
+                                              </code>
+                            <p>Результат:</p>
+                            <ol style="margin-left: 20px;">
+                                <li>Первый пункт</li>
+                                <li>Второй пункт</li>
+                                <li>Третий пункт</li>
+                            </ol>
+                        </div>
+
+                        <div>
+                            <h3>3. Список определений (&lt;dl&gt;):</h3>
+                            <code>
+                                                &lt;dl&gt;<br>
+                                                &nbsp;&nbsp;&lt;dt&gt;HTML&lt;/dt&gt;<br>
+                                                &nbsp;&nbsp;&lt;dd&gt;Язык гипертекстовой разметки&lt;/dd&gt;<br>
+                                                &nbsp;&nbsp;&lt;dt&gt;CSS&lt;/dt&gt;<br>
+                                                &nbsp;&nbsp;&lt;dd&gt;Каскадные таблицы стилей&lt;/dd&gt;<br>
+                                                &lt;/dl&gt;
+                                              </code>
+                            <p>Результат:</p>
+                            <dl style="margin-left: 20px;">
+                                <dt>HTML</dt>
+                                <dd>Язык гипертекстовой разметки</dd>
+                                <dt>CSS</dt>
+                                <dd>Каскадные таблицы стилей</dd>
+                            </dl>
+                        </div>
+
+                        <div>
+                            <h3>4. Вложенные списки:</h3>
+                            <code>
+                                                &lt;ul&gt;<br>
+                                                &nbsp;&nbsp;&lt;li&gt;Основной пункт 1<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Подпункт 1.1&lt;/li&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Подпункт 1.2&lt;/li&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br>
+                                                &nbsp;&nbsp;&lt;/li&gt;<br>
+                                                &nbsp;&nbsp;&lt;li&gt;Основной пункт 2&lt;/li&gt;<br>
+                                                &lt;/ul&gt;
+                                              </code>
+                            <p>Результат:</p>
+                            <ul style="margin-left: 20px;">
+                                <li>Основной пункт 1
+                                    <ul>
+                                        <li>Подпункт 1.1</li>
+                                        <li>Подпункт 1.2</li>
+                                    </ul>
+                                </li>
+                                <li>Основной пункт 2</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>5. Атрибуты для &lt;ol&gt;:</h3>
+                            <ul>
+                                <li><strong>type</strong>: 1 (по умолчанию), A, a, I, i</li>
+                                <li><strong>start</strong>: номер, с которого начинается список</li>
+                                <li><strong>reversed</strong>: обратная нумерация</li>
+                            </ul>
+                            <code>
+                                                &lt;ol type="A" start="3"&gt;<br>
+                                                &nbsp;&nbsp;&lt;li&gt;Пункт C&lt;/li&gt;<br>
+                                                &nbsp;&nbsp;&lt;li&gt;Пункт D&lt;/li&gt;<br>
+                                                &lt;/ol&gt;
+                                              </code>
+                            <p>Результат:</p>
+                            <ol type="A" start="3" style="margin-left: 20px;">
+                                <li>Пункт C</li>
+                                <li>Пункт D</li>
+                            </ol>
+                        </div>
+
+                        <div>
+                            <h3>Полезные ресурсы:</h3>
+                            <ul>
+                                <li>
+                                    <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/ul" target="_blank"
+                                        rel="noopener noreferrer">
+                                        MDN: Маркированные списки
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/ol" target="_blank"
+                                        rel="noopener noreferrer">
+                                        MDN: Нумерованные списки
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+                <!-- Как создать списки в HTML? конец-->
+
+                <!-- Как создать таблицу в HTML? -->
+                <div class="accordion-header level-3">Как создать таблицу в HTML?</div>
+                <div class="accordion-content">
+                    <section>
+                        <h2>12. Как создать таблицу в HTML?</h2>
+
+                        <div>
+                            <h3>Базовая структура таблицы:</h3>
+                            <code>
+                                                &lt;table&gt;<br>
+                                                &nbsp;&nbsp;&lt;tr&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Заголовок 1&lt;/th&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Заголовок 2&lt;/th&gt;<br>
+                                                &nbsp;&nbsp;&lt;/tr&gt;<br>
+                                                &nbsp;&nbsp;&lt;tr&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Данные 1&lt;/td&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Данные 2&lt;/td&gt;<br>
+                                                &nbsp;&nbsp;&lt;/tr&gt;<br>
+                                                &lt;/table&gt;
+                                              </code>
+                            <p>Результат:</p>
+                            <table border="1" style="border-collapse: collapse; margin: 10px 0;">
+                                <tr>
+                                    <th style="padding: 5px;">Заголовок 1</th>
+                                    <th style="padding: 5px;">Заголовок 2</th>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 5px;">Данные 1</td>
+                                    <td style="padding: 5px;">Данные 2</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div>
+                            <h3>Основные элементы таблицы:</h3>
+                            <ul>
+                                <li><strong>&lt;table&gt;</strong> - контейнер таблицы</li>
+                                <li><strong>&lt;tr&gt;</strong> (table row) - строка таблицы</li>
+                                <li><strong>&lt;th&gt;</strong> (table header) - ячейка заголовка</li>
+                                <li><strong>&lt;td&gt;</strong> (table data) - ячейка с данными</li>
+                                <li><strong>&lt;caption&gt;</strong> - заголовок таблицы</li>
+                                <li><strong>&lt;thead&gt;</strong>, <strong>&lt;tbody&gt;</strong>,
+                                    <strong>&lt;tfoot&gt;</strong> -
+                                    семантические секции
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Пример сложной таблицы:</h3>
+                            <code>
+                                                &lt;table&gt;<br>
+                                                &nbsp;&nbsp;&lt;caption&gt;Расписание занятий&lt;/caption&gt;<br>
+                                                &nbsp;&nbsp;&lt;thead&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th rowspan="2"&gt;День&lt;/th&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th colspan="2"&gt;Время&lt;/th&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Начало&lt;/th&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Конец&lt;/th&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+                                                &nbsp;&nbsp;&lt;/thead&gt;<br>
+                                                &nbsp;&nbsp;&lt;tbody&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Понедельник&lt;/td&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;9:00&lt;/td&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;18:00&lt;/td&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+                                                &nbsp;&nbsp;&lt;/tbody&gt;<br>
+                                                &lt;/table&gt;
+                                              </code>
+                        </div>
+
+                        <div>
+                            <h3>Атрибуты таблицы:</h3>
+                            <ul>
+                                <li><strong>border</strong> - рамка таблицы (устарел, используйте CSS)</li>
+                                <li><strong>colspan</strong> - объединение ячеек по горизонтали</li>
+                                <li><strong>rowspan</strong> - объединение ячеек по вертикали</li>
+                                <li><strong>cellspacing</strong> и <strong>cellpadding</strong> (устарели, используйте
+                                    CSS)</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Современные практики:</h3>
+                            <ul>
+                                <li>Используйте CSS для стилизации вместо HTML-атрибутов</li>
+                                <li>Добавляйте семантические секции (&lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;)</li>
+                                <li>Для сложных таблиц используйте ARIA-атрибуты для доступности</li>
+                                <li>Для адаптивных таблиц рассмотрите альтернативы (CSS Grid, Flexbox)</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Полезные ресурсы:</h3>
+                            <ul>
+                                <li>
+                                    <a href="https://developer.mozilla.org/ru/docs/Learn/HTML/Tables/Basics"
+                                        target="_blank" rel="noopener noreferrer">
+                                        MDN: Основы HTML-таблиц
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://html.spec.whatwg.org/multipage/tables.html" target="_blank"
+                                        rel="noopener noreferrer">
+                                        WHATWG: Спецификация таблиц
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+                <!-- Как создать таблицу в HTML? конец-->
+
+                <!-- Как создать выпадающий список (&lt;select&gt;) -->
+                <div class="accordion-header level-3">Как создать выпадающий список (&lt;select&gt;)</div>
+                <div class="accordion-content">
+                    <section>
+                        <h2>Как создать выпадающий список (&lt;select&gt;)</h2>
+
+                        <div>
+                            <h3>Базовая структура:</h3>
+                            <code>
+                                                &lt;select name="имя_списка"&gt;<br>
+                                                &nbsp;&nbsp;&lt;option value="значение1"&gt;Текст1&lt;/option&gt;<br>
+                                                &nbsp;&nbsp;&lt;option value="значение2"&gt;Текст2&lt;/option&gt;<br>
+                                                &nbsp;&nbsp;&lt;option value="значение3"&gt;Текст3&lt;/option&gt;<br>
+                                                &lt;/select&gt;
+                                              </code>
+                        </div>
+
+                        <div>
+                            <h3>Пример выпадающего списка:</h3>
+                            <code>
+                                                &lt;label for="cities"&gt;Выберите город:&lt;/label&gt;<br>
+                                                &lt;select id="cities" name="city"&gt;<br>
+                                                &nbsp;&nbsp;&lt;option value="msk"&gt;Москва&lt;/option&gt;<br>
+                                                &nbsp;&nbsp;&lt;option value="spb"&gt;Санкт-Петербург&lt;/option&gt;<br>
+                                                &nbsp;&nbsp;&lt;option value="ekb"&gt;Екатеринбург&lt;/option&gt;<br>
+                                                &nbsp;&nbsp;&lt;option value="nsk" selected&gt;Новосибирск&lt;/option&gt;<br>
+                                                &lt;/select&gt;
+                                              </code>
+                            <p>Результат:</p>
+                            <label for="cities-demo">Выберите город:</label>
+                            <select id="cities-demo" style="padding: 5px; margin: 5px 0;">
+                                <option value="msk">Москва</option>
+                                <option value="spb">Санкт-Петербург</option>
+                                <option value="ekb">Екатеринбург</option>
+                                <option value="nsk" selected>Новосибирск</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <h3>Основные атрибуты:</h3>
+                            <ul>
+                                <li><strong>name</strong> - имя для обработки на сервере</li>
+                                <li><strong>id</strong> - уникальный идентификатор</li>
+                                <li><strong>multiple</strong> - позволяет выбирать несколько вариантов</li>
+                                <li><strong>size</strong> - количество видимых строк</li>
+                                <li><strong>disabled</strong> - отключает список</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Атрибуты &lt;option&gt;:</h3>
+                            <ul>
+                                <li><strong>value</strong> - значение, которое будет отправлено на сервер</li>
+                                <li><strong>selected</strong> - предвыбранный вариант</li>
+                                <li><strong>disabled</strong> - отключает вариант</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Группировка вариантов:</h3>
+                            <code>
+                                                &lt;select name="auto"&gt;<br>
+                                                &nbsp;&nbsp;&lt;optgroup label="Немецкие"&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;option value="bmw"&gt;BMW&lt;/option&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;option value="audi"&gt;Audi&lt;/option&gt;<br>
+                                                &nbsp;&nbsp;&lt;/optgroup&gt;<br>
+                                                &nbsp;&nbsp;&lt;optgroup label="Японские"&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;option value="toyota"&gt;Toyota&lt;/option&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;option value="honda"&gt;Honda&lt;/option&gt;<br>
+                                                &nbsp;&nbsp;&lt;/optgroup&gt;<br>
+                                                &lt;/select&gt;
+                                              </code>
+                            <p>Результат:</p>
+                            <select style="padding: 5px; margin: 5px 0;">
+                                <optgroup label="Немецкие">
+                                    <option value="bmw">BMW</option>
+                                    <option value="audi">Audi</option>
+                                </optgroup>
+                                <optgroup label="Японские">
+                                    <option value="toyota">Toyota</option>
+                                    <option value="honda">Honda</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div>
+                            <h3>Полезные ресурсы:</h3>
+                            <ul>
+                                <li>
+                                    <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/select"
+                                        target="_blank" rel="noopener noreferrer">
+                                        MDN: Элемент &lt;select&gt;
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element"
+                                        target="_blank" rel="noopener noreferrer">
+                                        WHATWG: Спецификация &lt;select&gt;
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+                <!-- Как создать выпадающий список (&lt;select&gt;) конец-->
             </div>
             <!-- Теги и элементы конец-->
+
+            <!-- ***************************************************** -->
+
+            <!-- Атрибуты -->
+            <div class="accordion-header level-2">Атрибуты</div>
+            <div class="accordion-content">
+
+            </div>
+            <!-- Атрибуты конец-->
+
+
+
+            <!-- Формы и интерактивность -->
+            <div class="accordion-header level-2">Формы и интерактивность</div>
+            <div class="accordion-content">
+
+            </div>
+            <!-- Формы и интерактивность конец-->
+
+
+
+            <!-- Семантика и доступность -->
+            <div class="accordion-header level-2">Семантика и доступность</div>
+            <div class="accordion-content">
+
+            </div>
+            <!-- Семантика и доступность конец-->
+
+
+
+            <!-- Мультимедиа -->
+            <div class="accordion-header level-2">Мультимедиа</div>
+            <div class="accordion-content">
+
+            </div>
+            <!-- Мультимедиа конец-->
+
+
+
+            <!-- Метаданные и SEO -->
+            <div class="accordion-header level-2">Метаданные и SEO</div>
+            <div class="accordion-content">
+
+            </div>
+            <!-- Метаданные и SEO конец-->
+
+
+
+            <!-- Производительность и оптимизация -->
+            <div class="accordion-header level-2">Производительность и оптимизация</div>
+            <div class="accordion-content">
+
+            </div>
+            <!-- Производительность и оптимизация конец-->
+
+
+
+            <!-- Разное -->
+            <div class="accordion-header level-2">Разное</div>
+            <div class="accordion-content">
+
+            </div>
+            <!-- Разное конец-->
+
+
+
         </div>
         <!-- HTML конец -->
+
+
+
+
+
+        <!-- CSS -->
+        <div class="accordion-header level-1">CSS</div>
+        <div class="accordion-content">
+
+        </div>
+        <!-- CSS конец -->
+
+
+
+
+
+        <!-- JS -->
+        <div class="accordion-header level-1">JS</div>
+        <div class="accordion-content">
+
+        </div>
+        <!-- JS конец -->
+
+
+
+
+
+        <!-- TS -->
+        <div class="accordion-header level-1">TS</div>
+        <div class="accordion-content">
+
+        </div>
+        <!-- TS конец -->
+
+
+
+
+
+        <!-- REACT -->
+        <div class="accordion-header level-1">REACT</div>
+        <div class="accordion-content">
+
+        </div>
+        <!-- REACT конец -->
+
+
+
+
 
     </div>
     <script src="script.js"></script>
