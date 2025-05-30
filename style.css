@@ -86,12 +86,18 @@ p {
     }
 }
 
-h3 {
+h3,
+hr {
     color: #e74c3c;
     font-weight: bold;
     margin: 10px 0;
 }
 
+h4,
+h5 {
+    font-weight: bold;
+    margin: 5px 0;
+}
 
 a {
     display: inline-block;
