@@ -2465,9 +2465,646 @@
 
             <!-- Семантика и доступность -->
             <div class="accordion-header level-2">Семантика и доступность</div>
+            <!-- ********************************************************************************************************** -->
             <div class="accordion-content">
+                <!-- Что такое семантическая вёрстка? -->
+                <div class="accordion-header level-3">Что такое семантическая вёрстка?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Что такое семантическая вёрстка?</h2>
 
+                        <div>
+                            <h3>Основное определение:</h3>
+                            <p>Семантическая вёрстка - это подход к созданию HTML-разметки, где каждый тег используется
+                                в соответствии с его
+                                смысловым назначением, а не только для визуального оформления.</p>
+                        </div>
+
+                        <div>
+                            <h3>Ключевые принципы:</h3>
+                            <ul>
+                                <li>Использование HTML5-тегов по их прямому назначению</li>
+                                <li>Правильная иерархия заголовков (h1-h6)</li>
+                                <li>Логическая группировка контента</li>
+                                <li>Обеспечение доступности для вспомогательных технологий</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Семантические теги HTML5:</h3>
+                            <table>
+                                <tr>
+                                    <th>Тег</th>
+                                    <th>Назначение</th>
+                                    <th>Пример</th>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;header&gt;</code></td>
+                                    <td>Шапка документа или раздела</td>
+                                    <td><code>&lt;header&gt;<br>&nbsp;&nbsp;Лого и навигация<br>&lt;/header&gt;</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;nav&gt;</code></td>
+                                    <td>Навигационные ссылки</td>
+                                    <td><code>&lt;nav&gt;<br>&nbsp;&nbsp;&lt;a href="/"&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;Главная<br>&nbsp;&nbsp;&lt;/a&gt;<br>&lt;/nav&gt;</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;main&gt;</code></td>
+                                    <td>Основное содержимое</td>
+                                    <td><code>&lt;main&gt;<br>&nbsp;&nbsp;Статья или продукт<br>&lt;/main&gt;</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;article&gt;</code></td>
+                                    <td>Самостоятельный контент</td>
+                                    <td><code>&lt;article&gt;<br>&nbsp;&nbsp;Новость или пост<br>&lt;/article&gt;</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;section&gt;</code></td>
+                                    <td>Тематическая секция</td>
+                                    <td><code>&lt;section&gt;<br>&nbsp;&nbsp;Глава статьи<br>&lt;/section&gt;</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;aside&gt;</code></td>
+                                    <td>Дополнительный контент</td>
+                                    <td><code>&lt;aside&gt;<br>&nbsp;&nbsp;Рекомендации<br>&lt;/aside&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;footer&gt;</code></td>
+                                    <td>Подвал документа</td>
+                                    <td><code>&lt;footer&gt;<br>&nbsp;&nbsp;Контакты<br>&lt;/footer&gt;</code></td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div>
+                            <h3>Преимущества:</h3>
+                            <ul>
+                                <li><strong>Лучшее SEO</strong> - поисковики точнее анализируют контент</li>
+                                <li><strong>Доступность</strong> - скринридеры корректно работают</li>
+                                <li><strong>Поддержка кода</strong> - понятная структура для разработчиков</li>
+                                <li><strong>Адаптивность</strong> - легче создавать responsive-дизайн</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Пример правильной структуры:</h3>
+                            <code>
+                                                &lt;body&gt;<br>
+                                                &nbsp;&nbsp;&lt;header&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Заголовок сайта&lt;/h1&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;nav&gt;...&lt;/nav&gt;<br>
+                                                &nbsp;&nbsp;&lt;/header&gt;<br>
+                                                <br>
+                                                &nbsp;&nbsp;&lt;main&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;article&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Заголовок статьи&lt;/h2&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Основной текст...&lt;/p&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/article&gt;<br>
+                                                &nbsp;&nbsp;&lt;/main&gt;<br>
+                                                <br>
+                                                &nbsp;&nbsp;&lt;footer&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Контакты&lt;/p&gt;<br>
+                                                &nbsp;&nbsp;&lt;/footer&gt;<br>
+                                                &lt;/body&gt;
+                                              </code>
+                        </div>
+
+                        <div>
+                            <h3>Как проверить семантичность?</h3>
+                            <ol>
+                                <li>Отключите CSS - структура должна оставаться понятной</li>
+                                <li>Проверьте валидатором W3C</li>
+                                <li>Протестируйте скринридером</li>
+                            </ol>
+                        </div>
+
+                        <div>
+                            <h3>Полезные ресурсы</h3>
+
+                            <a href="https://developer.mozilla.org/ru/docs/Glossary/Semantics" target="_blank"
+                                rel="noopener">MDN</a> |
+                            <a href="https://html.spec.whatwg.org/multipage/semantics.html" target="_blank"
+                                rel="noopener">Спецификация</a> |
+                            <a href="https://www.w3schools.com/html/html5_semantic_elements.asp" target="_blank"
+                                rel="noopener">W3Schools</a>
+
+                        </div>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Что такое семантическая вёрстка? конец-->
+                <!-- Какие семантические теги появились в HTML5? -->
+                <div class="accordion-header level-3">Какие семантические теги появились в HTML5?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Какие семантические теги появились в HTML5?</h2>
+
+                        <div>
+                            <h3>Основные семантические теги HTML5:</h3>
+                            <table>
+                                <tr>
+                                    <th>Тег</th>
+                                    <th>Назначение</th>
+                                    <th>Пример использования</th>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;header&gt;</code></td>
+                                    <td>Шапка документа или раздела</td>
+                                    <td><code>&lt;header&gt;<br>
+                                        &nbsp;&nbsp;&lt;h1&gt;<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Заголовок<br>
+                                        &nbsp;&nbsp;&lt;/h1&gt;<br>
+                                        &lt;/header&gt;</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;footer&gt;</code></td>
+                                    <td>Подвал документа или раздела</td>
+                                    <td><code>&lt;footer&gt;<br>
+                                        &nbsp;&nbsp;Контакты и копирайт<br>
+                                        &lt;/footer&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;nav&gt;</code></td>
+                                    <td>Основная навигация по сайту</td>
+                                    <td><code>&lt;nav&gt;<br>
+                                        &nbsp;&nbsp;&lt;a href="/"&gt;<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Главная<br>
+                                        &nbsp;&nbsp;&lt;/a&gt;<br>
+                                        &lt;/nav&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;main&gt;</code></td>
+                                    <td>Основное содержимое документа</td>
+                                    <td><code>&lt;main&gt;<br>
+                                        &nbsp;&nbsp;Статья или продукт<br>
+                                        &lt;/main&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;article&gt;</code></td>
+                                    <td>Самостоятельный фрагмент контента</td>
+                                    <td><code>&lt;article&gt;<br>
+                                        &nbsp;&nbsp;Новость или пост в блоге<br>
+                                        &lt;/article&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;section&gt;</code></td>
+                                    <td>Тематическая группа контента</td>
+                                    <td><code>&lt;section&gt;<br>
+                                        &nbsp;&nbsp;Глава статьи<br>
+                                        &lt;/section&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;aside&gt;</code></td>
+                                    <td>Дополнительный, косвенно связанный контент</td>
+                                    <td><code>&lt;aside&gt;<br>
+                                        &nbsp;&nbsp;Рекомендации или реклама<br>
+                                        &lt;/aside&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;figure&gt;</code></td>
+                                    <td>Самостоятельный контент с подписью</td>
+                                    <td><code>&lt;figure&gt;<br>
+                                        &nbsp;&nbsp;&lt;img src="chart.jpg"&gt;<br>
+                                        &nbsp;&nbsp;&lt;figcaption&gt;<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;График<br>
+                                        &nbsp;&nbsp;&lt;/figcaption&gt;<br>
+                                        &lt;/figure&gt;</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;time&gt;</code></td>
+                                    <td>Дата и/или время</td>
+                                    <td><code>&lt;time datetime="2023-05-15"&gt;<br>
+                                        &nbsp;&nbsp;15 мая<br>
+                                        &lt;/time&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;mark&gt;</code></td>
+                                    <td>Выделенный (подсвеченный) текст</td>
+                                    <td><code>&lt;p&gt;<br>
+                                        &nbsp;&nbsp;Это &lt;mark&gt;важно&lt;/mark&gt;<br>
+                                        &lt;/p&gt;</code></td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div>
+                            <h3>Дополнительные семантические теги:</h3>
+                            <ul>
+                                <li><code>&lt;details&gt;</code> и <code>&lt;summary&gt;</code> - раскрывающийся блок
+                                </li>
+                                <li><code>&lt;progress&gt;</code> - индикатор прогресса</li>
+                                <li><code>&lt;meter&gt;</code> - скалярное значение в известном диапазоне</li>
+                                <li><code>&lt;dialog&gt;</code> - диалоговое окно</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Пример структуры страницы с семантическими тегами:</h3>
+                            <code>
+                                                &lt;body&gt;<br>
+                                                &nbsp;&nbsp;&lt;header&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Название сайта&lt;/h1&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;nav&gt;...&lt;/nav&gt;<br>
+                                                &nbsp;&nbsp;&lt;/header&gt;<br>
+                                                <br>
+                                                &nbsp;&nbsp;&lt;main&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;article&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Заголовок статьи&lt;/h2&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;section&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;Раздел 1&lt;/h3&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Текст раздела...&lt;/p&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/section&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/article&gt;<br>
+                                                <br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;aside&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;Дополнительно&lt;/h3&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Связанные материалы...&lt;/p&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/aside&gt;<br>
+                                                &nbsp;&nbsp;&lt;/main&gt;<br>
+                                                <br>
+                                                &nbsp;&nbsp;&lt;footer&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;© 2023 Компания&lt;/p&gt;<br>
+                                                &nbsp;&nbsp;&lt;/footer&gt;<br>
+                                                &lt;/body&gt;
+                                              </code>
+                        </div>
+
+                        <div>
+                            <h3>Полезные ресурсы</h3>
+
+                            <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element" target="_blank"
+                                rel="noopener">MDN</a> |
+                            <a href="https://html.spec.whatwg.org/multipage/semantics.html" target="_blank"
+                                rel="noopener">Спецификация</a> |
+                            <a href="https://www.w3schools.com/html/html5_semantic_elements.asp" target="_blank"
+                                rel="noopener">W3Schools</a>
+
+                        </div>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Какие семантические теги появились в HTML5? конец-->
+                <!-- Как улучшить доступность (accessibility) в HTML? -->
+                <div class="accordion-header level-3">Как улучшить доступность (accessibility) в HTML?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Как улучшить доступность (accessibility) в HTML?</h2>
+
+                        <div>
+                            <h3>1. Семантическая разметка</h3>
+                            <ul>
+                                <li>Используйте правильные HTML5-теги (<code>&lt;header&gt;</code>,
+                                    <code>&lt;nav&gt;</code>,
+                                    <code>&lt;main&gt;</code> и др.)
+                                </li>
+                                <li>Соблюдайте иерархию заголовков (<code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code>)
+                                </li>
+                                <li>Для кнопок используйте <code>&lt;button&gt;</code>, а не <code>&lt;div&gt;</code> с
+                                    JavaScript</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>2. Альтернативный текст</h3>
+                            <ul>
+                                <li>Всегда добавляйте <code>alt</code> для изображений:
+                                    <code>&lt;img src="logo.png" alt="Логотип компании"&gt;</code>
+                                </li>
+                                <li>Для декоративных изображений используйте пустой alt: <code>alt=""</code></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>3. ARIA-атрибуты</h3>
+                            <ul>
+                                <li><code>aria-label</code>: описание для элементов без текста
+                                    <code>&lt;button aria-label="Закрыть меню"&gt;×&lt;/button&gt;</code>
+                                </li>
+                                <li><code>aria-labelledby</code>: связь с видимым текстом
+                                    <code>&lt;div id="error"&gt;Ошибка&lt;/div&gt;<br>
+                                                  &lt;input aria-labelledby="error"&gt;</code>
+                                </li>
+                                <li><code>role</code>: явное указание роли элемента
+                                    <code>&lt;div role="alert"&gt;Важное сообщение&lt;/div&gt;</code>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>4. Доступные формы</h3>
+                            <ul>
+                                <li>Связывайте <code>&lt;label&gt;</code> с полями ввода:
+                                    <code>&lt;label for="email"&gt;Email:&lt;/label&gt;<br>
+                                                  &lt;input type="email" id="email"&gt;</code>
+                                </li>
+                                <li>Добавляйте подсказки через <code>aria-describedby</code></li>
+                                <li>Помечайте обязательные поля <code>required</code> и
+                                    <code>aria-required="true"</code>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>5. Клавиатурная навигация</h3>
+                            <ul>
+                                <li>Проверяйте, что все элементы доступны через <kbd>Tab</kbd></li>
+                                <li>Управляйте <code>tabindex</code> (0 - в порядке потока, -1 - исключить из навигации)
+                                </li>
+                                <li>Для модальных окон ловите фокус внутри них</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>6. Контраст и читаемость</h3>
+                            <ul>
+                                <li>Минимальное соотношение контраста 4.5:1 для обычного текста</li>
+                                <li>Не используйте только цвет для передачи информации</li>
+                                <li>Размер текста должен быть адаптивным</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>7. Тестирование доступности</h3>
+                            <ul>
+                                <li>Проверьте страницу скринридером (NVDA, VoiceOver)</li>
+                                <li>Протестируйте навигацию только с клавиатуры</li>
+                                <li>Используйте инструменты:
+                                    <ol>
+                                        <li>Lighthouse в Chrome DevTools</li>
+                                        <li>axe DevTools</li>
+                                        <li>WAVE Evaluation Tool</li>
+                                    </ol>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Пример доступного элемента</h3>
+                            <code>
+                                                &lt;button <br>
+                                                &nbsp;&nbsp;aria-label="Добавить в корзину"<br>
+                                                &nbsp;&nbsp;aria-expanded="false"<br>
+                                                &nbsp;&nbsp;tabindex="0"<br>
+                                                &gt;<br>
+                                                &nbsp;&nbsp;&lt;svg aria-hidden="true"&gt;...&lt;/svg&gt;<br>
+                                                &lt;/button&gt;
+                                              </code>
+                        </div>
+
+                        <div>
+                            <h3>Полезные ресурсы</h3>
+
+                            <a href="https://developer.mozilla.org/ru/docs/Web/Accessibility" target="_blank"
+                                rel="noopener">MDN</a> |
+                            <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank"
+                                rel="noopener">WCAG</a> |
+                            <a href="https://webaim.org/" target="_blank" rel="noopener">WebAIM</a>
+
+                        </div>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Как улучшить доступность (accessibility) в HTML? конец-->
+                <!-- Для чего используется атрибут aria-label? -->
+                <div class="accordion-header level-3">Для чего используется атрибут aria-label?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Для чего используется атрибут <code>aria-label</code>?</h2>
+
+                        <div>
+                            <h3>Основное назначение:</h3>
+                            <p>Атрибут <code>aria-label</code> предоставляет текстовую метку для элемента, когда:</p>
+                            <ul>
+                                <li>Элемент не имеет видимого текстового содержимого</li>
+                                <li>Существующий текст недостаточно описывает функционал</li>
+                                <li>Нужно переопределить текст по умолчанию для вспомогательных технологий</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Типичные случаи применения:</h3>
+                            <table>
+                                <tr>
+                                    <th>Пример</th>
+                                    <th>Код</th>
+                                    <th>Для чего</th>
+                                </tr>
+                                <tr>
+                                    <td>Кнопка с иконкой</td>
+                                    <td><code>&lt;button aria-label="Закрыть"&gt;<br>
+                                        &nbsp;&nbsp;×<br>&lt;/button&gt;</code></td>
+                                    <td>Объясняет назначение символа</td>
+                                </tr>
+                                <tr>
+                                    <td>Декоративные элементы</td>
+                                    <td><code>&lt;div aria-label="Главное меню" role="navigation"&gt;<br>
+                                        &nbsp;&nbsp;...<br>
+                                        &lt;/div&gt;</code>
+                                    </td>
+                                    <td>Описание блока</td>
+                                </tr>
+                                <tr>
+                                    <td>Интерактивные элементы</td>
+                                    <td><code>&lt;a href="#" aria-label="Читать далее о продукте"&gt;<br>
+                                        &nbsp;&nbsp;&lt;img src="arrow.png" alt=""&gt;<br>
+                                        &lt;/a&gt;</code>
+                                    </td>
+                                    <td>Уточнение действия</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div>
+                            <h3>Как это работает?</h3>
+                            <ul>
+                                <li>Скринридеры (NVDA, VoiceOver) зачитывают значение <code>aria-label</code></li>
+                                <li>Игнорируется визуальными браузерами (не влияет на отображение)</li>
+                                <li>Имеет приоритет над:
+                                    <ol>
+                                        <li>Текстом внутри элемента</li>
+                                        <li>Атрибутом <code>title</code></li>
+                                        <li>Атрибутом <code>alt</code> для изображений</li>
+                                    </ol>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Лучшие практики:</h3>
+                            <ul>
+                                <li>Используйте краткие, но описательные метки (1-3 слова)</li>
+                                <li>Не дублируйте видимый текст</li>
+                                <li>Для сложных описаний используйте <code>aria-labelledby</code></li>
+                                <li>Тестируйте со скринридерами</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Примеры правильного использования:</h3>
+                            <code>
+                                                &lt;!-- Иконка без текста --&gt;<br>
+                                                &lt;button aria-label="Поиск"&gt;<br>
+                                                &nbsp;&nbsp;&lt;svg aria-hidden="true"&gt;...&lt;/svg&gt;<br>
+                                                &lt;/button&gt;<br><br>
+                                                
+                                                &lt;!-- Графический элемент --&gt;<br>
+                                                &lt;div aria-label="Прогресс загрузки: 50%" role="progressbar"&gt;...&lt;/div&gt;
+                                              </code>
+                        </div>
+
+                        <div>
+                            <h3>Чего избегать:</h3>
+                            <ul>
+                                <li><code>&lt;button aria-label="Кнопка"&gt;Отправить&lt;/button&gt;</code> (избыточно)
+                                </li>
+                                <li><code>&lt;div aria-label=""&gt;...&lt;/div&gt;</code> (пустое значение)</li>
+                                <li>Использования вместо видимых текстовых меток</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Полезные ресурсы</h3>
+
+                            <a href="https://developer.mozilla.org/ru/docs/Web/Accessibility/ARIA/Attributes/aria-label"
+                                target="_blank" rel="noopener">MDN</a> |
+                            <a href="https://www.w3.org/WAI/tutorials/forms/labels/#using-aria-label" target="_blank"
+                                rel="noopener">W3C</a> |
+                            <a href="https://webaim.org/techniques/forms/advanced" target="_blank"
+                                rel="noopener">WebAIM</a>
+
+                        </div>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Для чего используется атрибут aria-label? конец-->
+                <!-- Как скрыть элемент визуально, но оставить его доступным для скринридеров? -->
+                <div class="accordion-header level-3">Как скрыть элемент визуально, но оставить его доступным для
+                    скринридеров?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Как скрыть элемент визуально, но оставить его доступным для скринридеров?</h2>
+
+                        <div>
+                            <h3>1. Оптимальный метод (рекомендован W3C):</h3>
+                            <code>
+                                                .visually-hidden {<br>
+                                                &nbsp;&nbsp;position: absolute;<br>
+                                                &nbsp;&nbsp;width: 1px;<br>
+                                                &nbsp;&nbsp;height: 1px;<br>
+                                                &nbsp;&nbsp;margin: -1px;<br>
+                                                &nbsp;&nbsp;padding: 0;<br>
+                                                &nbsp;&nbsp;overflow: hidden;<br>
+                                                &nbsp;&nbsp;clip: rect(0, 0, 0, 0);<br>
+                                                &nbsp;&nbsp;white-space: nowrap;<br>
+                                                &nbsp;&nbsp;border: 0;<br>
+                                                }
+                                              </code>
+                            <p>Применение:
+                                <code>&lt;div class="visually-hidden"&gt;Текст для скринридера&lt;/div&gt;</code>
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3>2. Альтернативные методы:</h3>
+                            <table>
+                                <tr>
+                                    <th>Метод</th>
+                                    <th>Код</th>
+                                    <th>Примечание</th>
+                                </tr>
+                                <tr>
+                                    <td>CSS-класс</td>
+                                    <td><code>.sr-only { position: absolute; left: -10000px; }</code></td>
+                                    <td>Устаревший, но рабочий способ</td>
+                                </tr>
+                                <tr>
+                                    <td>ARIA-атрибут</td>
+                                    <td><code>&lt;div aria-hidden="false" style="display: none;"&gt;Не работает!&lt;/div&gt;</code>
+                                    </td>
+                                    <td><strong>Неверно</strong> - скринридеры игнорируют</td>
+                                </tr>
+                                <tr>
+                                    <td>Нулевая прозрачность</td>
+                                    <td><code>style="opacity: 0; height: 0;"</code></td>
+                                    <td>Может оставлять пустое пространство</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div>
+                            <h3>3. Когда использовать:</h3>
+                            <ul>
+                                <li>Добавление пояснений для невизуальных пользователей</li>
+                                <li>Скрытые заголовки для структурных разделов</li>
+                                <li>Пост-текст для иконок и графических элементов</li>
+                                <li>Дополнительные инструкции для форм</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>4. Примеры правильного применения:</h3>
+                            <code>
+                                                &lt;!-- Скрытый заголовок для группы элементов --&gt;<br>
+                                                &lt;h3 class="visually-hidden"&gt;Настройки профиля&lt;/h3&gt;<br>
+                                                &lt;div&gt;...элементы настроек...&lt;/div&gt;<br><br>
+                                                
+                                                &lt;!-- Пояснение для иконки --&gt;<br>
+                                                &lt;button&gt;<br>
+                                                &nbsp;&nbsp;&lt;svg aria-hidden="true"&gt;...&lt;/svg&gt;<br>
+                                                &nbsp;&nbsp;&lt;span class="visually-hidden"&gt;Добавить в избранное&lt;/span&gt;<br>
+                                                &lt;/button&gt;
+                                              </code>
+                        </div>
+
+                        <div>
+                            <h3>5. Чего избегать:</h3>
+                            <ul>
+                                <li><code>visibility: hidden</code> - скрывает от всех</li>
+                                <li><code>display: none</code> - полностью удаляет из дерева доступности</li>
+                                <li><code>aria-hidden="true"</code> - скрывает от скринридеров</li>
+                                <li>Нулевой размер без позиционирования - может мешать навигации</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>6. Тестирование:</h3>
+                            <ol>
+                                <li>Проверьте в NVDA/VoiceOver</li>
+                                <li>Убедитесь, что элемент не виден визуально</li>
+                                <li>Проверьте навигацию с клавиатуры</li>
+                                <li>Используйте Chrome Accessibility Tools</li>
+                            </ol>
+                        </div>
+
+                        <div>
+                            <h3>Полезные ресурсы</h3>
+
+                            <a href="https://www.w3.org/WAI/tutorials/forms/labels/#hiding-label-text" target="_blank"
+                                rel="noopener">W3C</a> |
+                            <a href="https://webaim.org/techniques/css/invisiblecontent/" target="_blank"
+                                rel="noopener">WebAIM</a> |
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute"
+                                target="_blank" rel="noopener">MDN</a>
+
+                        </div>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Как скрыть элемент визуально, но оставить его доступным для скринридеров? конец-->
             </div>
+            <!-- ********************************************************************************************************** -->
             <!-- Семантика и доступность конец-->
 
 
