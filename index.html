@@ -2460,9 +2460,6 @@
             </div>
             <!-- ************************************************************************************************************************ -->
             <!-- Формы и интерактивность конец-->
-
-
-
             <!-- Семантика и доступность -->
             <div class="accordion-header level-2">Семантика и доступность</div>
             <!-- ********************************************************************************************************** -->
@@ -3106,14 +3103,282 @@
             </div>
             <!-- ********************************************************************************************************** -->
             <!-- Семантика и доступность конец-->
-
-
-
             <!-- Мультимедиа -->
             <div class="accordion-header level-2">Мультимедиа</div>
+            <!-- ********************************************************************************************************** -->
             <div class="accordion-content">
+                <!-- Как встроить видео на страницу? -->
+                <div class="accordion-header level-3">Как встроить видео на страницу?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Как встроить видео на страницу?</h2>
 
+                        <div>
+                            <h3>1. Использование HTML5-тега &lt;video&gt;</h3>
+                            <code>
+                                                &lt;video width="640" height="360" controls&gt;<br>
+                                                &nbsp;&nbsp;&lt;source src="video.mp4" type="video/mp4"&gt;<br>
+                                                &nbsp;&nbsp;&lt;source src="video.webm" type="video/webm"&gt;<br>
+                                                &nbsp;&nbsp;Ваш браузер не поддерживает HTML5 видео.<br>
+                                                &lt;/video&gt;
+                                              </code>
+                            <ul>
+                                <li><strong>controls</strong> - добавляет панель управления</li>
+                                <li><strong>width/height</strong> - задают размеры плеера</li>
+                                <li>Несколько <strong>&lt;source&gt;</strong> для поддержки разных форматов</li>
+                                <li>Текст внутри - фолбэк для старых браузеров</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>2. Дополнительные атрибуты &lt;video&gt;</h3>
+                            <table>
+                                <tr>
+                                    <th>Атрибут</th>
+                                    <th>Описание</th>
+                                </tr>
+                                <tr>
+                                    <td><code>autoplay</code></td>
+                                    <td>Автовоспроизведение (может блокироваться браузерами)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>loop</code></td>
+                                    <td>Зацикливание видео</td>
+                                </tr>
+                                <tr>
+                                    <td><code>muted</code></td>
+                                    <td>Без звука (часто требуется для autoplay)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>poster="image.jpg"</code></td>
+                                    <td>Заставка до воспроизведения</td>
+                                </tr>
+                                <tr>
+                                    <td><code>preload</code></td>
+                                    <td>Загрузка метаданных (auto/metadata/none)</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div>
+                            <h3>3. Встраивание YouTube/Vimeo</h3>
+                            <code>
+                                                &lt;iframe width="560" height="315"<br>
+                                                &nbsp;&nbsp;src="https://www.youtube.com/embed/КОД_ВИДЕО"<br>
+                                                &nbsp;&nbsp;frameborder="0"<br>
+                                                &nbsp;&nbsp;allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"<br>
+                                                &nbsp;&nbsp;allowfullscreen&gt;<br>
+                                                &lt;/iframe&gt;
+                                              </code>
+                            <p>Для Vimeo замените URL на <code>https://player.vimeo.com/video/КОД_ВИДЕО</code></p>
+                        </div>
+
+                        <div>
+                            <h3>4. Поддерживаемые форматы</h3>
+                            <ul>
+                                <li><strong>MP4</strong> (H.264 + AAC) - самый широко поддерживаемый</li>
+                                <li><strong>WebM</strong> (VP8/VP9 + Opus/Vorbis) - лучшее качество/размер</li>
+                                <li><strong>Ogg</strong> (Theora + Vorbis) - устаревает</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>5. Пример адаптивного видео</h3>
+                            <code>
+                                                &lt;div style="position:relative; padding-bottom:56.25%; height:0;"&gt;<br>
+                                                &nbsp;&nbsp;&lt;video style="position:absolute; top:0; left:0; width:100%; height:100%;" controls&gt;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;source src="video.mp4" type="video/mp4"&gt;<br>
+                                                &nbsp;&nbsp;&lt;/video&gt;<br>
+                                                &lt;/div&gt;
+                                              </code>
+                            <p>Соотношение 16:9 (56.25%) или 4:3 (75%)</p>
+                        </div>
+
+                        <div>
+                            <h3>6. Доступность</h3>
+                            <ul>
+                                <li>Добавляйте <code>&lt;track&gt;</code> для субтитров</li>
+                                <li>Для фонового видео используйте <code>aria-hidden="true"</code></li>
+                                <li>Предусмотрите текстовую альтернативу</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Полезные ресурсы</h3>
+
+                            <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/video" target="_blank"
+                                rel="noopener">MDN</a> |
+                            <a href="https://www.w3schools.com/html/html5_video.asp" target="_blank"
+                                rel="noopener">W3Schools</a> |
+                            <a href="https://web.dev/media/" target="_blank" rel="noopener">Web.dev</a>
+
+                        </div>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Как встроить видео на страницу? конец-->
+                <!-- Как добавить аудио в HTML? -->
+                <div class="accordion-header level-3">Как добавить аудио в HTML?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Добавление аудио на веб-страницу</h2>
+
+                        <h3>1. Базовый аудиоплеер</h3>
+                        <p>Используйте тег &lt;audio&gt; с атрибутом controls:</p>
+                        <div>
+                            &lt;audio controls src="audio.mp3"&gt;<br>
+                            &nbsp;&nbsp;Ваш браузер не поддерживает аудиоэлемент.<br>
+                            &lt;/audio&gt;
+                        </div>
+                        <audio controls src="audio.mp3"> Ваш браузер не поддерживает аудиоэлемент. </audio>
+
+                        <h3>2. Расширенные параметры</h3>
+                        <p>Добавьте несколько источников и дополнительные атрибуты:</p>
+                        <div>
+                            &lt;audio controls loop muted preload="auto"&gt;<br>
+                            &nbsp;&nbsp;&lt;source src="audio.mp3" type="audio/mpeg"&gt;<br>
+                            &nbsp;&nbsp;&lt;source src="audio.ogg" type="audio/ogg"&gt;<br>
+                            &nbsp;&nbsp;Ваш браузер не поддерживает HTML5 аудио.<br>
+                            &lt;/audio&gt;
+                        </div>
+                        <audio controls loop muted preload="auto">
+                            <source src="audio.mp3" type="audio/mpeg">
+                            <source src="audio.ogg" type="audio/ogg">
+                            Ваш браузер не поддерживает HTML5 аудио.
+                        </audio>
+                        <h3>3. Встраивание с популярных платформ</h3>
+
+                        <h4>YouTube (только аудио):</h4>
+                        <div>
+                            &lt;iframe width="300" height="60" src="https://www.youtube.com/embed/VIDEO_ID"
+                            frameborder="0"
+                            allowfullscreen&gt;&lt;/iframe&gt;
+                        </div>
+
+                        <h4>SoundCloud:</h4>
+                        <div>
+                            &lt;iframe width="100%" height="166"
+                            src="https://w.soundcloud.com/player/?url=TRACK_URL"&gt;&lt;/iframe&gt;
+                        </div>
+
+                        <h3>Полезные советы</h3>
+                        <ul>
+                            <li>Для автовоспроизведения добавьте &lt;code&gt;autoplay muted&lt;/code&gt;</li>
+                            <li>Используйте &lt;code&gt;preload="metadata"&lt;/code&gt; для экономии трафика</li>
+                            <li>Всегда указывайте fallback-контент внутри тега</li>
+                            <li>Для кросс-доменных запросов проверьте CORS-заголовки</li>
+                        </ul>
+
+                        <h3>Полезные ресурсы</h3>
+
+                        <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/audio"
+                            target="_blank">Документация MDN по
+                            &lt;audio&gt;</a> |
+                        <a href="https://www.freeconvert.com/mp3-converter" target="_blank">Бесплатный конвертер
+                            аудио</a> |
+                        <a href="https://soundcloud.com/for-developers" target="_blank">SoundCloud API для
+                            разработчиков</a> |
+                        <a href="https://www.audacityteam.org/" target="_blank">Audacity - бесплатный
+                            аудиоредактор</a> |
+                        <a href="https://cloudconvert.com/" target="_blank">Онлайн-конвертер форматов</a>
+
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Как добавить аудио в HTML? конец-->
+                <!-- Какие форматы видео поддерживает <video>? -->
+                <div class="accordion-header level-3">Какие форматы видео поддерживает &lt;video&gt;?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+
+                        <h2>Форматы видео, поддерживаемые тегом &lt;video&gt;</h2>
+
+                        <h3>Основные поддерживаемые форматы:</h3>
+
+                        <ul>
+                            <li><strong>MP4</strong> (H.264 + AAC/MP3) - наиболее универсальный формат</li>
+                            <li><strong>WebM</strong> (VP8/VP9 + Vorbis/Opus) - хорошая альтернатива с открытым кодом
+                            </li>
+                            <li><strong>Ogg</strong> (Theora + Vorbis) - менее распространён, но поддерживается Firefox
+                            </li>
+                        </ul>
+
+                        <h3>Рекомендуемые комбинации:</h3>
+
+                        <div>
+                            &lt;video controls&gt;
+                            <br>&nbsp;&nbsp;&lt;source src="video.mp4" type="video/mp4"&gt;
+                            <br>&nbsp;&nbsp;&lt;source src="video.webm" type="video/webm"&gt;
+                            <br>&nbsp;&nbsp;Ваш браузер не поддерживает HTML5 видео.
+                            <br>&lt;/video&gt;
+                        </div>
+                        <h3>Полезные ресурсы:</h3>
+                        <a href="https://developer.mozilla.org/ru/docs/Web/Media/Formats/Video_codecs"
+                            target="_blank">MDN:
+                            Видеокодеки</a> |
+                        <a href="https://www.videoconverter.com/" target="_blank">Online-конвертер</a> |
+                        <a href="https://handbrake.fr/" target="_blank">HandBrake</a> |
+                        <a href="https://ffmpeg.org/" target="_blank">FFmpeg</a>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Какие форматы видео поддерживает <video>? конец-->
+                <!-- Как сделать фонтовое видео (autoplay, loop, muted)? -->
+                <div class="accordion-header level-3">Как сделать фонтовое видео (autoplay, loop, muted)?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Фоновое видео на сайте</h2>
+
+                        <h3>Для создания фонового видео используйте этот код:</h3>
+
+                        <p>
+                            &lt;div style="position:relative; height:100vh; overflow:hidden;"&gt;
+                            <br>&nbsp;&nbsp;&lt;video autoplay loop muted playsinline style="position:absolute;
+                            width:100%; height:100%;
+                            object-fit:cover;"&gt;
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;source src="video.mp4" type="video/mp4"&gt;
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;source src="video.webm" type="video/webm"&gt;
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;Ваш браузер не поддерживает HTML5 видео.
+                            <br>&nbsp;&nbsp;&lt;/video&gt;
+                            <br>
+                            <br>&nbsp;&nbsp;&lt;!-- Контент поверх видео --&gt;
+                            <br>&nbsp;&nbsp;&lt;div style="position:relative; z-index:1;"&gt;
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;Ваш контент здесь
+                            <br>&nbsp;&nbsp;&lt;/div&gt;
+                            <br>&lt;/div&gt;
+                        </p>
+
+                        <h3>Важные атрибуты:</h3>
+                        <ul>
+                            <li><strong>autoplay</strong> - автоматическое воспроизведение</li>
+                            <li><strong>loop</strong> - зацикливание видео</li>
+                            <li><strong>muted</strong> - отключение звука (обязательно)</li>
+                            <li><strong>playsinline</strong> - для мобильных устройств</li>
+                        </ul>
+
+                        <h3>Рекомендации:</h3>
+                        <ul>
+                            <li>Используйте короткие видео (10-30 секунд)</li>
+                            <li>Оптимальное разрешение - 1080p</li>
+                            <li>Сжимайте видео (до 5MB)</li>
+                            <li>Добавляйте fallback-изображение через CSS</li>
+                        </ul>
+                        <h3>Полезные ресурсы:</h3>
+                        <a href="https://handbrake.fr/" target="_blank">HandBrake</a> | <a
+                            href="https://www.ffmpeg.org/" target="_blank">FFmpeg</a> | <a
+                            href="https://cloudconvert.com/" target="_blank">CloudConvert</a> | <a
+                            href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/replace-animated-gifs-with-video"
+                            target="_blank">Google Web Fundamentals</a>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Как сделать фонтовое видео (autoplay, loop, muted)? конец-->
             </div>
+            <!-- ********************************************************************************************************** -->
             <!-- Мультимедиа конец-->
 
 
