@@ -4372,7 +4372,7 @@
                 <div class="accordion-header level-3">Что такое CSS и для чего он используется?</div>
                 <!-- ------------------------------------------------------------------------------------- -->
                 <div class="accordion-content">
-                    <section class="css-info">
+                    <section>
                         <h2>Что такое CSS и для чего он используется?</h2>
                         <p>
                             <strong>CSS (Cascading Style Sheets)</strong> — это язык стилей, который определяет внешний
@@ -4410,7 +4410,7 @@
 
                         <h3>1. Встроенные стили (inline)</h3>
                         <p>Добавляются напрямую в HTML-элемент через атрибут <code>style</code>:</p>
-                        у <div class="code-example">
+                        у <div>
                             <code>&lt;p style="color: blue; font-size: 16px;"&gt;Пример текста&lt;/p&gt;</code>
                         </div>
                         <p><strong>Когда использовать:</strong> Для быстрого тестирования или переопределения отдельных
@@ -4418,7 +4418,7 @@
 
                         <h3>2. Внутренние стили</h3>
                         <p>Размещаются в секции <code>&lt;head&gt;</code> внутри тега <code>&lt;style&gt;</code>:</p>
-                        <div class="code-example">
+                        <div>
                             <code>
                                                 &lt;head&gt;<br>
                                                 &nbsp;&nbsp;&lt;style&gt;<br>
@@ -4434,7 +4434,7 @@
 
                         <h3>3. Внешний файл (рекомендуется)</h3>
                         <p>Подключается через тег <code>&lt;link&gt;</code> в <code>&lt;head&gt;</code>:</p>
-                        <div class="code-example">
+                        <div>
                             <code>
                                                 &lt;head&gt;<br>
                                                 &nbsp;&nbsp;&lt;link rel="stylesheet" href="styles.css"&gt;<br>
@@ -4450,13 +4450,13 @@
 
                         <h3>4. Через @import</h3>
                         <p>Импорт внутри CSS-файла:</p>
-                        <div class="code-example">
+                        <div>
                             <code>@import url('mobile.css') screen and (max-width: 768px);</code>
                         </div>
                         <p><strong>Недостатки:</strong> Замедляет загрузку страницы</p>
 
                         <h3>5. Динамическое подключение (JavaScript)</h3>
-                        <div class="code-example">
+                        <div>
                             <code>
                                                 const link = document.createElement('link');<br>
                                                 link.rel = 'stylesheet';<br>
@@ -4477,7 +4477,7 @@
                 <div class="accordion-header level-3">Что такое селекторы в CSS? Перечислите основные типы.</div>
                 <!-- ------------------------------------------------------------------------------------- -->
                 <div class="accordion-content">
-                    <section class="css-selectors">
+                    <section>
                         <h2>Что такое селекторы в CSS?</h2>
                         <p>
                             <strong>Селекторы</strong> - это шаблоны для выбора HTML-элементов, к которым применяются
@@ -4559,7 +4559,7 @@
                 <div class="accordion-header level-3">Как работает приоритетность (специфичность) селекторов?</div>
                 <!-- ------------------------------------------------------------------------------------- -->
                 <div class="accordion-content">
-                    <section class="css-specificity">
+                    <section>
                         <h2>Приоритетность (специфичность) CSS-селекторов</h2>
 
                         <p>
@@ -4572,7 +4572,7 @@
 
                         <h3>Система расчета специфичности:</h3>
 
-                        <div class="specificity-rules">
+                        <div>
                             <p>Каждый тип селектора добавляет баллы в 4 категории (a, b, c, d):</p>
                             <ul>
                                 <li><strong>a:</strong> Инлайн-стили (style="") — 1000 баллов</li>
@@ -4584,20 +4584,20 @@
                         </div>
 
                         <h3>Примеры расчета:</h3>
-                        <div class="examples">
-                            <div class="example">
+                        <div>
+                            <div>
                                 <code>#nav .item:hover</code> →
                                 <span class="breakdown">ID(100) + класс(10) + псевдокласс(10) =
                                     <strong>120</strong></span>
                             </div>
-                            <div class="example">
+                            <div>
                                 <code>div.header > a[href]</code> →
                                 <span class="breakdown">тег(1) + класс(10) + тег(1) + атрибут(10) =
                                     <strong>22</strong></span>
                             </div>
-                            <div class="example">
+                            <div>
                                 <code style="white-space: nowrap">&lt;div style="color:red;"&gt;</code> →
-                                <span class="breakdown">инлайн-стиль = <strong>1000</strong></span>
+                                <span>инлайн-стиль = <strong>1000</strong></span>
                             </div>
                         </div>
 
@@ -4610,7 +4610,7 @@
                         </ul>
 
                         <h3>Как запомнить:</h3>
-                        <div class="mnemonic">
+                        <div>
                             <p>Порядок приоритетов:</p>
                             <ol>
                                 <li><code>!important</code></li>
@@ -4633,7 +4633,7 @@
                 <div class="accordion-header level-3">Что такое каскадность в CSS?</div>
                 <!-- ------------------------------------------------------------------------------------- -->
                 <div class="accordion-content">
-                    <section class="css-cascade">
+                    <section>
                         <h2>Каскадность в CSS</h2>
 
                         <p>
@@ -4644,7 +4644,7 @@
 
                         <h3>Как работает каскадность:</h3>
 
-                        <div class="cascade-steps">
+                        <div>
                             <p>Браузер обрабатывает стили в строгом порядке:</p>
                             <ol>
                                 <li>
@@ -4668,7 +4668,7 @@
                         </div>
 
                         <h3>Практический пример:</h3>
-                        <div class="example">
+                        <div>
                             <p>Если в разных местах указаны:</p>
                             <code>
                                                 p { color: black; }<br>
@@ -4710,7 +4710,7 @@
                 <div class="accordion-header level-3">Как работают наследование и свойство inherit?</div>
                 <!-- ------------------------------------------------------------------------------------- -->
                 <div class="accordion-content">
-                    <section class="css-inheritance">
+                    <section>
                         <h2>Наследование и свойство inherit в CSS</h2>
 
                         <h3>1. Наследование свойств</h3>
@@ -4719,7 +4719,7 @@
                             автоматически передаются от родительских элементов к дочерним.
                         </p>
 
-                        <div class="inheritance-example">
+                        <div>
                             <p><strong>Пример наследуемых свойств:</strong></p>
                             <ul>
                                 <li><code>font-family</code></li>
@@ -4743,7 +4743,7 @@
                             что свойство должно наследовать значение от родительского элемента.
                         </p>
 
-                        <div class="inherit-example">
+                        <div>
                             <p><strong>Пример использования:</strong></p>
                             <code>
                                                 div {<br>
@@ -4763,7 +4763,7 @@
                         </ul>
 
                         <h3>4. Отличия от других значений</h3>
-                        <table class="property-comparison">
+                        <table>
                             <tr>
                                 <th>Значение</th>
                                 <th>Описание</th>
@@ -4798,7 +4798,452 @@
             <div class="accordion-header level-2">Синтаксис и структура</div>
             <!-- ************************************************************************************ -->
             <div class="accordion-content">
-                <p></p>
+                <!-- Как записывается CSS-правило? -->
+                <div class="accordion-header level-3">Как записывается CSS-правило?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Структура CSS-правила</h2>
+
+                        <div>
+                            <div>
+                                <code>
+                                                                          <span class="selector">селектор</span> <span class="braces">{</span><br>
+                                                                          &nbsp;&nbsp;<span class="property">свойство</span>: <span class="value">значение</span>;<br>
+                                                                          <span class="braces">}</span>
+                                                                        </code>
+                            </div>
+                        </div>
+
+                        <h3>Компоненты CSS-правила:</h3>
+                        <ol>
+                            <li>
+                                <strong>Селектор</strong> - определяет, к каким элементам применяются стили:
+                                <ul>
+                                    <li><code>p</code> - по тегу</li>
+                                    <li><code>.class</code> - по классу</li>
+                                    <li><code>#id</code> - по идентификатору</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Блок объявлений</strong> (в фигурных скобках {}) содержит:
+                                <ul>
+                                    <li><strong>Свойства</strong> (например: <code>color</code>, <code>font-size</code>)
+                                    </li>
+                                    <li><strong>Значения</strong> (например: <code>red</code>, <code>16px</code>)</li>
+                                    <li><strong>Точку с запятой</strong> (;) после каждого объявления</li>
+                                </ul>
+                            </li>
+                        </ol>
+
+                        <h3>Примеры правил:</h3>
+                        <div>
+                            <div>
+                                <h4>Простое правило:</h4>
+                                <code>
+                                                                          h1 {<br>
+                                                                          &nbsp;&nbsp;color: #2c3e50;<br>
+                                                                          &nbsp;&nbsp;margin-bottom: 20px;<br>
+                                                                          }
+                                                                        </code>
+                            </div>
+
+                            <div>
+                                <h4>Группировка селекторов:</h4>
+                                <code>
+                                                                          h1, h2, h3 {<br>
+                                                                          &nbsp;&nbsp;font-family: 'Arial', sans-serif;<br>
+                                                                          }
+                                                                        </code>
+                            </div>
+
+                            <div>
+                                <h4>Множественные свойства:</h4>
+                                <code>
+                                                                          .button {<br>
+                                                                          &nbsp;&nbsp;background: #3498db;<br>
+                                                                          &nbsp;&nbsp;border: none;<br>
+                                                                          &nbsp;&nbsp;padding: 10px 20px;<br>
+                                                                          &nbsp;&nbsp;border-radius: 5px;<br>
+                                                                          }
+                                                                        </code>
+                            </div>
+                        </div>
+
+                        <h3>Особенности синтаксиса:</h3>
+                        <ul>
+                            <li>Чувствительность к регистру для значений (но не для свойств)</li>
+                            <li>Пробелы и переносы строк не влияют на работу (кроме некоторых исключений)</li>
+                            <li>Комментарии оформляются как <code>/* Это комментарий */</code></li>
+                        </ul>
+
+                        <h3>Полезные ресурсы:</h3>
+                        <a href="https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/CSS_basics"
+                            target="_blank">MDN</a> |
+                        <a href="https://www.w3schools.com/css/css_syntax.asp" target="_blank">W3Schools</a> |
+                        <a href="https://css-tricks.com/syntax-component-almanac/" target="_blank">CSS-Tricks</a>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Как записывается CSS-правило? конец-->
+                <!-- Что такое псевдоклассы и псевдоэлементы? Приведите примеры. -->
+                <div class="accordion-header level-3">Что такое псевдоклассы и псевдоэлементы? Приведите примеры.</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Псевдоклассы и псевдоэлементы в CSS</h2>
+
+                        <div>
+                            <div>
+                                <h3>Псевдоклассы</h3>
+                                <p>Определяют <strong>особые состояния элементов</strong> и начинаются с одного
+                                    двоеточия (<code>:</code>):
+                                </p>
+
+                                <h4>Основные примеры:</h4>
+                                <ul>
+                                    <li>
+                                        <code>a:hover</code> - стили при наведении курсора
+                                        <div>
+                                            <code>a:hover { color: red; }</code>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <code>input:focus</code> - стили для элемента в фокусе
+                                        <div>
+                                            <code>input:focus { border-color: blue; }</code>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <code>li:nth-child(odd)</code> - нечетные элементы списка
+                                        <div>
+                                            <code>li:nth-child(odd) { background: #f2f2f2; }</code>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <code>form:valid</code>/<code>form:invalid</code> - валидация формы
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h3>Псевдоэлементы</h3>
+                                <p>Позволяют стилизовать <strong>определенные части элементов</strong> и используют два
+                                    двоеточия
+                                    (<code>::</code>):</p>
+
+                                <h4>Основные примеры:</h4>
+                                <ul>
+                                    <li>
+                                        <code>p::first-line</code> - первая строка текста
+                                        <div>
+                                            <code>p::first-line { font-weight: bold; }</code>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <code>blockquote::before</code>, <code>::after</code> - добавление контента
+                                        <div>
+                                            <code>blockquote::before { content: "«"; }</code>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <code>::selection</code> - стиль выделенного текста
+                                        <div>
+                                            <code>::selection { background: yellow; }</code>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <code>li::marker</code> - маркеры списка
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h3>Ключевые различия:</h3>
+                        <table>
+                            <tr>
+                                <th></th>
+                                <th>Псевдоклассы</th>
+                                <th>Псевдоэлементы</th>
+                            </tr>
+                            <tr>
+                                <td><strong>Синтаксис</strong></td>
+                                <td><code>:состояние</code></td>
+                                <td><code>::часть</code></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Применение</strong></td>
+                                <td>К целому элементу в определенном состоянии</td>
+                                <td>К части элемента или для создания новых элементов</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Примеры</strong></td>
+                                <td>:hover, :active, :nth-child()</td>
+                                <td>::before, ::first-letter, ::placeholder</td>
+                            </tr>
+                        </table>
+
+                        <h3>Комбинированные примеры:</h3>
+                        <div>
+                            <div>
+                                <code>
+                                                  button:hover::after {<br>
+                                                  &nbsp;&nbsp;content: " →";<br>
+                                                  }
+                                                </code>
+                                <p>Добавляет стрелку при наведении на кнопку</p>
+                            </div>
+                            <div>
+                                <code>
+                                                  li:first-child::marker {<br>
+                                                  &nbsp;&nbsp;color: red;<br>
+                                                  }
+                                                </code>
+                                <p>Изменяет цвет маркера первого элемента списка</p>
+                            </div>
+                        </div>
+
+                        <h3>Полезные ресурсы:</h3>
+                        <a href="https://developer.mozilla.org/ru/docs/Web/CSS/Pseudo-classes" target="_blank">MDN:
+                            Псевдоклассы</a> |
+                        <a href="https://developer.mozilla.org/ru/docs/Web/CSS/Pseudo-elements" target="_blank">MDN:
+                            Псевдоэлементы</a> |
+                        <a href="https://css-tricks.com/pseudo-class-selectors/" target="_blank">CSS-Tricks</a>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Что такое псевдоклассы и псевдоэлементы? Приведите примеры. конец-->
+                <!-- Как группировать селекторы и свойства в CSS? -->
+                <div class="accordion-header level-3">Как группировать селекторы и свойства в CSS?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Группировка селекторов и свойств в CSS</h2>
+
+                        <div>
+                            <h3>1. Группировка селекторов</h3>
+                            <p>Позволяет применять одинаковые стили к разным элементам:</p>
+
+                            <div>
+                                <code>
+                                                  h1, h2, h3, .title {<br>
+                                                  &nbsp;&nbsp;font-family: 'Arial', sans-serif;<br>
+                                                  &nbsp;&nbsp;color: #333;<br>
+                                                  }
+                                                </code>
+                            </div>
+
+                            <ul>
+                                <li>Селекторы перечисляются через запятую</li>
+                                <li>Можно комбинировать разные типы селекторов</li>
+                                <li>Экономит код и упрощает поддержку</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>2. Группировка свойств</h3>
+                            <p>Сокращенная запись нескольких связанных свойств:</p>
+
+                            <div>
+                                <h4>Полная запись:</h4>
+                                <code>
+                                                  div {<br>
+                                                  &nbsp;&nbsp;margin-top: 10px;<br>
+                                                  &nbsp;&nbsp;margin-right: 20px;<br>
+                                                  &nbsp;&nbsp;margin-bottom: 10px;<br>
+                                                  &nbsp;&nbsp;margin-left: 20px;<br>
+                                                  }
+                                                </code>
+
+                                <h4>Сокращенная запись:</h4>
+                                <code>
+                                                  div {<br>
+                                                  &nbsp;&nbsp;margin: 10px 20px;<br>
+                                                  }
+                                                </code>
+                            </div>
+                        </div>
+
+                        <h3>Популярные сокращенные свойства:</h3>
+                        <table>
+                            <tr>
+                                <th>Свойство</th>
+                                <th>Пример</th>
+                                <th>Расшифровка</th>
+                            </tr>
+                            <tr>
+                                <td><code>margin</code><br><code>padding</code></td>
+                                <td><code>10px 20px 15px 5px</code></td>
+                                <td>top right bottom left</td>
+                            </tr>
+                            <tr>
+                                <td><code>border</code></td>
+                                <td><code>1px solid #000</code></td>
+                                <td>width style color</td>
+                            </tr>
+                            <tr>
+                                <td><code>background</code></td>
+                                <td><code>#fff url(bg.jpg) no-repeat center</code></td>
+                                <td>color image repeat position</td>
+                            </tr>
+                            <tr>
+                                <td><code>font</code></td>
+                                <td><code>italic 700 16px/1.5 'Arial'</code></td>
+                                <td>style weight size/line-height family</td>
+                            </tr>
+                        </table>
+
+                        <h3>Лучшие практики:</h3>
+                        <ul>
+                            <li><strong>Группируйте логически связанные селекторы</strong> (например, все заголовки)
+                            </li>
+                            <li><strong>Используйте сокращения разумно</strong> - только когда нужно задать все значения
+                            </li>
+                            <li><strong>Комментируйте группы свойств</strong> для сложных компонентов:</li>
+                        </ul>
+
+                        <div>
+                            <code>
+                                                /* Карточка продукта */<br>
+                                                .product-card {<br>
+                                                &nbsp;&nbsp;/* Размеры и отступы */<br>
+                                                &nbsp;&nbsp;width: 300px;<br>
+                                                &nbsp;&nbsp;margin: 0 auto 20px;<br>
+                                                <br>
+                                                &nbsp;&nbsp;/* Оформление */<br>
+                                                &nbsp;&nbsp;border: 1px solid #eee;<br>
+                                                &nbsp;&nbsp;border-radius: 8px;<br>
+                                                }
+                                              </code>
+                        </div>
+
+                        <h3>Ограничения:</h3>
+                        <ul>
+                            <li>Избыточная группировка может снизить читаемость</li>
+                            <li>Некоторые свойства нельзя группировать (например, <code>animation</code>)</li>
+                            <li>Сокращенные записи сбрасывают неуказанные значения</li>
+                        </ul>
+
+                        <h3>Полезные ресурсы:</h3>
+                        <a href="https://developer.mozilla.org/ru/docs/Web/CSS/Shorthand_properties"
+                            target="_blank">MDN</a> |
+                        <a href="https://css-tricks.com/shorthand-properties-in-css/" target="_blank">CSS-Tricks</a> |
+                        <a href="https://www.w3schools.com/css/css_shorthand.asp" target="_blank">W3Schools</a>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Как группировать селекторы и свойства в CSS? конец-->
+                <!-- Что такое CSS-переменные (кастомные свойства) и как их использовать? -->
+                <div class="accordion-header level-3">Что такое CSS-переменные (кастомные свойства) и как их
+                    использовать?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>CSS-переменные (кастомные свойства)</h2>
+
+                        <p>
+                            <strong>CSS Custom Properties</strong> (CSS-переменные) — это сущности,
+                            содержащие конкретные значения, которые можно повторно использовать в документе.
+                        </p>
+
+                        <h3>Основные особенности:</h3>
+                        <ul>
+                            <li>Объявляются с префиксом <code>--</code></li>
+                            <li>Имеют доступ к каскаду и наследованию</li>
+                            <li>Могут изменяться через JavaScript</li>
+                            <li>Поддерживают анимацию в современных браузерах</li>
+                        </ul>
+
+                        <h3>1. Объявление переменных</h3>
+                        <div>
+                            <h4>В глобальной области видимости (:root):</h4>
+                            <code>
+                                                :root {<br>
+                                                &nbsp;&nbsp;--primary-color: #3498db;<br>
+                                                &nbsp;&nbsp;--default-padding: 15px;<br>
+                                                &nbsp;&nbsp;--font-main: 'Segoe UI', sans-serif;<br>
+                                                }
+                                              </code>
+
+                            <h4>В локальной области (внутри селектора):</h4>
+                            <code>
+                                                .card {<br>
+                                                &nbsp;&nbsp;--card-bg: #ffffff;<br>
+                                                &nbsp;&nbsp;--card-shadow: 0 2px 4px rgba(0,0,0,0.1);<br>
+                                                }
+                                              </code>
+                        </div>
+
+                        <h3>2. Использование переменных</h3>
+                        <p>Применяются через функцию <code>var()</code>:</p>
+                        <div>
+                            <code>
+                                                .button {<br>
+                                                &nbsp;&nbsp;background-color: var(--primary-color);<br>
+                                                &nbsp;&nbsp;padding: var(--default-padding);<br>
+                                                }<br><br>
+                                                .card {<br>
+                                                &nbsp;&nbsp;background: var(--card-bg, #f9f9f9); /* С запасным значением */<br>
+                                                &nbsp;&nbsp;box-shadow: var(--card-shadow);<br>
+                                                }
+                                              </code>
+                        </div>
+
+                        <h3>3. Преимущества использования</h3>
+                        <ul>
+                            <li><strong>Централизованное управление</strong> стилями</li>
+                            <li><strong>Темы оформления</strong> — легкое переключение стилей</li>
+                            <li><strong>Динамическое изменение</strong> через JavaScript</li>
+                            <li><strong>Улучшенная читаемость</strong> кода</li>
+                        </ul>
+
+                        <h3>4. Пример с темной темой</h3>
+                        <div>
+                            <code>
+                                                :root {<br>
+                                                &nbsp;&nbsp;--bg-color: #ffffff;<br>
+                                                &nbsp;&nbsp;--text-color: #333333;<br>
+                                                }<br><br>
+                                                .dark-theme {<br>
+                                                &nbsp;&nbsp;--bg-color: #222222;<br>
+                                                &nbsp;&nbsp;--text-color: #f0f0f0;<br>
+                                                }<br><br>
+                                                body {<br>
+                                                &nbsp;&nbsp;background: var(--bg-color);<br>
+                                                &nbsp;&nbsp;color: var(--text-color);<br>
+                                                }
+                                              </code>
+                        </div>
+
+                        <h3>5. Работа с JavaScript</h3>
+                        <div>
+                            <code>
+                                                // Получить значение<br>
+                                                getComputedStyle(element).getPropertyValue('--primary-color');<br><br>
+                                                // Установить значение<br>
+                                                element.style.setProperty('--primary-color', '#ff0000');<br><br>
+                                                // Изменить для всего документа<br>
+                                                document.documentElement.style.setProperty('--primary-color', 'green');
+                                              </code>
+                        </div>
+
+                        <h3>Ограничения:</h3>
+                        <ul>
+                            <li>Не работают в медиа-запросах (но можно менять внутри @media)</li>
+                            <li>Старые браузеры требуют полифилов</li>
+                            <li>Нельзя использовать как имена свойств</li>
+                        </ul>
+
+                        <h3>Полезные ресурсы:</h3>
+                        <a href="https://developer.mozilla.org/ru/docs/Web/CSS/Using_CSS_custom_properties"
+                            target="_blank">MDN</a> |
+                        <a href="https://css-tricks.com/patterns-for-practical-css-custom-properties-use/"
+                            target="_blank">CSS-Tricks</a> |
+                        <a href="https://web.dev/articles/css-variables" target="_blank">web.dev</a>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Что такое CSS-переменные (кастомные свойства) и как их использовать? конец-->
             </div>
             <!-- ************************************************************************************ -->
             <!-- Синтаксис и структура конец-->
