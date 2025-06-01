@@ -3380,14 +3380,380 @@
             </div>
             <!-- ********************************************************************************************************** -->
             <!-- Мультимедиа конец-->
-
-
-
             <!-- Метаданные и SEO -->
             <div class="accordion-header level-2">Метаданные и SEO</div>
+            <!-- ********************************************************************************************************** -->
             <div class="accordion-content">
+                <!-- Для чего нужен тег <meta>? -->
+                <div class="accordion-header level-3">Для чего нужен тег &lt;meta&gt;?
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Для чего нужен тег &lt;meta&gt;?</h2>
 
+                        <div>
+                            <h3>Основное назначение тега &lt;meta&gt;</h3>
+                            <div>Тег <code>&lt;meta&gt;</code> предоставляет метаданные (дополнительную информацию) о
+                                HTML-документе, которые:
+                            </div>
+                            <ul>
+                                <li>Не отображаются на странице напрямую</li>
+                                <li>Используются браузерами, поисковыми системами и другими веб-сервисами</li>
+                                <li>Помещаются внутри раздела <code>&lt;head&gt;</code></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Основные типы мета-тегов:</h3>
+                            <table>
+                                <tr>
+                                    <th>Тип</th>
+                                    <th>Пример</th>
+                                    <th>Назначение</th>
+                                </tr>
+                                <tr>
+                                    <td>Кодировка</td>
+                                    <td><code>&lt;meta charset="UTF-8"&gt;</code></td>
+                                    <td>Указывает кодировку документа (обязателен)</td>
+                                </tr>
+                                <tr>
+                                    <td>Viewport</td>
+                                    <td><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>
+                                    </td>
+                                    <td>Адаптация под мобильные устройства</td>
+                                </tr>
+                                <tr>
+                                    <td>Описание</td>
+                                    <td><code>&lt;meta name="description" content="Описание страницы"&gt;</code></td>
+                                    <td>Используется в сниппетах поисковиков</td>
+                                </tr>
+                                <tr>
+                                    <td>Ключевые слова</td>
+                                    <td><code>&lt;meta name="keywords" content="ключевые, слова"&gt;</code></td>
+                                    <td>Менее значим для SEO, чем раньше</td>
+                                </tr>
+                                <tr>
+                                    <td>Автор</td>
+                                    <td><code>&lt;meta name="author" content="Имя Автора"&gt;</code></td>
+                                    <td>Указание автора контента</td>
+                                </tr>
+                                <tr>
+                                    <td>Роботы</td>
+                                    <td><code>&lt;meta name="robots" content="index, follow"&gt;</code></td>
+                                    <td>Управление индексацией страницы</td>
+                                </tr>
+                                <tr>
+                                    <td>Социальные сети</td>
+                                    <td><code>&lt;meta property="og:title" content="Заголовок"&gt;</code></td>
+                                    <td>Микроданные для соцсетей (Open Graph)</td>
+                                </tr>
+                                <tr>
+                                    <td>HTTP-заголовки</td>
+                                    <td><code>&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;</code></td>
+                                    <td>Эмуляция HTTP-заголовков</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div>
+                            <h3>Обязательные мета-теги:</h3>
+                            <code>
+                                                &lt;!DOCTYPE html&gt;<br>
+                                                &lt;html lang="ru"&gt;<br>
+                                                &lt;head&gt;<br>
+                                                &nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+                                                &nbsp;&nbsp;&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>
+                                                &nbsp;&nbsp;&lt;title&gt;Заголовок страницы&lt;/title&gt;<br>
+                                                &lt;/head&gt;
+                                              </code>
+                        </div>
+
+                        <div>
+                            <h3>Пример SEO-оптимизированных мета-тегов:</h3>
+                            <code>
+                                                &lt;meta name="description" content="Подробное описание страницы (150-300 символов)"&gt;<br>
+                                                &lt;meta name="keywords" content="основные, ключевые, слова"&gt;<br>
+                                                &lt;meta name="robots" content="index, follow"&gt;<br>
+                                                &lt;meta property="og:title" content="Социальный заголовок"&gt;<br>
+                                                &lt;meta property="og:description" content="Описание для соцсетей"&gt;<br>
+                                                &lt;meta property="og:image" content="image.jpg"&gt;
+                                              </code>
+                        </div>
+
+                        <div>
+                            <h3>Современные рекомендации:</h3>
+                            <ul>
+                                <li>Всегда указывайте <code>charset</code> первым мета-тегом</li>
+                                <li>Обязательно используйте <code>viewport</code> для мобильных</li>
+                                <li>Добавляйте уникальные <code>description</code> для каждой страницы</li>
+                                <li>Используйте Open Graph для соцсетей</li>
+                                <li>Избегайте дублирования метаданных</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Полезные ресурсы</h3>
+
+                            <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/meta" target="_blank"
+                                rel="noopener">MDN</a>
+                            |
+                            <a href="https://www.w3schools.com/tags/tag_meta.asp" target="_blank"
+                                rel="noopener">W3Schools</a> |
+                            <a href="https://ogp.me/" target="_blank" rel="noopener">Open Graph</a>
+
+                        </div>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Для чего нужен тег <meta>? конец-->
+                <!-- Как указать кодировку страницы? -->
+                <div class="accordion-header level-3">Как указать кодировку страницы?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Как указать кодировку страницы?</h2>
+
+                        <div>
+                            <h3>1. Стандартный способ (рекомендуется):</h3>
+                            <code>&lt;meta charset="UTF-8"&gt;</code>
+                            <ul>
+                                <li>Должен быть первым элементом в <code>&lt;head&gt;</code></li>
+                                <li>Поддерживается всеми современными браузерами</li>
+                                <li>Короткий и простой синтаксис</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>2. Альтернативный способ (устаревший):</h3>
+                            <code>&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;</code>
+                            <p>Использовался в HTML4, но сейчас рекомендуется первый вариант.</p>
+                        </div>
+
+                        <div>
+                            <h3>3. Пример правильного HTML-документа:</h3>
+                            <code>
+                                                &lt;!DOCTYPE html&gt;<br>
+                                                &lt;html lang="ru"&gt;<br>
+                                                &lt;head&gt;<br>
+                                                &nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+                                                &nbsp;&nbsp;&lt;title&gt;Заголовок страницы&lt;/title&gt;<br>
+                                                &nbsp;&nbsp;...<br>
+                                                &lt;/head&gt;
+                                              </code>
+                        </div>
+
+                        <div>
+                            <h3>4. Почему UTF-8?</h3>
+                            <ul>
+                                <li>Поддерживает все символы Unicode</li>
+                                <li>Совместим с любым языком (включая кириллицу, иероглифы)</li>
+                                <li>Является стандартом для веб-документов</li>
+                                <li>Эффективно использует память</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>5. Проверка кодировки:</h3>
+                            <ul>
+                                <li>Просмотрите исходный код страницы (Ctrl+U)</li>
+                                <li>Проверьте HTTP-заголовки (Content-Type)</li>
+                                <li>Используйте валидатор W3C</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>6. Что делать, если кодировка указана неправильно?</h3>
+                            <ul>
+                                <li>Убедитесь, что файл сохранен в UTF-8</li>
+                                <li>Проверьте настройки веб-сервера</li>
+                                <li>Удалите BOM (Byte Order Mark) если используете UTF-8</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Полезные ресурсы</h3>
+
+                            <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/meta" target="_blank"
+                                rel="noopener">MDN</a>
+                            |
+                            <a href="https://www.w3.org/International/questions/qa-html-encoding-declarations"
+                                target="_blank" rel="noopener">W3C</a> |
+                            <a href="https://validator.w3.org/" target="_blank" rel="noopener">Валидатор</a>
+
+                        </div>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Как указать кодировку страницы? конец-->
+                <!-- Как добавить favicon на сайт? -->
+                <div class="accordion-header level-3">Как добавить favicon на сайт?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Как добавить favicon на сайт?</h2>
+
+                        <div>
+                            <h3>1. Основной способ (рекомендуемый):</h3>
+                            <code>
+                                                &lt;link rel="icon" type="image/x-icon" href="/favicon.ico"&gt;
+                                              </code>
+                            <p>Размещается в <code>&lt;head&gt;</code> вашего HTML-документа.</p>
+                        </div>
+
+                        <div>
+                            <h3>2. Современный подход с разными форматами:</h3>
+                            <code>
+                                                &lt;link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32"&gt;<br>
+                                                &lt;link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16"&gt;<br>
+                                                &lt;link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"&gt;<br>
+                                                &lt;link rel="manifest" href="/site.webmanifest"&gt;
+                                              </code>
+                        </div>
+
+                        <div>
+                            <h3>3. Рекомендуемые размеры и форматы:</h3>
+                            <table>
+                                <tr>
+                                    <th>Тип</th>
+                                    <th>Размер</th>
+                                    <th>Формат</th>
+                                    <th>Назначение</th>
+                                </tr>
+                                <tr>
+                                    <td>Основной</td>
+                                    <td>32×32</td>
+                                    <td>PNG/ICO</td>
+                                    <td>Браузеры, закладки</td>
+                                </tr>
+                                <tr>
+                                    <td>Мобильный</td>
+                                    <td>180×180</td>
+                                    <td>PNG</td>
+                                    <td>Домашний экран iOS</td>
+                                </tr>
+                                <tr>
+                                    <td>Манифест</td>
+                                    <td>-</td>
+                                    <td>WebManifest</td>
+                                    <td>PWA, тема браузера</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div>
+                            <h3>4. Генерация favicon:</h3>
+                            <ol>
+                                <li>Создайте квадратное изображение (рекомендуется 512×512px)</li>
+                                <li>Используйте онлайн-генераторы:
+                                    <ul>
+                                        <li><a href="https://realfavicongenerator.net/" target="_blank"
+                                                rel="noopener">RealFaviconGenerator</a></li>
+                                        <li><a href="https://www.favicon-generator.org/" target="_blank"
+                                                rel="noopener">Favicon
+                                                Generator</a></li>
+                                    </ul>
+                                </li>
+                                <li>Загрузите полученные файлы в корень сайта</li>
+                            </ol>
+                        </div>
+
+                        <div>
+                            <h3>5. Пример полной реализации:</h3>
+                            <code>
+                                                &lt;!-- В head вашего HTML --&gt;<br>
+                                                &lt;link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"&gt;<br>
+                                                &lt;link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"&gt;<br>
+                                                &lt;link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"&gt;<br>
+                                                &lt;link rel="manifest" href="/site.webmanifest"&gt;<br>
+                                                &lt;link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"&gt;<br>
+                                                &lt;meta name="msapplication-TileColor" content="#da532c"&gt;<br>
+                                                &lt;meta name="theme-color" content="#ffffff"&gt;
+                                              </code>
+                        </div>
+
+                        <div>
+                            <h3>6. Проверка favicon:</h3>
+                            <ul>
+                                <li>Обновите страницу в браузере (иногда требуется кэш)</li>
+                                <li>Проверьте в разных браузерах и устройствах</li>
+                                <li>Используйте <a href="https://realfavicongenerator.net/favicon_checker"
+                                        target="_blank" rel="noopener">Favicon Checker</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Полезные ресурсы</h3>
+
+                            <a href="https://developer.mozilla.org/ru/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#добавление_custom-иконок"
+                                target="_blank" rel="noopener">MDN</a> |
+                            <a href="https://www.w3.org/2005/10/howto-favicon" target="_blank" rel="noopener">W3C</a> |
+                            <a href="https://web.dev/articles/add-manifest" target="_blank" rel="noopener">Web.dev</a>
+
+                        </div>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Как добавить favicon на сайт? конец-->
+                <!-- Какие метатеги важны для SEO? -->
+                <div class="accordion-header level-3">Какие метатеги важны для SEO?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Важные метатеги для SEO</h2>
+
+                        <h3>1. Основные метатеги</h3>
+                        <div>
+                            &lt;meta charset="UTF-8"&gt;
+                            <br>&lt;title&gt;Ключевые слова - Название компании&lt;/title&gt;
+                            <br>&lt;meta name="description" content="Краткое описание страницы (150-160 символов)"&gt;
+                            <br>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                        </div>
+
+                        <h3>2. Метатеги для соцсетей (Open Graph)</h3>
+                        <div>
+                            &lt;meta property="og:title" content="Заголовок для соцсетей"&gt;
+                            <br>&lt;meta property="og:description" content="Описание для соцсетей"&gt;
+                            <br>&lt;meta property="og:image" content="URL изображения"&gt;
+                            <br>&lt;meta property="og:url" content="URL страницы"&gt;
+                            <br>&lt;meta property="og:type" content="website"&gt;
+                        </div>
+
+                        <h3>3. Дополнительные важные теги</h3>
+                        <div>
+                            &lt;meta name="robots" content="index, follow"&gt;
+                            <br>&lt;link rel="canonical" href="Канонический URL"&gt;
+                            <br>&lt;meta name="keywords" content="ключевые, слова, через, запятую"&gt;
+                        </div>
+
+                        <h3>4. Метатеги для мобильных</h3>
+                        <div>
+                            &lt;meta name="theme-color" content="#цвет"&gt;
+                            <br>&lt;link rel="icon" href="/favicon.ico"&gt;
+                            <br>&lt;link rel="apple-touch-icon" href="/apple-touch-icon.png"&gt;
+                        </div>
+
+                        <h3>Рекомендации:</h3>
+                        <ul>
+                            <li>Title должен быть уникальным и содержать до 60 символов</li>
+                            <li>Description должен быть читаемым и содержать ключевые слова</li>
+                            <li>Используйте разные изображения для Open Graph (1200×630px)</li>
+                            <li>Обновляйте метаданные при изменении контента</li>
+                        </ul>
+
+                        <h3>Полезные ресурсы:</h3> <a href="https://metatags.io/" target="_blank">Meta Tags
+                            Generator</a>
+                        | <a href="https://www.google.com/webmasters/tools/" target="_blank">Google Search
+                            Console</a> | <a
+                            href="https://developers.google.com/search/docs/advanced/crawling/special-tags"
+                            target="_blank">Google Meta
+                            Tags Docs</a>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Какие метатеги важны для SEO? конец-->
             </div>
+            <!-- ********************************************************************************************************** -->
             <!-- Метаданные и SEO конец-->
 
 
