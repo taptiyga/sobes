@@ -3755,14 +3755,174 @@
             </div>
             <!-- ********************************************************************************************************** -->
             <!-- Метаданные и SEO конец-->
-
-
-
             <!-- Производительность и оптимизация -->
             <div class="accordion-header level-2">Производительность и оптимизация</div>
+            <!-- ********************************************************************************************************** -->
             <div class="accordion-content">
+                <!-- Как предзагрузить ресурсы с помощью <link rel="preload">? -->
+                <div class="accordion-header level-3">Как предзагрузить ресурсы с помощью
+                    &lt;link rel="preload"&gt;?
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Предзагрузка ресурсов с помощью &lt;link rel="preload"&gt;</h2>
 
+                        <h3>Базовый синтаксис:</h3>
+                        <div>
+                            &lt;link rel="preload" href="ресурс" as="тип"&gt;
+                        </div>
+
+                        <h3>Примеры для разных типов ресурсов:</h3>
+
+                        <h4>1. Шрифты:</h4>
+                        <div>
+                            &lt;link rel="preload" href="fonts/font.woff2" as="font" type="font/woff2" crossorigin&gt;
+                        </div>
+
+                        <h4>2. CSS-файлы:</h4>
+                        <div>
+                            &lt;link rel="preload" href="styles/main.css" as="style"&gt;
+                            <br>&lt;link rel="stylesheet" href="styles/main.css"&gt;
+                        </div>
+
+                        <h4>3. JavaScript:</h4>
+                        <div>
+                            &lt;link rel="preload" href="scripts/app.js" as="script"&gt;
+                            <br>&lt;script src="scripts/app.js"&gt;&lt;/script&gt;
+                        </div>
+
+                        <h4>4. Изображения:</h4>
+                        <div>
+                            &lt;link rel="preload" href="images/hero.jpg" as="image"&gt;
+                        </div>
+
+                        <h4>5. Видео:</h4>
+                        <div>
+                            &lt;link rel="preload" href="video/intro.mp4" as="video" type="video/mp4"&gt;
+                        </div>
+
+                        <h3>Дополнительные параметры:</h3>
+                        <div>
+                            &lt;link rel="preload" href="data.json" as="fetch" crossorigin&gt;
+                            <br>&lt;link rel="preload" href="critical.css" as="style" onload="this.rel='stylesheet'"&gt;
+                        </div>
+
+                        <h3>Важные особенности:</h3>
+                        <ul>
+                            <li>Всегда указывайте атрибут <code>as</code> (font, script, style, image, document и др.)
+                            </li>
+                            <li>Для шрифтов обязательно добавляйте <code>crossorigin</code></li>
+                            <li>Используйте для критически важных ресурсов</li>
+                            <li>Не злоупотребляйте - предзагружайте только самое важное</li>
+                            <li>Порядок имеет значение - размещайте в &lt;head&gt;</li>
+                        </ul>
+
+                        <h3>Как проверить:</h3>
+                        <ol>
+                            <li>В Chrome DevTools вкладка Network</li>
+                            <li>Ищите "preload" в списке запросов</li>
+                            <li>Проверяйте вкладку "Priority"</li>
+                        </ol>
+
+                        <h3>Полезные ресурсы: </h3><a href="https://web.dev/preload-critical-assets/"
+                            target="_blank">web.dev
+                            Preload Guide</a> |
+                        <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Preloading_content" target="_blank">MDN
+                            Documentation</a> | <a
+                            href="https://www.smashingmagazine.com/2016/02/preload-what-is-it-good-for/"
+                            target="_blank">Smashing Magazine Article</a>
+
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Как предзагрузить ресурсы с помощью <link rel="preload">? конец-->
+                <!-- Как добавить lazy loading для изображений? -->
+                <div class="accordion-header level-3">Как добавить lazy loading для изображений?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Lazy Loading для изображений</h2>
+
+                        <h3>1. Нативный способ (HTML-атрибут)</h3>
+                        <div>
+                            &lt;img src="placeholder.jpg" data-src="image.jpg" loading="lazy" alt="Описание"&gt;
+                        </div>
+
+                        <h3>2. Для фоновых изображений (CSS + JS)</h3>
+                        <div>
+                            &lt;div class="lazy-bg" data-bg="url('image.jpg')"&gt;&lt;/div&gt;
+                            <br>
+                            <br>&lt;style&gt;
+                            <br>.lazy-bg {
+                            <br>&nbsp;&nbsp;background-image: url('placeholder.jpg');
+                            <br>&nbsp;&nbsp;/* Дополнительные стили */
+                            <br>}
+                            <br>&lt;/style&gt;
+                        </div>
+
+                        <h3>3. С использованием Intersection Observer API</h3>
+                        <div>
+                            &lt;img data-src="image.jpg" class="lazy" alt="Описание"&gt;
+                            <br>
+                            <br>&lt;script&gt;
+                            <br>document.addEventListener("DOMContentLoaded", function() {
+                            <br>&nbsp;&nbsp;const lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+                            <br>
+                            <br>&nbsp;&nbsp;if ("IntersectionObserver" in window) {
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;let lazyImageObserver = new
+                            IntersectionObserver(function(entries) {
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;entries.forEach(function(entry) {
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (entry.isIntersecting) {
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let lazyImage =
+                            entry.target;
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lazyImage.src =
+                            lazyImage.dataset.src;
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lazyImageObserver.unobserve(lazyImage);
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;});
+                            <br>
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;lazyImages.forEach(function(lazyImage) {
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lazyImageObserver.observe(lazyImage);
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;});
+                            <br>&nbsp;&nbsp;}
+                            <br>});
+                            <br>&lt;/script&gt;
+                        </div>
+
+                        <h3>4. Для iframe и видео</h3>
+                        <div>
+                            &lt;iframe src="about:blank" data-src="content.html" loading="lazy"&gt;&lt;/iframe&gt;
+                        </div>
+
+                        <h3>Рекомендации:</h3>
+                        <ul>
+                            <li>Всегда используйте <code>width</code> и <code>height</code> для предотвращения layout
+                                shift</li>
+                            <li>Для важных изображений "выше экрана" (LCP) не используйте lazy loading</li>
+                            <li>Оптимизируйте placeholder-изображения (маленький размер, низкое качество)</li>
+                            <li>Тестируйте на различных устройствах и скорости соединения</li>
+                        </ul>
+
+                        <h3>Проверка реализации:</h3>
+                        <ol>
+                            <li>Chrome DevTools → вкладка Network (отметьте "Disable cache")</li>
+                            <li>Прокрутите страницу и наблюдайте за загрузкой изображений</li>
+                            <li>Проверьте вкладку Performance для анализа</li>
+                        </ol>
+
+                        <h3>Полезные ресурсы:</h3> <a href="https://web.dev/browser-level-image-lazy-loading/"
+                            target="_blank">web.dev Lazy
+                            Loading</a> | <a href="https://developer.mozilla.org/ru/docs/Web/Performance/Lazy_loading"
+                            target="_blank">MDN Documentation</a> | <a href="https://github.com/aFarkas/lazysizes"
+                            target="_blank">Lazysizes Library</a>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Как добавить lazy loading для изображений? конец-->
             </div>
+            <!-- ********************************************************************************************************** -->
             <!-- Производительность и оптимизация конец-->
 
 
