@@ -6175,95 +6175,162 @@
                             <strong>flex-элементы</strong>.
                         </p>
 
-                        <h3>Основные свойства Flexbox:</h3>
 
-                        <div
-                            style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
-                            <!-- Для контейнера -->
-                            <div style="background: #e3f2fd; padding: 15px; border-radius: 8px;">
-                                <h4 style="color: #0d47a1; margin-top: 0;">Для контейнера:</h4>
-                                <ul>
-                                    <li>
-                                        <strong>flex-direction</strong>:
-                                        <ul>
-                                            <li><code>row</code> (по умолчанию)</li>
-                                            <li><code>row-reverse</code></li>
-                                            <li><code>column</code></li>
-                                            <li><code>column-reverse</code></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <strong>flex-wrap</strong>:
-                                        <ul>
-                                            <li><code>nowrap</code> (по умолчанию)</li>
-                                            <li><code>wrap</code></li>
-                                            <li><code>wrap-reverse</code></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <strong>justify-content</strong> (выравнивание по главной оси):
-                                        <ul>
-                                            <li><code>flex-start</code> (по умолчанию)</li>
-                                            <li><code>flex-end</code></li>
-                                            <li><code>center</code></li>
-                                            <li><code>space-between</code></li>
-                                            <li><code>space-around</code></li>
-                                            <li><code>space-evenly</code></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <strong>align-items</strong> (выравнивание по поперечной оси):
-                                        <ul>
-                                            <li><code>stretch</code> (по умолчанию)</li>
-                                            <li><code>flex-start</code></li>
-                                            <li><code>flex-end</code></li>
-                                            <li><code>center</code></li>
-                                            <li><code>baseline</code></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <strong>align-content</strong> (для многострочных контейнеров):
-                                        <ul>
-                                            <li><code>stretch</code> (по умолчанию)</li>
-                                            <li>Аналогично justify-content</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
 
-                            <!-- Для элементов -->
-                            <div style="background: #e8f5e9; padding: 15px; border-radius: 8px;">
-                                <h4 style="color: #2e7d32; margin-top: 0;">Для элементов:</h4>
-                                <ul>
-                                    <li>
-                                        <strong>order</strong>:
-                                        <p>Порядок отображения (по умолчанию 0)</p>
-                                    </li>
-                                    <li>
-                                        <strong>flex-grow</strong>:
-                                        <p>Коэффициент роста (по умолчанию 0)</p>
-                                    </li>
-                                    <li>
-                                        <strong>flex-shrink</strong>:
-                                        <p>Коэффициент сжатия (по умолчанию 1)</p>
-                                    </li>
-                                    <li>
-                                        <strong>flex-basis</strong>:
-                                        <p>Базовый размер (по умолчанию auto)</p>
-                                    </li>
-                                    <li>
-                                        <strong>flex</strong> (сокращение):
-                                        <p><code>flex: grow shrink basis</code></p>
-                                        <p>Пример: <code>flex: 1 0 200px</code></p>
-                                    </li>
-                                    <li>
-                                        <strong>align-self</strong>:
-                                        <p>Индивидуальное выравнивание элемента</p>
-                                        <p>Те же значения, что у align-items</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                        <h3>Свойства для flex-контейнера:</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Свойство</th>
+                                    <th>Значения</th>
+                                    <th>Описание</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>flex-direction</strong>
+                                    </td>
+                                    <td>
+                                        row | row-reverse<br>
+                                        column | column-reverse
+                                    </td>
+                                    <td>
+                                        Определяет направление главной оси (по умолчанию row)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>flex-wrap</strong></td>
+                                    <td>
+                                        nowrap | wrap | wrap-reverse
+                                    </td>
+                                    <td>
+                                        Разрешает перенос элементов на новую строку (по умолчанию nowrap)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>justify-content</strong>
+                                    </td>
+                                    <td>
+                                        flex-start | flex-end<br>
+                                        center | space-between<br>
+                                        space-around | space-evenly
+                                    </td>
+                                    <td>
+                                        Выравнивание элементов по главной оси (по умолчанию flex-start)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>align-items</strong></td>
+                                    <td>
+                                        stretch | flex-start<br>
+                                        flex-end | center<br>
+                                        baseline
+                                    </td>
+                                    <td>
+                                        Выравнивание элементов по поперечной оси (по умолчанию stretch)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>align-content</strong>
+                                    </td>
+                                    <td>
+                                        stretch | flex-start<br>
+                                        flex-end | center<br>
+                                        space-between | space-around
+                                    </td>
+                                    <td>
+                                        Выравнивание строк в многострочном контейнере (по умолчанию stretch)
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Свойства для flex-элементов:</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Свойство</th>
+                                    <th>Значения</th>
+                                    <th>Описание</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>order</strong></td>
+                                    <td>число (по умолчанию 0)</td>
+                                    <td>
+                                        Определяет порядок отображения элемента
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>flex-grow</strong></td>
+                                    <td>число (по умолчанию 0)</td>
+                                    <td>
+                                        Определяет способность элемента увеличиваться при наличии свободного места
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>flex-shrink</strong></td>
+                                    <td>число (по умолчанию 1)</td>
+                                    <td>
+                                        Определяет способность элемента уменьшаться при нехватке места
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>flex-basis</strong></td>
+                                    <td>
+                                        длина | auto (по умолчанию auto)
+                                    </td>
+                                    <td>
+                                        Определяет базовый размер элемента до распределения свободного места
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>flex</strong></td>
+                                    <td>
+                                        none | [flex-grow] [flex-shrink] [flex-basis]
+                                    </td>
+                                    <td>
+                                        Сокращенное свойство для flex-grow, flex-shrink и flex-basis
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>align-self</strong></td>
+                                    <td>
+                                        auto | flex-start<br>
+                                        flex-end | center<br>
+                                        baseline | stretch
+                                    </td>
+                                    <td>
+                                        Позволяет переопределить align-items для отдельного элемента
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Примеры сокращенных записей:</h3>
+                        <table>
+                            <tr>
+                                <th>Запись</th>
+                                <th>Эквивалент</th>
+                            </tr>
+                            <tr>
+                                <td><code>flex: initial</code></td>
+                                <td><code>flex: 0 1 auto</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>flex: auto</code></td>
+                                <td><code>flex: 1 1 auto</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>flex: none</code></td>
+                                <td><code>flex: 0 0 auto</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>flex: 1</code></td>
+                                <td><code>flex: 1 1 0%</code></td>
+                            </tr>
+                        </table>
 
                         <h3>Практический пример:</h3>
                         <p>
@@ -6300,6 +6367,322 @@
                 </div>
                 <!-------------------------------------------------------------------------------------------------------->
                 <!-- Как работает display: flex и какие основные свойства у Flexbox? конец-->
+                <!-- Как работает display: grid и какие основные свойства у CSS Grid? -->
+                <div class="accordion-header level-3">Как работает display: grid и какие основные свойства у CSS Grid?
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>CSS Grid Layout (display: grid)</h2>
+
+                        <p>
+                            <strong>CSS Grid</strong> - это мощная система двумерной верстки, позволяющая создавать
+                            сложные адаптивные
+                            макеты.
+                            В отличие от Flexbox (одномерная система), Grid работает с колонками и строками
+                            одновременно.
+                        </p>
+
+                        <h3>Активация Grid:</h3>
+                        <div style="background: #f5f5f5; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                            <code>
+                                                .container {<br>
+                                                &nbsp;&nbsp;display: grid; /* или inline-grid */<br>
+                                                }
+                                              </code>
+                        </div>
+
+                        <h3>Основные свойства CSS Grid:</h3>
+
+                        <h4>1. Свойства контейнера:</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Свойство</th>
+                                    <th>Описание</th>
+                                    <th>Пример</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <strong>grid-template-columns<br>grid-template-rows</strong>
+                                    </td>
+                                    <td>
+                                        Определяет размеры и количество колонок/строк
+                                    </td>
+                                    <td>
+                                        <code>grid-template-columns: 100px 1fr 2fr;</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>grid-template-areas</strong>
+                                    </td>
+                                    <td>
+                                        Задает шаблон областей с помощью именованных областей
+                                    </td>
+                                    <td>
+                                        <code>grid-template-areas:<br>&nbsp;&nbsp;"header header"<br>&nbsp;&nbsp;"sidebar main";</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>gap (grid-gap)</strong>
+                                    </td>
+                                    <td>
+                                        Расстояние между ячейками (row-gap и column-gap)
+                                    </td>
+                                    <td>
+                                        <code>gap: 20px 10px;</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>justify-items<br>align-items</strong>
+                                    </td>
+                                    <td>
+                                        Выравнивание содержимого ячеек по горизонтали/вертикали
+                                    </td>
+                                    <td>
+                                        <code>align-items: center;</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>justify-content<br>align-content</strong>
+                                    </td>
+                                    <td>
+                                        Выравнивание всей сетки, если есть свободное пространство
+                                    </td>
+                                    <td>
+                                        <code>justify-content: space-between;</code>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h4>2. Свойства элементов сетки:</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Свойство</th>
+                                    <th>Описание</th>
+                                    <th>Пример</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <strong>grid-column<br>grid-row</strong>
+                                    </td>
+                                    <td>
+                                        Определяет расположение элемента по линиям сетки
+                                    </td>
+                                    <td>
+                                        <code>grid-column: 1 / 3;</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>grid-area</strong></td>
+                                    <td>
+                                        Задает имя области или позицию (row-start/column-start/row-end/column-end)
+                                    </td>
+                                    <td>
+                                        <code>grid-area: sidebar;</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>justify-self<br>align-self</strong>
+                                    </td>
+                                    <td>
+                                        Индивидуальное выравнивание элемента внутри ячейки
+                                    </td>
+                                    <td>
+                                        <code>justify-self: end;</code>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Ключевые особенности Grid:</h3>
+                        <ul>
+                            <li><strong>Двумерность</strong> - одновременное управление строками и колонками</li>
+                            <li><strong>Гибкие треки</strong> - единица измерения <code>fr</code> (фракция)</li>
+                            <li><strong>Явное и неявное позиционирование</strong></li>
+                            <li><strong>Именованные области</strong> для удобного размещения элементов</li>
+                            <li><strong>Функции minmax(), repeat()</strong> для гибких макетов</li>
+                        </ul>
+
+                        <h3>Практический пример:</h3>
+                        <div style="background: #fff3e0; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                            <code>
+                                                .container {<br>
+                                                &nbsp;&nbsp;display: grid;<br>
+                                                &nbsp;&nbsp;grid-template-columns: 200px 1fr 1fr;<br>
+                                                &nbsp;&nbsp;grid-template-rows: 80px 1fr 100px;<br>
+                                                &nbsp;&nbsp;grid-template-areas:<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;"header header header"<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;"sidebar main main"<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;"footer footer footer";<br>
+                                                &nbsp;&nbsp;gap: 15px;<br>
+                                                }<br><br>
+                                                .header { grid-area: header; }<br>
+                                                .sidebar { grid-area: sidebar; }<br>
+                                                .main { grid-area: main; }<br>
+                                                .footer { grid-area: footer; }
+                                              </code>
+                        </div>
+
+                        <h3>Полезные ресурсы:</h3>
+                        <a href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Grid_Layout" target="_blank">MDN</a>
+                        |
+                        <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">CSS-Tricks
+                            (полное
+                            руководство)</a> |
+                        <a href="https://gridbyexample.com/" target="_blank">Grid by Example</a> |
+                        <a href="https://cssgridgarden.com/" target="_blank">CSS Grid Garden (игра для обучения)</a>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Как работает display: grid и какие основные свойства у CSS Grid? конец-->
+                <!-- Чем отличается inline от inline-block и block? -->
+                <div class="accordion-header level-3">Чем отличается inline от inline-block и block?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Разница между inline, inline-block и block</h2>
+
+                        <p>В CSS свойства <code>display: inline</code>, <code>display: inline-block</code> и
+                            <code>display: block</code>
+                            определяют, как элементы отображаются на странице. Вот их основные различия:
+                        </p>
+
+                        <h3>1. <code>display: inline</code> (строчные элементы)</h3>
+                        <ul>
+                            <li><strong>Расположение</strong>: Элементы выстраиваются в строку, один за другим.</li>
+                            <li><strong>Размеры</strong>: Ширина и высота (<code>width</code>, <code>height</code>)
+                                <strong>не
+                                    работают</strong> - элемент занимает столько места, сколько нужно для его
+                                содержимого.
+                            </li>
+                            <li><strong>Отступы</strong>: <code>margin</code> и <code>padding</code> работают только
+                                <strong>по
+                                    горизонтали</strong> (слева и справа), вертикальные отступы
+                                (<code>margin-top</code>,
+                                <code>margin-bottom</code>) <strong>не влияют</strong> на другие элементы.
+                            </li>
+                            <li><strong>Примеры</strong>: <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>,
+                                <code>&lt;strong&gt;</code>,
+                                <code>&lt;em&gt;</code>.
+                            </li>
+                        </ul>
+
+                        <h3>2. <code>display: block</code> (блочные элементы)</h3>
+                        <ul>
+                            <li><strong>Расположение</strong>: Элемент занимает <strong>всю доступную ширину</strong> и
+                                начинается с новой
+                                строки.</li>
+                            <li><strong>Размеры</strong>: Можно задавать <code>width</code>, <code>height</code>,
+                                <code>margin</code>,
+                                <code>padding</code> - все свойства работают.
+                            </li>
+                            <li><strong>Отступы</strong>: <code>margin</code> и <code>padding</code> применяются со всех
+                                сторон и влияют на
+                                поток документа.</li>
+                            <li><strong>Примеры</strong>: <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>,
+                                <code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code>, <code>&lt;section&gt;</code>.
+                            </li>
+                        </ul>
+
+                        <h3>3. <code>display: inline-block</code> (строчно-блочные элементы)</h3>
+                        <ul>
+                            <li><strong>Расположение</strong>: Элементы выстраиваются в строку, как <code>inline</code>,
+                                но ведут себя как
+                                <code>block</code> внутри.
+                            </li>
+                            <li><strong>Размеры</strong>: Можно задавать <code>width</code>, <code>height</code>,
+                                <code>margin</code>,
+                                <code>padding</code> (в отличие от <code>inline</code>).
+                            </li>
+                            <li><strong>Отступы</strong>: Все отступы работают, включая вертикальные
+                                (<code>margin-top</code>,
+                                <code>margin-bottom</code>).
+                            </li>
+                            <li><strong>Примеры</strong>: Кнопки (<code>&lt;button&gt;</code>), изображения
+                                (<code>&lt;img&gt;</code>),
+                                инпуты (<code>&lt;input&gt;</code>) - по умолчанию имеют <code>inline-block</code>.</li>
+                        </ul>
+
+                        <h3>Сравнение в таблице</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Свойство</th>
+                                    <th><code>inline</code></th>
+                                    <th><code>inline-block</code></th>
+                                    <th><code>block</code></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Расположение</strong></td>
+                                    <td>В строке</td>
+                                    <td>В строке</td>
+                                    <td>С новой строки</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ширина/Высота</strong></td>
+                                    <td>Не работают</td>
+                                    <td>Работают</td>
+                                    <td>Работают</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Margin/Padding</strong></td>
+                                    <td>Только по горизонтали</td>
+                                    <td>Работают со всех сторон</td>
+                                    <td>Работают со всех сторон</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Перенос строки</strong></td>
+                                    <td>Нет</td>
+                                    <td>Нет</td>
+                                    <td>Да (занимает всю ширину)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Когда что использовать?</h3>
+                        <ul>
+                            <li><strong><code>inline</code></strong> - для текстовых элементов, которые должны идти в
+                                строку (ссылки,
+                                выделения).</li>
+                            <li><strong><code>block</code></strong> - для структурных элементов (секции, абзацы,
+                                заголовки).</li>
+                            <li><strong><code>inline-block</code></strong> - когда нужно выстроить элементы в линию, но
+                                управлять их
+                                размерами (кнопки, карточки в ряд).</li>
+                        </ul>
+
+                        <h3>Пример</h3>
+                        <p><code>&lt;span style="display: inline; width: 100px; height: 50px;"&gt;Не изменится&lt;/span&gt;</code>
+                        </p>
+                        <p><code>&lt;span style="display: inline-block; width: 100px; height: 50px;"&gt;Будет 100x50&lt;/span&gt;</code>
+                        </p>
+                        <p><code>&lt;div style="display: block; width: 100px; height: 50px;"&gt;Блок 100x50&lt;/div&gt;</code>
+                        </p>
+
+                        <h3>Полезные ресурсы</h3>
+
+                        <a href="https://developer.mozilla.org/ru/docs/Web/CSS/display" target="_blank">MDN</a> |
+                        <a href="https://www.w3schools.com/css/css_display_visibility.asp" target="_blank">W3Schools</a>
+                        |
+                        <a href="https://css-tricks.com/almanac/properties/d/display/" target="_blank">CSS-Tricks</a>
+
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Чем отличается inline от inline-block и block? конец-->
             </div>
             <!-- ************************************************************************************ -->
             <!-- Позиционирование конец-->
@@ -6582,10 +6965,85 @@
                 <div class="accordion-header level-3">Что такое NaN? Как проверить, что значение NaN?</div>
                 <!-------------------------------------------------------------------------------------------------------->
                 <div class="accordion-content">
+                    <section>
+                        <h2>Что такое NaN в JavaScript?</h2>
 
+                        <p><strong>NaN (Not-A-Number)</strong> - это специальное значение в JavaScript, которое
+                            представляет результат
+                            математической операции, которая не может быть выполнена или не имеет смысла.</p>
+
+                        <h3>Основные особенности NaN:</h3>
+                        <ul>
+                            <li>Тип: <code>typeof NaN</code> возвращает <code>"number"</code></li>
+                            <li>NaN не равно ничему, включая само себя: <code>NaN === NaN</code> → <code>false</code>
+                            </li>
+                            <li>Любая математическая операция с NaN возвращает NaN</li>
+                        </ul>
+
+                        <h3>Примеры получения NaN:</h3>
+                        <p>
+                            <code>
+                                              0 / 0; // NaN<br>
+                                              Math.sqrt(-1); // NaN<br>
+                                              Number("текст"); // NaN<br>
+                                              "abc" * 10; // NaN
+                                            </code>
+                        </p>
+
+
+                        <h3>Как правильно проверить NaN:</h3>
+                        <ul>
+                            <li><strong>Функция isNaN()</strong> - преобразует значение в число перед проверкой
+                                <code>
+                                                  isNaN(NaN); // true<br>
+                                                  isNaN("текст"); // true (преобразуется в NaN)<br>
+                                                  isNaN(123); // false
+                                                </code>
+                            </li>
+                            <li><strong>Number.isNaN()</strong> (ES6) - проверяет строго без преобразования
+                                <code>
+                                                  Number.isNaN(NaN); // true<br>
+                                                  Number.isNaN("текст"); // false (строгая проверка)<br>
+                                                  Number.isNaN(123); // false
+                                                </code>
+                            </li>
+                            <li><strong>Самопроверка</strong> (старый способ)
+                                <code>
+                                                  function isNaN(value) {<br>
+                                                  &nbsp;&nbsp;return value !== value;<br>
+                                                  }
+                                                </code>
+                            </li>
+                        </ul>
+
+                        <h3>Рекомендации:</h3>
+                        <ul>
+                            <li>Всегда используйте <code>Number.isNaN()</code> вместо <code>isNaN()</code></li>
+                            <li>Помните, что <code>NaN</code> - единственное значение в JavaScript, которое не равно
+                                само себе</li>
+                            <li>Для проверки чисел используйте также <code>Number.isFinite()</code></li>
+                        </ul>
+
+                        <h3>Полезные ресурсы:</h3>
+                        <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/NaN"
+                            target="_blank">Документация MDN</a> |
+                        <a href="https://learn.javascript.ru/number#nan" target="_blank">Учебник JavaScript</a> |
+                        <a href="https://javascript.info/number#nan" target="_blank">JavaScript.info</a> |
+                        <a href="https://dorey.github.io/JavaScript-Equality-Table/" target="_blank">Таблица
+                            сравнений</a>
+
+                    </section>
                 </div>
                 <!-------------------------------------------------------------------------------------------------------->
                 <!-- Что такое NaN? Как проверить, что значение NaN? конец-->
+                <!-- Что такое undefined и null? В чем разница? -->
+                <div class="accordion-header level-3">Что такое undefined и null? В чем разница?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Что такое undefined и null? В чем разница? конец-->
             </div>
             <!-- ************************************************************************************ -->
             <!-- Основы JavaScript конец-->
