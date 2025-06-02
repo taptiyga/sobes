@@ -7949,6 +7949,399 @@
             </div>
             <!-- ************************************************************************************ -->
             <!-- Функции конец-->
+            <!-- Области видимости (Scope) и Hoisting -->
+            <div class="accordion-header level-2">Области видимости (Scope) и Hoisting</div>
+            <!-- ************************************************************************************ -->
+            <div class="accordion-content">
+                <!-- Что такое область видимости (Scope)? -->
+                <div class="accordion-header level-3">Что такое область видимости (Scope)?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>
+                            Что такое область видимости (Scope)?
+                        </h2>
+
+                        <p>
+                            <strong>Область видимости (Scope)</strong> — это концепция в программировании, определяющая,
+                            где переменные и функции могут быть доступны в коде. Она контролирует видимость
+                            и время жизни переменных.
+                        </p>
+
+                        <h3>
+                            Основные типы областей видимости:
+                        </h3>
+
+                        <ul>
+                            <li><strong>Глобальная:</strong> переменные доступны везде</li>
+                            <li><strong>Функциональная:</strong> переменные доступны только внутри функции</li>
+                            <li><strong>Блочная:</strong> переменные доступны только внутри блока {}</li>
+                            <li><strong>Модульная:</strong> переменные доступны только внутри модуля</li>
+                        </ul>
+
+                        <h3>
+                            Примеры разных областей видимости:
+                        </h3>
+
+                        <p>
+                            // Глобальная область<br>
+                            const globalVar = 'Доступна везде';<br>
+                            <br>
+                            function testScope() {<br>
+                            &nbsp;&nbsp;// Функциональная область<br>
+                            &nbsp;&nbsp;var functionVar = 'Доступна в функции';<br>
+                            <br>
+                            &nbsp;&nbsp;if (true) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;// Блочная область<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;let blockVar = 'Доступна только в блоке';<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;console.log(blockVar); // Работает<br>
+                            &nbsp;&nbsp;}<br>
+                            <br>
+                            &nbsp;&nbsp;console.log(blockVar); // Ошибка!<br>
+                            }
+                        </p>
+
+                        <h3>
+                            Ключевые особенности:
+                        </h3>
+
+                        <ul>
+                            <li>Внутренние блоки видят внешние переменные</li>
+                            <li>var видна во всей функции</li>
+                            <li>let/const видны только в блоке</li>
+                            <li>Области создаются функциями, блоками и модулями</li>
+                        </ul>
+
+                        <h3>
+                            Дополнительные материалы:
+                        </h3>
+
+
+                        <a href="https://developer.mozilla.org/ru/docs/Glossary/Scope" target="_blank">MDN</a> | <a
+                            href="https://learn.javascript.ru/closure" target="_blank">Учебник JavaScript</a> | <a
+                            href="https://habr.com/ru/articles/419997/" target="_blank">Habr</a>
+
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Что такое область видимости (Scope)? конец-->
+                <!-- Разница между var, let и const. -->
+                <div class="accordion-header level-3">Разница между var, let и const.</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Разница между var, let и const</h2>
+
+                        <p>
+                            В JavaScript есть три способа объявления переменных: <strong>var</strong>,
+                            <strong>let</strong> и
+                            <strong>const</strong>.
+                            Они отличаются областью видимости, возможностью переопределения и поднятием (hoisting).
+                        </p>
+
+                        <h3>Основные различия:</h3>
+                        <table>
+                            <tr>
+                                <th></th>
+
+                                <th>let</th>
+                                <th>const</th>
+                            </tr>
+                            <tr>
+                                <td>Область видимости</td>
+
+                                <td>Блочная</td>
+                                <td>Блочная</td>
+                            </tr>
+                            <tr>
+                                <td>Поднятие (hoisting)</td>
+
+                                <td>Да (ошибка при обращении)</td>
+                                <td>Да (ошибка при обращении)</td>
+                            </tr>
+                            <tr>
+                                <td>Переопределение</td>
+
+                                <td>Можно</td>
+                                <td>Нельзя</td>
+                            </tr>
+                            <tr>
+                                <td>Изменение значения</td>
+
+                                <td>Можно</td>
+                                <td>Нельзя*</td>
+                            </tr>
+                        </table>
+                        <h4>устаревший синтаксис (лучше не использовать):</h4>
+                        <table>
+                            <tr>
+                                <th></th>
+                                <th>var</th>
+
+                            </tr>
+                            <tr>
+                                <td>Область видимости</td>
+                                <td>Функциональная</td>
+
+                            </tr>
+                            <tr>
+                                <td>Поднятие (hoisting)</td>
+                                <td>Да (undefined)</td>
+
+                            </tr>
+                            <tr>
+                                <td>Переопределение</td>
+                                <td>Можно</td>
+
+                            </tr>
+                            <tr>
+                                <td>Изменение значения</td>
+                                <td>Можно</td>
+
+                            </tr>
+                        </table>
+                        <p>
+                            * Для const нельзя изменить присвоенное значение, но если это объект или массив - можно
+                            изменять их
+                            свойства/элементы.
+                        </p>
+
+                        <h3>Примеры:</h3>
+
+                        <ul>
+                            <li>// var - функциональная область видимости<br>
+                                function varExample() {<br>
+                                &nbsp;&nbsp;var x = 1;<br>
+                                &nbsp;&nbsp;if (true) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;var x = 2; // Та же переменная!<br>
+                                &nbsp;&nbsp;}<br>
+                                &nbsp;&nbsp;console.log(x); // 2<br>
+                                }<br>
+                                <br>
+                            </li>
+                            <li>// let - блочная область<br>
+                                function letExample() {<br>
+                                &nbsp;&nbsp;let y = 1;<br>
+                                &nbsp;&nbsp;if (true) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;let y = 2; // Другая переменная<br>
+                                &nbsp;&nbsp;}<br>
+                                &nbsp;&nbsp;console.log(y); // 1<br>
+                                }<br>
+                                <br>
+                            </li>
+                            <li>// const - нельзя переопределить<br>
+                                const z = 10;<br>
+                                z = 20; // Ошибка!<br>
+                                <br>
+                                // Но можно изменять объект:<br>
+                                const obj = { a: 1 };<br>
+                                obj.a = 2; // Работает
+                            </li>
+                        </ul>
+
+                        <h3>Рекомендации:</h3>
+                        <ul>
+                            <li>Используйте const по умолчанию</li>
+                            <li>Используйте let, если нужно изменять значение</li>
+                            <li>Избегайте var в новом коде</li>
+                        </ul>
+
+                        <h3>Дополнительные материалы:</h3>
+                        <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/let"
+                            target="_blank">MDN: let
+                            и const</a>
+                        <span> | </span>
+                        <a href="https://learn.javascript.ru/let-const" target="_blank">Учебник JavaScript</a>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Разница между var, let и const. конец-->
+                <!-- Что такое hoisting (поднятие)? Как он работает для var, let, const? -->
+                <div class="accordion-header level-3">Что такое hoisting (поднятие)? Как он работает для var, let,
+                    const?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Что такое hoisting (поднятие)?</h2>
+
+                        <p>
+                            <strong>Hoisting (поднятие)</strong> — это механизм в JavaScript, при котором объявления
+                            переменных и функций
+                            "поднимаются" в верхнюю часть своей области видимости перед выполнением кода.
+                        </p>
+
+                        <h3>Как работает hoisting для разных типов переменных:</h3>
+
+                        <table>
+                            <tr>
+                                <th>Тип</th>
+                                <th>Поднятие</th>
+                                <th>Доступ до объявления</th>
+                                <th>Инициализация</th>
+                            </tr>
+                            <tr>
+                                <td>var</td>
+                                <td>Полное</td>
+                                <td>undefined</td>
+                                <td>При объявлении</td>
+                            </tr>
+                            <tr>
+                                <td>let</td>
+                                <td>Частичное</td>
+                                <td>ReferenceError</td>
+                                <td>Не инициализирована</td>
+                            </tr>
+                            <tr>
+                                <td>const</td>
+                                <td>Частичное</td>
+                                <td>ReferenceError</td>
+                                <td>Должна быть сразу</td>
+                            </tr>
+                        </table>
+
+                        <h3>Примеры поведения:</h3>
+
+                        <div class="code-example">
+                            // var - поднимается с значением undefined<br>
+                            console.log(a); // undefined<br>
+                            var a = 5;<br>
+                            console.log(a); // 5<br>
+                            <br>
+                            // let/const - поднимаются, но нельзя использовать<br>
+                            console.log(b); // ReferenceError<br>
+                            let b = 10;<br>
+                            <br>
+                            console.log(c); // ReferenceError<br>
+                            const c = 15;
+                        </div>
+
+                        <h3>Технические детали:</h3>
+                        <ul>
+                            <li>Все объявления (var, let, const, function) поднимаются</li>
+                            <li>Разница в <strong>временной мертвой зоне</strong> (TDZ) для let/const</li>
+                            <li>Функции поднимаются полностью (можно вызывать до объявления)</li>
+                            <li>Функциональные выражения (const fn = function() {}) ведут себя как переменные</li>
+                        </ul>
+
+                        <h3>Временная мертвая зона (TDZ):</h3>
+                        <p>
+                            Период между началом области видимости и моментом объявления переменной,
+                            где переменные let/const существуют, но недоступны.
+                        </p>
+
+                        <div class="code-example">
+                            // TDZ для let начинается здесь<br>
+                            console.log(x); // ReferenceError<br>
+                            let x = 10; // TDZ заканчивается здесь<br>
+                            console.log(x); // 10
+                        </div>
+
+                        <h3>Рекомендации:</h3>
+                        <ul>
+                            <li>Всегда объявляйте переменные до использования</li>
+                            <li>Используйте const/let вместо var</li>
+                            <li>Группируйте объявления в начале области видимости</li>
+                        </ul>
+
+                        <h3>Дополнительные материалы:</h3>
+                        <div>
+                            <a href="https://developer.mozilla.org/ru/docs/Glossary/Hoisting" target="_blank">MDN:
+                                Hoisting</a>
+                            <span> | </span>
+                            <a href="https://learn.javascript.ru/var" target="_blank">Учебник JavaScript</a>
+                            <span> | </span>
+                            <a href="https://dmitripavlutin.com/javascript-hoisting-in-details/"
+                                target="_blank">Подробное объяснение</a>
+                        </div>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Что такое hoisting (поднятие)? Как он работает для var, let, const? конец-->
+                <!-- Что такое Temporal Dead Zone (TDZ)? -->
+                <div class="accordion-header level-3">Что такое Temporal Dead Zone (TDZ)?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Что такое Temporal Dead Zone (TDZ)?</h2>
+
+                        <p>
+                            <strong>Temporal Dead Zone (TDZ)</strong> — это период между созданием области видимости
+                            переменной (входом в
+                            блок)
+                            и моментом её объявления, когда переменная технически существует, но недоступна для
+                            обращения.
+                        </p>
+
+                        <h3>Как работает TDZ:</h3>
+
+                        <p>
+                            // Начало TDZ для переменной 'value'<br>
+                            console.log(value); // ReferenceError: Cannot access 'value' before initialization<br>
+                            <br>
+                            let value = 42; // Конец TDZ для 'value'<br>
+                            console.log(value); // 42 - теперь доступна
+                        </p>
+
+                        <h3>Ключевые особенности TDZ:</h3>
+
+                        <ul>
+                            <li>Применяется только к <strong>let</strong> и <strong>const</strong></li>
+                            <li>Не существует для <strong>var</strong> (они инициализируются как undefined)</li>
+                            <li>Возникает даже если переменная в итоге не будет объявлена</li>
+                            <li>Проверяется во время выполнения (runtime), а не парсинга</li>
+                        </ul>
+
+                        <h3>Почему важна TDZ:</h3>
+
+                        <ul>
+                            <li>Помогает избежать ошибок, связанных с использованием до объявления</li>
+                            <li>Делает поведение кода более предсказуемым</li>
+                            <li>Поощряет хорошие практики (объявление перед использованием)</li>
+                        </ul>
+
+                        <h3>Примеры с разными типами переменных:</h3>
+
+                        <ul>
+                            <li>// var - нет TDZ<br>
+                                console.log(a); // undefined<br>
+                                var a = 10;</li>
+                            <br>
+                            <li>// let - есть TDZ<br>
+                                console.log(b); // ReferenceError<br>
+                                let b = 20;</li>
+                            <br>
+                            <li>// const - тоже есть TDZ<br>
+                                console.log(c); // ReferenceError<br>
+                                const c = 30;</li>
+                        </ul>
+
+                        <h3>Как избежать проблем с TDZ:</h3>
+
+                        <ul>
+                            <li>Объявляйте все переменные в начале их области видимости</li>
+                            <li>Используйте const по умолчанию, let когда нужно изменять значение</li>
+                            <li>Избегайте сложных цепочек зависимостей между объявлениями</li>
+                        </ul>
+
+                        <h3>Дополнительные материалы:</h3>
+
+                        <div>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#temporal_dead_zone_tdz"
+                                target="_blank">MDN: TDZ</a>
+                            <span> | </span>
+                            <a href="https://dmitripavlutin.com/javascript-variables-and-temporal-dead-zone/"
+                                target="_blank">Подробное
+                                объяснение TDZ</a>
+                            <span> | </span>
+                            <a href="https://javascript.info/var#temporal-dead-zone" target="_blank">JavaScript.info</a>
+                        </div>
+                    </section>
+                </div>
+                <!-----------------------------------------------------------------------------------------TDZ------------>
+                <!-- Что такое Temporal Dead Zone (TDZ)? конец-->
+            </div>
+            <!-- ************************************************************************************ -->
+            <!-- Области видимости (Scope) и Hoisting конец-->
         </div>
         <!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
         <!-- JS конец -->
