@@ -7040,10 +7040,307 @@
                 <div class="accordion-header level-3">Что такое undefined и null? В чем разница?</div>
                 <!-------------------------------------------------------------------------------------------------------->
                 <div class="accordion-content">
+                    <section>
+                        <h2>Разница между undefined и null в JavaScript</h2>
 
+                        <h3>undefined (неопределённое значение)</h3>
+                        <ul>
+                            <li><strong>Значение по умолчанию</strong> для неинициализированных переменных</li>
+                            <li><strong>Тип</strong>: <code>"undefined"</code></li>
+                            <li><strong>Возникает</strong>, когда:
+                                <ol>
+                                    <li>переменная объявлена, но не инициализирована</li>
+                                    <li>свойство объекта не существует</li>
+                                    <li>функция не возвращает значение</li>
+                                    <li>параметр функции не передан</li>
+                                </ol>
+                            </li>
+                        </ul>
+
+                        <h4>Пример</h4>
+                        <p><code>let x;<br>
+                                            console.log(x); // undefined<br>
+                                            console.log(typeof x); // "undefined"</code></p>
+
+                        <h3>null (явное отсутствие значения)</h3>
+                        <ul>
+                            <li><strong>Явное указание</strong> на отсутствие значения</li>
+                            <li><strong>Тип</strong>: <code>"object"</code> (историческая особенность JavaScript)</li>
+                            <li><strong>Используется</strong>, когда нужно явно указать, что значение отсутствует</li>
+                        </ul>
+
+                        <h4>Пример</h4>
+                        <p><code>let y = null;<br>
+                                            console.log(y); // null<br>
+                                            console.log(typeof y); // "object" (осторожно!)</code></p>
+
+                        <h3>Ключевые различия</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Характеристика</th>
+                                    <th><code>undefined</code></th>
+                                    <th><code>null</code></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Тип</strong></td>
+                                    <td><code>"undefined"</code></td>
+                                    <td><code>"object"</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Причина</strong></td>
+                                    <td>Языком автоматически</td>
+                                    <td>Явно задаётся разработчиком</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Использование</strong></td>
+                                    <td>Ошибка/недостаток значения</td>
+                                    <td>Преднамеренное отсутствие значения</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Строгое равенство</strong></td>
+                                    <td><code>undefined === undefined</code> (true)</td>
+                                    <td><code>null === null</code> (true)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Приведение типов</strong></td>
+                                    <td>Становится <code>NaN</code> в числовом контексте</td>
+                                    <td>Становится <code>0</code> в числовом контексте</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Когда что использовать?</h3>
+                        <ul>
+                            <li>Используйте <code>null</code>, когда хотите явно указать на отсутствие значения</li>
+                            <li><code>undefined</code> обычно означает, что значение ещё не было установлено</li>
+                        </ul>
+
+                        <h3>Примеры сравнения</h3>
+                        <p><code>console.log(null == undefined); // true (нестрогое сравнение)<br>
+                                            console.log(null === undefined); // false (строгое сравнение)<br><br>
+                                            console.log(Number(undefined)); // NaN<br>
+                                            console.log(Number(null)); // 0</code></p>
+
+                        <h3>Полезные ресурсы</h3>
+
+                        <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/null"
+                            target="_blank">MDN: null</a> |
+                        <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/undefined"
+                            target="_blank">MDN: undefined</a> |
+                        <a href="https://learn.javascript.ru/types" target="_blank">JavaScript.info: Типы данных</a>
+
+                    </section>
                 </div>
                 <!-------------------------------------------------------------------------------------------------------->
                 <!-- Что такое undefined и null? В чем разница? конец-->
+                <!-- Как работает оператор typeof? Какие значения он возвращает? -->
+                <div class="accordion-header level-3">Как работает оператор typeof? Какие значения он возвращает?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Оператор typeof в JavaScript</h2>
+
+                        <p>Оператор <code>typeof</code> возвращает строку, указывающую тип операнда.</p>
+
+                        <h3>Синтаксис</h3>
+                        <p><code>typeof operand</code><br>
+                            или<br>
+                            <code>typeof(operand)</code>
+                        </p>
+
+                        <h3>Возвращаемые значения</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Тип</th>
+                                    <th>Результат typeof</th>
+                                    <th>Пример</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Number</td>
+                                    <td><code>"number"</code></td>
+                                    <td><code>typeof 42</code></td>
+                                </tr>
+                                <tr>
+                                    <td>String</td>
+                                    <td><code>"string"</code></td>
+                                    <td><code>typeof "hello"</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Boolean</td>
+                                    <td><code>"boolean"</code></td>
+                                    <td><code>typeof true</code></td>
+                                </tr>
+                                <tr>
+                                    <td>undefined</td>
+                                    <td><code>"undefined"</code></td>
+                                    <td><code>typeof undefined</code></td>
+                                </tr>
+                                <tr>
+                                    <td>null</td>
+                                    <td><code>"object"</code> (историческая особенность)</td>
+                                    <td><code>typeof null</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Object (обычный)</td>
+                                    <td><code>"object"</code></td>
+                                    <td><code>typeof {a: 1}</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Array</td>
+                                    <td><code>"object"</code></td>
+                                    <td><code>typeof [1, 2, 3]</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Function</td>
+                                    <td><code>"function"</code></td>
+                                    <td><code>typeof function() {}</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Symbol (ES6+)</td>
+                                    <td><code>"symbol"</code></td>
+                                    <td><code>typeof Symbol()</code></td>
+                                </tr>
+                                <tr>
+                                    <td>BigInt</td>
+                                    <td><code>"bigint"</code></td>
+                                    <td><code>typeof 10n</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Особенности работы</h3>
+                        <ul>
+                            <li><strong>null</strong>: Возвращает <code>"object"</code> - это известная ошибка в
+                                JavaScript, которая
+                                сохраняется для совместимости</li>
+                            <li><strong>Функции</strong>: Возвращают <code>"function"</code>, хотя технически функции
+                                являются объектами
+                            </li>
+                            <li><strong>Необъявленные переменные</strong>: <code>typeof undeclaredVar</code> вернёт
+                                <code>"undefined"</code>
+                                (без ошибки)
+                            </li>
+                            <li><strong>Массивы</strong>: Возвращают <code>"object"</code>, для проверки массивов лучше
+                                использовать
+                                <code>Array.isArray()</code>
+                            </li>
+                        </ul>
+
+                        <h3>Примеры использования</h3>
+                        <p><code>console.log(typeof 42); // "number"<br>
+                                            console.log(typeof 'text'); // "string"<br>
+                                            console.log(typeof true); // "boolean"<br>
+                                            console.log(typeof undeclaredVariable); // "undefined"<br>
+                                            console.log(typeof null); // "object"<br>
+                                            console.log(typeof {a: 1}); // "object"<br>
+                                            console.log(typeof [1, 2, 3]); // "object"<br>
+                                            console.log(typeof function() {}); // "function"<br>
+                                            console.log(typeof Symbol('sym')); // "symbol"<br>
+                                            console.log(typeof 10n); // "bigint"</code></p>
+
+                        <h3>Полезные ресурсы</h3>
+
+                        <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/typeof"
+                            target="_blank">MDN:
+                            typeof</a> |
+                        <a href="https://learn.javascript.ru/types#type-typeof" target="_blank">JavaScript.info:
+                            typeof</a> |
+                        <a href="https://www.ecma-international.org/ecma-262/" target="_blank">Спецификация
+                            ECMAScript</a>
+
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Как работает оператор typeof? Какие значения он возвращает? конец-->
+                <!-- Что такое строгий режим ('use strict')? -->
+                <div class="accordion-header level-3">Что такое строгий режим ('use strict')?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Строгий режим ('use strict') в JavaScript</h2>
+
+                        <p>Строгий режим — это специальный режим выполнения JavaScript кода, который вводит более
+                            строгие правила синтаксиса
+                            и обработки ошибок.</p>
+
+                        <h3>Как включить строгий режим</h3>
+                        <div>Добавьте директиву в начале скрипта или функции:</div>
+                        <p><code>'use strict';<br>
+                                            // ваш код</code></p>
+
+                        <h3>Основные отличия строгого режима</h3>
+                        <ul>
+                            <li><strong>Запрещает неявное создание глобальных переменных</strong><br>
+                                <code>x = 10; // ReferenceError в strict mode</code>
+                            </li>
+                            <li><strong>Запрещает дублирование параметров функции</strong><br>
+                                <code>function(a, a) {} // SyntaxError</code>
+                            </li>
+                            <li><strong>Запрещает удаление переменных, функций и аргументов</strong><br>
+                                <code>delete x; // SyntaxError</code>
+                            </li>
+                            <li><strong>Делает <code>this</code> равным <code>undefined</code> в глобальных
+                                    функциях</strong><br>
+                                <code>function f() { console.log(this); } // undefined</code>
+                            </li>
+                            <li><strong>Запрещает восьмеричные литералы (кроме ES6 с префиксом 0o)</strong><br>
+                                <code>var n = 0123; // SyntaxError</code>
+                            </li>
+                            <li><strong>Запрещает изменение свойств, помеченных как writable: false</strong></li>
+                            <li><strong>Ограничивает использование <code>eval</code> и <code>arguments</code> как
+                                    идентификаторов</strong>
+                            </li>
+                        </ul>
+
+                        <h3>Преимущества строгого режима</h3>
+                        <ul>
+                            <li>Помогает выявлять ошибки на раннем этапе</li>
+                            <li>Предотвращает неочевидное поведение кода</li>
+                            <li>Запрещает использование устаревших возможностей</li>
+                            <li>Облегчает оптимизацию кода движком JavaScript</li>
+                        </ul>
+
+                        <h3>Область применения</h3>
+                        <div>Можно применять:</div>
+                        <ul>
+                            <li>Ко всему файлу (первая строка скрипта)</li>
+                            <li>К отдельной функции (первая строка функции)</li>
+                        </ul>
+
+                        <h3>Примеры</h3>
+                        <p><code>'use strict';<br><br>
+                                            // Ошибка: неявное создание глобальной переменной<br>
+                                            undeclaredVar = 10; // ReferenceError<br><br>
+                                            // Ошибка: дублирование параметров<br>
+                                            function sum(a, a, c) { // SyntaxError<br>
+                                              return a + a + c;<br>
+                                            }<br><br>
+                                            // Правильное поведение this<br>
+                                            function showThis() {<br>
+                                              console.log(this); // undefined (в нестрогом режиме был бы window)<br>
+                                            }<br>
+                                            showThis();</code></p>
+
+                        <h3>Полезные ресурсы</h3>
+
+                        <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Strict_mode"
+                            target="_blank">MDN:
+                            Строгий режим</a> |
+                        <a href="https://learn.javascript.ru/strict-mode" target="_blank">JavaScript.info: Строгий
+                            режим</a> |
+                        <a href="https://tc39.es/ecma262/#sec-strict-mode-code" target="_blank">Спецификация
+                            ECMAScript</a>
+
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Что такое строгий режим ('use strict')? конец-->
             </div>
             <!-- ************************************************************************************ -->
             <!-- Основы JavaScript конец-->
