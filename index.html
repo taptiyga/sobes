@@ -7344,6 +7344,611 @@
             </div>
             <!-- ************************************************************************************ -->
             <!-- Основы JavaScript конец-->
+            <!-- Функции -->
+            <div class="accordion-header level-2">Функции</div>
+            <!-- ************************************************************************************ -->
+            <div class="accordion-content">
+                <!-- Что такое функция в JavaScript? -->
+                <div class="accordion-header level-3">Что такое функция в JavaScript?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Функции в JavaScript</h2>
+
+                        <p>Функция — это самостоятельный блок кода, который выполняет определенную задачу и может быть
+                            многократно вызван из
+                            других частей программы.</p>
+
+                        <h3>Основные характеристики функций</h3>
+                        <ul>
+                            <li><strong>Инкапсуляция логики</strong> - объединяют последовательность команд</li>
+                            <li><strong>Повторное использование</strong> - могут вызываться многократно</li>
+                            <li><strong>Приём параметров</strong> - могут получать входные данные</li>
+                            <li><strong>Возврат значений</strong> - могут возвращать результат работы</li>
+                        </ul>
+
+                        <h3>Способы объявления функций</h3>
+
+                        <h4>1. Function Declaration (объявление функции)</h4>
+                        <p><code>function sum(a, b) {<br>
+                                            &nbsp;&nbsp;return a + b;<br>
+                                            }</code></p>
+                        <ul>
+                            <li>Поднимается (hoisting) - доступна до объявления</li>
+                            <li>Имеет собственный контекст <code>this</code></li>
+                        </ul>
+
+                        <h4>2. Function Expression (функциональное выражение)</h4>
+                        <p><code>const multiply = function(a, b) {<br>
+                                            &nbsp;&nbsp;return a * b;<br>
+                                            };</code></p>
+                        <ul>
+                            <li>Не поднимается - доступна только после объявления</li>
+                            <li>Может быть анонимной</li>
+                        </ul>
+
+                        <h4>3. Стрелочные функции (ES6+)</h4>
+                        <p><code>const divide = (a, b) => a / b;</code></p>
+                        <ul>
+                            <li>Не имеют собственного <code>this</code> (берут из внешнего контекста)</li>
+                            <li>Всегда анонимные</li>
+                            <li>Короткий синтаксис для однострочных операций</li>
+                        </ul>
+
+                        <h3>Параметры и аргументы</h3>
+                        <p><code>function greet(name = 'Гость', age) {<br>
+                                            &nbsp;&nbsp;console.log(`Привет, ${name}!`);<br>
+                                            }</code></p>
+                        <ul>
+                            <li>Параметры по умолчанию (ES6+)</li>
+                            <li>Остаточные параметры (...args)</li>
+                            <li>Объект arguments (устаревший способ)</li>
+                        </ul>
+
+                        <h3>Возврат значений</h3>
+                        <p><code>function isAdult(age) {<br>
+                                            &nbsp;&nbsp;return age >= 18;<br>
+                                            }</code></p>
+                        <ul>
+                            <li>Без <code>return</code> возвращает <code>undefined</code></li>
+                            <li>Может возвращать любые значения, включая другие функции</li>
+                        </ul>
+
+                        <h3>Особенности функций в JavaScript</h3>
+                        <ul>
+                            <li><strong>Функции — это объекты</strong> (имеют свойства и методы)</li>
+                            <li><strong>Функции высшего порядка</strong> - могут принимать/возвращать другие функции
+                            </li>
+                            <li><strong>Замыкания</strong> - запоминают окружение, где были созданы</li>
+                            <li><strong>IIFE</strong> - немедленно вызываемые функции</li>
+                        </ul>
+
+                        <h3>Примеры использования</h3>
+                        <p><code>// Рекурсивная функция<br>
+                                            function factorial(n) {<br>
+                                            &nbsp;&nbsp;return n <= 1 ? 1 : n * factorial(n - 1);<br>
+                                            }<br><br>
+                                            // Функция обратного вызова (callback)<br>
+                                            setTimeout(() => console.log('Прошло 1 сек'), 1000);<br><br>
+                                            // Метод объекта<br>
+                                            const user = {<br>
+                                            &nbsp;&nbsp;name: 'Анна',<br>
+                                            &nbsp;&nbsp;greet() { console.log(`Я ${this.name}`) }<br>
+                                            };</code></p>
+
+                        <h3>Полезные ресурсы</h3>
+
+                        <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Functions"
+                            target="_blank">MDN: Функции</a>
+                        |
+                        <a href="https://learn.javascript.ru/function-basics" target="_blank">JavaScript.info:
+                            Функции</a> |
+                        <a href="https://eloquentjavascript.net/03_functions.html" target="_blank">Eloquent JavaScript:
+                            Глава о
+                            функциях</a>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Что такое функция в JavaScript? конец-->
+                <!-- Разница между Function Declaration и Function Expression. -->
+                <div class="accordion-header level-3">Разница между Function Declaration и Function Expression.</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Разница между Function Declaration и Function Expression</h2>
+
+                        <p>В JavaScript есть два основных способа создания функций, которые отличаются поведением и
+                            возможностями.</p>
+
+                        <h3>Function Declaration (Объявление функции)</h3>
+                        <p><code>function sum(a, b) {<br>
+                                            &nbsp;&nbsp;return a + b;<br>
+                                            }</code></p>
+
+                        <h4>Особенности:</h4>
+                        <ul>
+                            <li><strong>Поднятие (hoisting)</strong>: Доступна до объявления в коде</li>
+                            <li><strong>Контекст</strong>: Имеет собственный <code>this</code></li>
+                            <li><strong>Имя</strong>: Всегда имеет имя (не может быть анонимной)</li>
+                            <li><strong>Область видимости</strong>: Создается в текущей области видимости</li>
+                        </ul>
+
+                        <h3>Function Expression (Функциональное выражение)</h3>
+                        <p><code>const multiply = function(a, b) {<br>
+                                            &nbsp;&nbsp;return a * b;<br>
+                                            };</code></p>
+
+                        <h4>Особенности:</h4>
+                        <ul>
+                            <li><strong>Нет поднятия</strong>: Доступна только после объявления</li>
+                            <li><strong>Может быть анонимной</strong>: Но именованные функции предпочтительнее для
+                                отладки</li>
+                            <li><strong>Гибкость использования</strong>: Может быть передана как аргумент или присвоена
+                                переменной</li>
+                            <li><strong>Выполнение</strong>: Создается в момент выполнения присваивания</li>
+                        </ul>
+
+                        <h3>Ключевые различия</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Характеристика</th>
+                                    <th>Function Declaration</th>
+                                    <th>Function Expression</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Поднятие (hoisting)</strong></td>
+                                    <td>Полностью поднимается</td>
+                                    <td>Не поднимается</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Доступность</strong></td>
+                                    <td>Доступна до объявления</td>
+                                    <td>Доступна только после присваивания</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Имя функции</strong></td>
+                                    <td>Обязательно</td>
+                                    <td>Может быть анонимной</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Использование</strong></td>
+                                    <td>Как самостоятельная конструкция</td>
+                                    <td>Как часть выражения (присваивание, аргумент)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Контекст создания</strong></td>
+                                    <td>При парсинге кода</td>
+                                    <td>В момент выполнения</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Примеры различий</h3>
+                        <p><code>// Function Declaration - работает<br>
+                                            console.log(sum(2, 3)); // 5<br>
+                                            function sum(a, b) { return a + b; }<br><br>
+                                            // Function Expression - вызовет ошибку<br>
+                                            console.log(multiply(2, 3)); // TypeError<br>
+                                            const multiply = function(a, b) { return a * b; };</code></p>
+
+                        <h3>Когда что использовать?</h3>
+                        <ul>
+                            <li><strong>Function Declaration</strong>: Для основных функций программы, когда нужен
+                                hoisting</li>
+                            <li><strong>Function Expression</strong>:
+                                <ol>
+                                    <li>Когда нужно передать функцию как аргумент</li>
+                                    <li>Для условного создания функций</li>
+                                    <li>При работе с замыканиями</li>
+                                    <li>В стрелочных функциях (разновидность Function Expression)</li>
+                                </ol>
+                            </li>
+                        </ul>
+
+                        <h3>Полезные ресурсы</h3>
+
+                        <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/function"
+                            target="_blank">MDN:
+                            Function Expression</a> |
+                        <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/function"
+                            target="_blank">MDN: Function Declaration</a> |
+                        <a href="https://learn.javascript.ru/function-declaration-expression"
+                            target="_blank">JavaScript.info: Разница
+                            между объявлениями</a>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Разница между Function Declaration и Function Expression. конец-->
+                <!-- Что такое стрелочные функции (Arrow Functions)? Чем они отличаются от обычных? -->
+                <div class="accordion-header level-3">Что такое стрелочные функции (Arrow Functions)? Чем они отличаются
+                    от обычных?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Стрелочные функции (Arrow Functions) в JavaScript</h2>
+
+                        <p>Стрелочные функции — это сокращенный синтаксис записи функций, появившийся в ES6 (ECMAScript
+                            2015), с особенным
+                            поведением контекста <code>this</code>.</p>
+
+                        <h3>Синтаксис стрелочных функций</h3>
+                        <p><code>// Полная форма<br>
+                                            const sum = (a, b) => {<br>
+                                            &nbsp;&nbsp;return a + b;<br>
+                                            };<br><br>
+                                            // Сокращенная форма (когда тело состоит из одного выражения)<br>
+                                            const double = x => x * 2;<br><br>
+                                            // Без параметров<br>
+                                            const sayHi = () => console.log('Hello!');<br><br>
+                                            // С одним параметром (скобки можно опустить)<br>
+                                            const square = x => x * x;</code></p>
+
+                        <h3>Ключевые отличия от обычных функций</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Характеристика</th>
+                                    <th>Стрелочные функции</th>
+                                    <th>Обычные функции</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Контекст (this)</strong></td>
+                                    <td>Берут из внешней области (лексический this)</td>
+                                    <td>Имеют собственный this (определяется при вызове)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>arguments</strong></td>
+                                    <td>Нет собственного объекта arguments</td>
+                                    <td>Есть объект arguments</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Имя функции</strong></td>
+                                    <td>Всегда анонимные</td>
+                                    <td>Могут быть именованными</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Использование как конструктор</strong></td>
+                                    <td>Не могут быть конструкторами (вызовут ошибку с new)</td>
+                                    <td>Могут быть конструкторами</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Метод объекта</strong></td>
+                                    <td>Не подходят (проблемы с this)</td>
+                                    <td>Подходят</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Поднятие (hoisting)</strong></td>
+                                    <td>Нет (как Function Expression)</td>
+                                    <td>Function Declaration - есть, Expression - нет</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Примеры различий в поведении this</h3>
+                        <p><code>const obj = {<br>
+                                            &nbsp;&nbsp;name: 'Test',<br>
+                                            &nbsp;&nbsp;regularFunc: function() {<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;console.log(this.name); // 'Test'<br>
+                                            &nbsp;&nbsp;},<br>
+                                            &nbsp;&nbsp;arrowFunc: () => {<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;console.log(this.name); // undefined (берет this внешней области)<br>
+                                            &nbsp;&nbsp;}<br>
+                                            };</code></p>
+
+                        <h3>Когда использовать стрелочные функции?</h3>
+                        <ul>
+                            <li>Коллбэки и промисы (сохраняют контекст)</li>
+                            <li>Короткие однострочные операции</li>
+                            <li>Когда нужно сохранить лексический this</li>
+                            <li>Функции-обработчики в map/filter/reduce</li>
+                        </ul>
+
+                        <h3>Когда НЕ использовать стрелочные функции?</h3>
+                        <ul>
+                            <li>Методы объектов (где нужен доступ к this объекта)</li>
+                            <li>Функции-конструкторы</li>
+                            <li>Когда нужен доступ к arguments</li>
+                            <li>Функции, использующие yield (генераторы)</li>
+                        </ul>
+
+                        <h3>Полезные ресурсы</h3>
+
+                        <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Arrow_functions"
+                            target="_blank">MDN: Стрелочные функции</a> |
+                        <a href="https://learn.javascript.ru/arrow-functions" target="_blank">JavaScript.info:
+                            Стрелочные функции</a> |
+                        <a href="https://dmitripavlutin.com/differences-between-arrow-and-regular-functions/"
+                            target="_blank">Подробное
+                            сравнение</a>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Что такое стрелочные функции (Arrow Functions)? Чем они отличаются от обычных? конец-->
+                <!-- Что такое IIFE (Immediately Invoked Function Expression)? -->
+                <div class="accordion-header level-3">Что такое IIFE (Immediately Invoked Function Expression)?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>IIFE (Immediately Invoked Function Expression)</h2>
+
+                        <p>IIFE (Immediately Invoked Function Expression) — это функция, которая выполняется сразу же
+                            после своего создания.
+                        </p>
+
+                        <h3>Синтаксис IIFE</h3>
+                        <p><code>(function() {<br>
+                                            &nbsp;&nbsp;// код функции<br>
+                                            })();<br><br>
+                                            // Альтернативный вариант<br>
+                                            (function() {<br>
+                                            &nbsp;&nbsp;// код функции<br>
+                                            }());</code></p>
+
+                        <h3>Основные особенности</h3>
+                        <ul>
+                            <li><strong>Немедленное выполнение</strong>: Функция вызывается сразу после определения</li>
+                            <li><strong>Изолированная область видимости</strong>: Переменные внутри IIFE не попадают в
+                                глобальную область
+                            </li>
+                            <li><strong>Анонимность</strong>: Обычно используется без имени (но может быть именованной)
+                            </li>
+                            <li><strong>Возврат значений</strong>: Может возвращать значение, которое можно сохранить в
+                                переменную</li>
+                        </ul>
+
+                        <h3>Зачем использовать IIFE?</h3>
+                        <ul>
+                            <li><strong>Изоляция переменных</strong>: Предотвращает загрязнение глобального пространства
+                                имен</li>
+                            <li><strong>Создание приватного контекста</strong>: Данные внутри недоступны извне</li>
+                            <li><strong>Работа с замыканиями</strong>: Позволяет сохранять состояние</li>
+                            <li><strong>Асинхронные операции</strong>: Использовалось для модулей до появления ES6</li>
+                        </ul>
+
+                        <h3>Примеры использования</h3>
+                        <p><code>// Базовый пример<br>
+                                            (function() {<br>
+                                            &nbsp;&nbsp;console.log('Выполняется сразу!');<br>
+                                            })();<br><br>
+                                            // С передачей параметров<br>
+                                            (function(a, b) {<br>
+                                            &nbsp;&nbsp;console.log(a + b); // 15<br>
+                                            })(10, 5);<br><br>
+                                            // С возвратом значения<br>
+                                            const result = (function(x) {<br>
+                                            &nbsp;&nbsp;return x * x;<br>
+                                            })(5);<br>
+                                            console.log(result); // 25</code></p>
+
+                        <h3>Современные альтернативы</h3>
+                        <div>С появлением ES6+ IIFE используются реже благодаря:</div>
+                        <ul>
+                            <li>Блочной области видимости (<code>let</code>/<code>const</code>)</li>
+                            <li>Модулям ES6 (<code>import</code>/<code>export</code>)</li>
+                        </ul>
+
+                        <h3>Полезные ресурсы</h3>
+
+                        <a href="https://developer.mozilla.org/ru/docs/Glossary/IIFE" target="_blank">MDN: IIFE</a>
+                        |
+                        <a href="https://learn.javascript.ru/closure#iife" target="_blank">JavaScript.info: IIFE</a>
+                        |
+                        <a href="https://medium.com/javascript-in-plain-english/https-medium-com-javascript-in-plain-english-stop-feeling-iffy-about-using-an-iife-7b0292aba174"
+                            target="_blank">Статья об IIFE</a>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Что такое IIFE (Immediately Invoked Function Expression)? конец-->
+                <!-- Что такое замыкание (Closure)? Пример использования. -->
+                <div class="accordion-header level-3">Что такое замыкание (Closure)? Пример использования.</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Замыкания (Closures) в JavaScript</h2>
+
+                        <p>Замыкание — это функция, которая запоминает свое лексическое окружение (переменные,
+                            параметры) даже после того,
+                            как выполнение покинуло эту область видимости.</p>
+
+                        <h3>Как работают замыкания?</h3>
+                        <ul>
+                            <li>Функция "запоминает" внешние переменные в момент своего создания</li>
+                            <li>Доступ к этим переменным сохраняется даже после завершения работы внешней функции</li>
+                            <li>Каждое замыкание хранит свою собственную копию переменных</li>
+                        </ul>
+
+                        <h3>Простой пример замыкания</h3>
+                        <p><code>function createCounter() {<br>
+                                            &nbsp;&nbsp;let count = 0; // локальная переменная<br><br>
+                                            &nbsp;&nbsp;return function() {<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;return ++count; // доступ к count из внешней функции<br>
+                                            &nbsp;&nbsp;};<br>
+                                            }<br><br>
+                                            const counter = createCounter();<br>
+                                            console.log(counter()); // 1<br>
+                                            console.log(counter()); // 2<br>
+                                            console.log(counter()); // 3</code></p>
+
+                        <h3>Практические примеры использования</h3>
+
+                        <h4>1. Создание приватных переменных</h4>
+                        <p><code>function createUser(name) {<br>
+                                            &nbsp;&nbsp;let privateName = name;<br><br>
+                                            &nbsp;&nbsp;return {<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;getName: () => privateName,<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;setName: (newName) => { privateName = newName }<br>
+                                            &nbsp;&nbsp;};<br>
+                                            }<br><br>
+                                            const user = createUser('Alice');<br>
+                                            console.log(user.getName()); // Alice<br>
+                                            user.setName('Bob');<br>
+                                            console.log(user.getName()); // Bob</code></p>
+
+                        <h4>2. Мемоизация (кеширование результатов)</h4>
+                        <p><code>function createMemoized() {<br>
+                                            &nbsp;&nbsp;const cache = {};<br><br>
+                                            &nbsp;&nbsp;return function(arg) {<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;if (arg in cache) {<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('Из кэша:', arg);<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return cache[arg];<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;// Тяжелые вычисления<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;const result = arg * 2; // Пример вычисления<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;cache[arg] = result;<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;return result;<br>
+                                            &nbsp;&nbsp;};<br>
+                                            }<br><br>
+                                            const memoized = createMemoized();<br>
+                                            console.log(memoized(5)); // вычисляет 10<br>
+                                            console.log(memoized(5)); // "Из кэша: 5", возвращает 10</code></p>
+
+                        <h3>Особенности замыканий</h3>
+                        <ul>
+                            <li><strong>Память</strong>: Замыкания сохраняют все используемые внешние переменные (может
+                                приводить к утечкам
+                                памяти)</li>
+                            <li><strong>Производительность</strong>: Создание множества замыканий может повлиять на
+                                производительность</li>
+                            <li><strong>Гибкость</strong>: Позволяют создавать изолированные контексты и приватные
+                                данные</li>
+                        </ul>
+
+                        <h3>Полезные ресурсы</h3>
+
+                        <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Closures" target="_blank">MDN:
+                            Замыкания</a> |
+                        <a href="https://learn.javascript.ru/closure" target="_blank">JavaScript.info: Замыкания</a> |
+                        <a href="https://dmitripavlutin.com/simple-explanation-of-javascript-closures/"
+                            target="_blank">Простое
+                            объяснение замыканий</a>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Что такое замыкание (Closure)? Пример использования. конец-->
+                <!-- Что такое callback-функция? -->
+                <div class="accordion-header level-3">Что такое callback-функция?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>
+                            Что такое callback-функция?
+                        </h2>
+
+                        <p>
+                            <strong>Callback-функция</strong> — это функция, которая передаётся в другую функцию в
+                            качестве аргумента и
+                            вызывается внутри неё после выполнения определённых действий или при наступлении какого-либо
+                            события.
+                            Callback-функции широко используются в асинхронном программировании, обработке событий и
+                            работе с API.
+                        </p>
+
+                        <h3>
+                            Пример callback-функции в JavaScript:
+                        </h3>
+
+                        <code>
+                                              function greeting(name) {<br>
+                                              &nbsp;&nbsp;console.log(`Привет, ${name}!`);<br>
+                                              }<br>
+                                              <br>
+                                              function processUserInput(callback) {<br>
+                                              &nbsp;&nbsp;const name = prompt('Введите ваше имя:');<br>
+                                              &nbsp;&nbsp;callback(name);<br>
+                                              }<br>
+                                              <br>
+                                              processUserInput(greeting); // Вызовет greeting после ввода имени<br>
+                                            </code>
+
+                        <h3>
+                            Полезные ресурсы:
+                        </h3>
+
+                        <a href="https://developer.mozilla.org/ru/docs/Glossary/Callback_function"
+                            target="_blank">MDN</a> |
+                        <a href="https://learn.javascript.ru/callbacks" target="_blank">learn.javascript.ru</a> |
+                        <a href="https://habr.com/ru/articles/151569/" target="_blank">Habr</a>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Что такое callback-функция? конец-->
+                <!-- Что такое arguments в функции? -->
+                <div class="accordion-header level-3">Что такое arguments в функции?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>
+                            Что такое arguments в функции?
+                        </h2>
+
+                        <p>
+                            <strong>arguments</strong> — это объект, доступный внутри функции, который содержит все
+                            переданные ей аргументы.
+                            Это псевдомассив (имеет свойство length и индексы, но не имеет методов массива), который
+                            позволяет работать с
+                            произвольным количеством аргументов, даже если они не объявлены в параметрах функции.
+                        </p>
+
+                        <h3>
+                            Особенности arguments:
+                        </h3>
+
+                        <ul>
+                            <li>Доступен только внутри нестрелочных функций</li>
+                            <li>Содержит все переданные аргументы, включая избыточные</li>
+                            <li>Не является настоящим массивом (для использования методов массива нужно преобразовать)
+                            </li>
+                            <li>В современном JS чаще используют rest-параметры (...args)</li>
+                        </ul>
+
+                        <h3>
+                            Пример использования arguments:
+                        </h3>
+
+                        <code>
+                                            function sum() {<br>
+                                            &nbsp;&nbsp;let total = 0;<br>
+                                            &nbsp;&nbsp;for (let i = 0; i < arguments.length; i++) {<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;total += arguments[i];<br>
+                                            &nbsp;&nbsp;}<br>
+                                            &nbsp;&nbsp;return total;<br>
+                                            }<br>
+                                            <br>
+                                            console.log(sum(1, 2, 3)); // 6<br>
+                                            console.log(sum(5, 10)); // 15<br>
+                                          </code>
+
+                        <h3>
+                            Современная альтернатива (rest-параметры):
+                        </h3>
+
+                        <code>
+                                            function sum(...args) {<br>
+                                            &nbsp;&nbsp;return args.reduce((acc, val) => acc + val, 0);<br>
+                                            }<br>
+                                          </code>
+
+                        <h3>
+                            Полезные ресурсы:
+                        </h3>
+
+                        <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/arguments"
+                            target="_blank">MDN</a>
+                        |
+                        <a href="https://learn.javascript.ru/rest-parameters-spread"
+                            target="_blank">learn.javascript.ru</a>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Что такое arguments в функции? конец-->
+            </div>
+            <!-- ************************************************************************************ -->
+            <!-- Функции конец-->
         </div>
         <!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
         <!-- JS конец -->
