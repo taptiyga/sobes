@@ -5247,6 +5247,464 @@
             </div>
             <!-- ************************************************************************************ -->
             <!-- Синтаксис и структура конец-->
+            <!-- Блочная модель (Box Model) -->
+            <div class="accordion-header level-2">Блочная модель (Box Model)</div>
+            <!-- ************************************************************************************ -->
+            <div class="accordion-content">
+                <!-- Из каких компонентов состоит блочная модель CSS? -->
+                <div class="accordion-header level-3">Из каких компонентов состоит блочная модель CSS?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Блочная модель CSS (Box Model)</h2>
+
+                        <p>
+                            <strong>Блочная модель</strong> — это фундаментальная концепция CSS, которая описывает,
+                            как располагаются и взаимодействуют элементы на веб-странице. Каждый элемент
+                            представляет собой прямоугольный блок со следующими компонентами:
+                        </p>
+
+                        <div style="text-align: center; margin: 20px 0;">
+                            <svg width="300" height="200" viewBox="0 0 300 200" style="max-width: 100%;">
+                                <!-- Внешний блок (margin) -->
+                                <rect x="50" y="30" width="200" height="140" fill="none" stroke="#ccc"
+                                    stroke-dasharray="5,5" />
+                                <text x="150" y="20" text-anchor="middle" font-size="12">margin</text>
+
+                                <!-- Блок (border) -->
+                                <rect x="70" y="50" width="160" height="100" fill="none" stroke="#888"
+                                    stroke-width="2" />
+                                <text x="150" y="45" text-anchor="middle" font-size="12">border</text>
+
+                                <!-- Отступ (padding) -->
+                                <rect x="90" y="70" width="120" height="60" fill="#e1f5fe" stroke="#039be5" />
+                                <text x="150" y="65" text-anchor="middle" font-size="12">padding</text>
+
+                                <!-- Контент (content) -->
+                                <rect x="100" y="80" width="100" height="40" fill="#4fc3f7" />
+                                <text x="150" y="100" text-anchor="middle" fill="#fff" font-size="12">content</text>
+                            </svg>
+                        </div>
+
+                        <h3>Основные компоненты:</h3>
+                        <ol>
+                            <li>
+                                <strong>Контент (Content)</strong>:
+                                <ul>
+                                    <li>Внутренняя часть элемента (текст, изображения)</li>
+                                    <li>Размеры определяются свойствами <code>width</code> и <code>height</code></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Внутренний отступ (Padding)</strong>:
+                                <ul>
+                                    <li>Пространство между контентом и границей</li>
+                                    <li>Контролируется свойствами <code>padding</code></li>
+                                    <li>Фон элемента распространяется на padding</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Граница (Border)</strong>:
+                                <ul>
+                                    <li>Линия вокруг padding и контента</li>
+                                    <li>Настраивается свойствами <code>border</code></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Внешний отступ (Margin)</strong>:
+                                <ul>
+                                    <li>Пространство между границей и другими элементами</li>
+                                    <li>Контролируется свойствами <code>margin</code></li>
+                                    <li>Прозрачный, не реагирует на события мыши</li>
+                                </ul>
+                            </li>
+                        </ol>
+
+                        <h3>Важные свойства:</h3>
+                        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+                            <tr>
+                                <th style="border: 1px solid #ddd; padding: 8px;">Свойство</th>
+                                <th style="border: 1px solid #ddd; padding: 8px;">Описание</th>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px;"><code>box-sizing</code></td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">
+                                    Определяет, как рассчитываются размеры элемента:<br>
+                                    <code>content-box</code> (по умолчанию) - width/height включают только контент<br>
+                                    <code>border-box</code> - width/height включают padding и border
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px;"><code>margin-collapse</code></td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">
+                                    Вертикальные margin соседних элементов могут схлопываться (объединяться)
+                                </td>
+                            </tr>
+                        </table>
+
+                        <h3>Пример расчета размеров:</h3>
+                        <div>
+                            <code>
+                                                div {<br>
+                                                &nbsp;&nbsp;width: 200px;<br>
+                                                &nbsp;&nbsp;padding: 20px;<br>
+                                                &nbsp;&nbsp;border: 5px solid black;<br>
+                                                &nbsp;&nbsp;margin: 10px;<br>
+                                                }
+                                              </code>
+                            <p>
+                                <strong>Фактическая ширина</strong> при <code>box-sizing: content-box</code>:<br>
+                                200px (width) + 40px (padding) + 10px (border) = <strong>250px</strong>
+                            </p>
+                            <p>
+                                <strong>Фактическая ширина</strong> при <code>box-sizing: border-box</code>:<br>
+                                <strong>200px</strong> (уже включает padding и border)
+                            </p>
+                        </div>
+
+                        <h3>Полезные ресурсы:</h3>
+                        <a href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Box_Model" target="_blank">MDN</a> |
+                        <a href="https://css-tricks.com/the-css-box-model/" target="_blank">CSS-Tricks</a> |
+                        <a href="https://www.w3schools.com/css/css_boxmodel.asp" target="_blank">W3Schools</a>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Из каких компонентов состоит блочная модель CSS? конец-->
+                <!-- Чем отличаются margin, padding, border? -->
+                <div class="accordion-header level-3">Чем отличаются margin, padding, border?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Отличия margin, padding и border в CSS</h2>
+
+                        <div
+                            style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;margin-top: 20px;">
+                            <div style="width: 30%; min-width: 300px;">
+                                <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; height: 100%;">
+                                    <h3 style="color: #0d47a1; margin-top: 0;">Margin</h3>
+                                    <ul style="padding-left: 20px;">
+                                        <li><strong>Внешний отступ</strong> за пределами границы</li>
+                                        <li>Создает пространство <em>между элементами</em></li>
+                                        <li><strong>Прозрачный</strong> (не виден)</li>
+                                        <li>Не реагирует на события мыши</li>
+                                        <li>Может иметь отрицательные значения</li>
+                                        <li>Вертикальные margin схлопываются</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div style="width: 30%; min-width: 300px;">
+                                <div style="background: #e8f5e9; padding: 15px; border-radius: 8px; height: 100%;">
+                                    <h3 style="color: #2e7d32; margin-top: 0;">Padding</h3>
+                                    <ul style="padding-left: 20px;">
+                                        <li><strong>Внутренний отступ</strong> между контентом и границей</li>
+                                        <li>Создает пространство <em>внутри элемента</em></li>
+                                        <li><strong>Принимает фон</strong> элемента</li>
+                                        <li>Реагирует на события мыши</li>
+                                        <li>Не может быть отрицательным</li>
+                                        <li>Не схлопывается</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div style="width: 30%; min-width: 300px;">
+                                <div style="background: #fff3e0; padding: 15px; border-radius: 8px; height: 100%;">
+                                    <h3 style="color: #e65100; margin-top: 0;">Border</h3>
+                                    <ul style="padding-left: 20px;">
+                                        <li><strong>Граница</strong> между padding и margin</li>
+                                        <li>Визуальное обрамление элемента</li>
+                                        <li>Может иметь <strong>разные стили</strong> (solid, dashed и др.)</li>
+                                        <li>Участвует в расчете размеров элемента</li>
+                                        <li>Реагирует на события мыши</li>
+                                        <li>Не может быть отрицательным</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>Наглядное сравнение:</h3>
+                        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; position: relative;">
+                            <div style="margin: 30px; background: #bbdefb; padding: 20px; border: 5px dashed #2196f3;">
+                                <div style="background: #fff; padding: 10px; margin: 0; text-align: center;">
+                                    <strong>Контент</strong> (Content)>
+                                </div>
+                                <div style="position: absolute; top: 10px; left: 15px; color: #f44336;">margin</div>
+                                <div style="position: absolute; top: 50px; left: 55px; color: #4caf50;">padding</div>
+                                <div style="position: absolute; top: 30px; left: 35px; color: #ff9800;">border</div>
+                            </div>
+
+                            <h3>Практические отличия:</h3>
+                            <table>
+                                <tr>
+                                    <th>Margin</th>
+                                    <th>Padding</th>
+                                    <th>Border</th>
+                                </tr>
+                                <tr>
+                                    <td>Не влияет на размер
+                                    </td>
+                                    <td>Увеличивает внутренний размер</td>
+                                    <td>Увеличивает общий размер</td>
+                                </tr>
+                                <tr>
+                                    <td>Фон не отображается</td>
+                                    <td>Принимает фон элемента</td>
+                                    <td>Собственный цвет/стиль</td>
+                                </tr>
+                                <tr>
+                                    <td>Схлопывание вертикальное</td>
+                                    <td>Не схлопывается</td>
+                                    <td>Не схлопывается</td>
+                                </tr>
+                            </table>
+
+                            <h3>Когда что использовать:</h3>
+                            <ul>
+                                <li><strong>Margin</strong> - для расстояния между отдельными элементами</li>
+                                <li><strong>Padding</strong> - для внутренних отступов внутри элемента</li>
+                                <li><strong>Border</strong> - для визуального выделения элемента</li>
+                            </ul>
+
+                            <h3>Полезные ресурсы:</h3>
+                            <a href="https://developer.mozilla.org/ru/docs/Web/CSS/margin" target="_blank">MDN:
+                                margin</a> |
+                            <a href="https://developer.mozilla.org/ru/docs/Web/CSS/padding" target="_blank">MDN:
+                                padding</a>
+                            |
+                            <a href="https://developer.mozilla.org/ru/docs/Web/CSS/border" target="_blank">MDN:
+                                border</a>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Чем отличаются margin, padding, border? конец-->
+                <!-- Как работает свойство box-sizing? -->
+                <div class="accordion-header level-3">Как работает свойство box-sizing?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Свойство box-sizing в CSS</h2>
+
+                        <p>
+                            <strong>box-sizing</strong> — это CSS-свойство, которое определяет, как рассчитываются
+                            ширина (width)
+                            и высота (height) элемента, включая или исключая внутренние отступы (padding) и границы
+                            (border).
+                        </p>
+
+                        <h3>Два основных значения:</h3>
+
+                        <div
+                            style="display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 20px; gap: 20px;">
+                            <div style="width: 48%; min-width: 300px;">
+                                <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; height: 100%;">
+                                    <h4 style="color: #0d47a1; margin-top: 0;"><code>content-box</code> (по умолчанию)
+                                    </h4>
+                                    <ul>
+                                        <li>Ширина/высота применяются <strong>только к контенту</strong></li>
+                                        <li>Padding и border добавляются к указанным размерам</li>
+                                        <li>Формула: <br><code>общая ширина = width + padding + border</code></li>
+                                    </ul>
+                                    <div
+                                        style="background: #fff; padding: 10px; margin-top: 10px; border: 2px dashed #2196f3;">
+                                        <code>
+                                                      div {<br>
+                                                      &nbsp;&nbsp;width: 200px;<br>
+                                                      &nbsp;&nbsp;padding: 20px;<br>
+                                                      &nbsp;&nbsp;border: 5px solid black;<br>
+                                                      &nbsp;&nbsp;box-sizing: content-box;<br>
+                                                      }<br>
+                                                      /* Фактическая ширина = 200 + 40 + 10 = 250px */
+                                                    </code>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="width: 48%; min-width: 300px;">
+                                <div style="background: #e8f5e9; padding: 15px; border-radius: 8px; height: 100%;">
+                                    <h4 style="color: #2e7d32; margin-top: 0;"><code>border-box</code> (рекомендуется)
+                                    </h4>
+                                    <ul>
+                                        <li>Ширина/высота включают <strong>контент + padding + border</strong></li>
+                                        <li>Размер элемента точно соответствует указанному</li>
+                                        <li>Формула: <br><code>ширина контента = width - padding - border</code></li>
+                                    </ul>
+                                    <div
+                                        style="background: #fff; padding: 10px; margin-top: 10px; border: 2px dashed #4caf50;">
+                                        <code>
+                                                      div {<br>
+                                                      &nbsp;&nbsp;width: 200px;<br>
+                                                      &nbsp;&nbsp;padding: 20px;<br>
+                                                      &nbsp;&nbsp;border: 5px solid black;<br>
+                                                      &nbsp;&nbsp;box-sizing: border-box;<br>
+                                                      }<br>
+                                                      /* Фактическая ширина = 200px (контент 150px) */
+                                                    </code>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>Наглядное сравнение:</h3>
+                        <div style="text-align: center; margin: 20px 0;">
+                            <svg width="500" height="200" viewBox="0 0 500 200" style="max-width: 100%;">
+                                <!-- Content-box -->
+                                <rect x="50" y="50" width="150" height="100" fill="#bbdefb" stroke="#2196f3"
+                                    stroke-width="2" />
+                                <rect x="70" y="70" width="110" height="60" fill="#e3f2fd" />
+                                <rect x="90" y="90" width="70" height="20" fill="#fff" />
+                                <text x="125" y="40" text-anchor="middle">content-box</text>
+                                <text x="125" y="180" text-anchor="middle">width: 150px (контент 70px)</text>
+
+                                <!-- Border-box -->
+                                <rect x="300" y="50" width="150" height="100" fill="#c8e6c9" stroke="#4caf50"
+                                    stroke-width="2" />
+                                <rect x="320" y="70" width="110" height="60" fill="#e8f5e9" />
+                                <rect x="340" y="90" width="70" height="20" fill="#fff" />
+                                <text x="375" y="40" text-anchor="middle">border-box</text>
+                                <text x="370" y="180" text-anchor="middle">width: 150px (включая padding и
+                                    border)</text>
+                            </svg>
+                        </div>
+
+                        <h3>Почему border-box лучше?</h3>
+                        <ul>
+                            <li>Позволяет точно контролировать размеры элементов</li>
+                            <li>Упрощает расчеты при верстке</li>
+                            <li>Делает поведение элементов более предсказуемым</li>
+                        </ul>
+
+                        <h3>Как применять на практике:</h3>
+                        <div style="background: #f5f5f5; padding: 15px; border-radius: 8px;">
+                            <code>
+                                                /* Глобальная настройка для всех элементов */<br>
+                                                html {<br>
+                                                &nbsp;&nbsp;box-sizing: border-box;<br>
+                                                }<br>
+                                                *, *:before, *:after {<br>
+                                                &nbsp;&nbsp;box-sizing: inherit;<br>
+                                                }
+                                              </code>
+                        </div>
+
+                        <h3>Ограничения:</h3>
+                        <ul>
+                            <li>Не влияет на margin (внешние отступы)</li>
+                            <li>Не изменяет поведение flex/grid-элементов (они уже используют border-box логику)</li>
+                        </ul>
+
+                        <h3>Поддержка браузерами:</h3>
+                        <p>Поддерживается всеми современными браузерами, включая IE8+.</p>
+
+                        <h3>Полезные ресурсы:</h3>
+                        <a href="https://developer.mozilla.org/ru/docs/Web/CSS/box-sizing" target="_blank">MDN</a> |
+                        <a href="https://css-tricks.com/box-sizing/" target="_blank">CSS-Tricks</a> |
+                        <a href="https://www.w3schools.com/css/css3_box-sizing.asp" target="_blank">W3Schools</a>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Как работает свойство box-sizing? конец-->
+                <!-- Что такое схлопывание margin (margin collapsing)? -->
+                <div class="accordion-header level-3">Что такое схлопывание margin (margin collapsing)?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Схлопывание margin (margin collapsing) в CSS</h2>
+
+                        <p>
+                            <strong>Схлопывание margin</strong> — это поведение в CSS, когда вертикальные отступы
+                            (margin)
+                            соседних элементов объединяются в один отступ, вместо того чтобы складываться.
+                        </p>
+
+                        <h3>Когда происходит схлопывание:</h3>
+                        <ol>
+                            <li>
+                                <strong>Соседние элементы</strong>:
+                                <p>Когда два блочных элемента расположены друг под другом, их вертикальные margin
+                                    сливаются в один (равный
+                                    большему из них).</p>
+
+                                <code>
+                                                    div { margin: 20px 0; }<br>
+                                                    &lt;div&gt;Первый&lt;/div&gt;<br>
+                                                    &lt;div&gt;Второй&lt;/div&gt;
+                                                  </code>
+                                <p>Расстояние между блоками будет 20px (не 40px)</p>
+
+                            </li>
+                            <li>
+                                <strong>Родитель и первый/последний потомок</strong>:
+                                <p>Margin родителя и margin первого/последнего дочернего элемента схлопываются.</p>
+
+                                <code>
+                                                    .parent { margin-top: 30px; }<br>
+                                                    .child { margin-top: 20px; }<br>
+                                                    &lt;div class="parent"&gt;<br>
+                                                    &nbsp;&nbsp;&lt;div class="child"&gt;Ребенок&lt;/div&gt;<br>
+                                                    &lt;/div&gt;
+                                                  </code>
+                                <p>Общий отступ будет 30px (большее значение)</p>
+
+                            </li>
+                            <li>
+                                <strong>Пустые блоки</strong>:
+                                <p>У пустых блоков margin-top и margin-bottom также схлопываются.</p>
+                            </li>
+                        </ol>
+
+                        <h3>Когда НЕ происходит схлопывание:</h3>
+                        <ul>
+                            <li>Горизонтальные margin (никогда не схлопываются)</li>
+                            <li>Элементы с позиционированием (position: absolute/fixed)</li>
+                            <li>Элементы с display: flex/grid (и их дочерние элементы)</li>
+                            <li>Элементы с overflow (кроме visible)</li>
+                            <li>Элементы с float</li>
+                            <li>Элементы с border или padding между margin</li>
+                        </ul>
+
+                        <h3>Как контролировать схлопывание:</h3>
+                        <div style="display: flex; flex-wrap: wrap; gap: 15px; margin: 15px 0;">
+                            <div
+                                style="flex: 1; min-width: 200px; background: #e3f2fd; padding: 10px; border-radius: 5px;">
+                                <h4>Предотвратить:</h4>
+                                <ul>
+                                    <li>Добавить <code>padding: 0.1px</code></li>
+                                    <li>Добавить <code>border: 1px solid transparent</code></li>
+                                    <li>Использовать <code>overflow: auto</code></li>
+                                </ul>
+                            </div>
+                            <div
+                                style="flex: 1; min-width: 200px; background: #e8f5e9; padding: 10px; border-radius: 5px;">
+                                <h4>Использовать:</h4>
+                                <ul>
+                                    <li>Гибкие системы верстки (Flexbox/Grid)</li>
+                                    <li>Отступы только в одном направлении</li>
+                                    <li><code>gap</code> вместо margin в Flex/Grid</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h3>Почему это важно понимать:</h3>
+                        <ul>
+                            <li>Позволяет избежать "неожиданных" отступов</li>
+                            <li>Помогает создавать более предсказуемую верстку</li>
+                            <li>Упрощает расчеты пространства между элементами</li>
+                        </ul>
+
+                        <h3>Полезные ресурсы:</h3>
+                        <a href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing"
+                            target="_blank">MDN</a> |
+                        <a href="https://css-tricks.com/what-you-should-know-about-collapsing-margins/"
+                            target="_blank">CSS-Tricks</a> |
+                        <a href="https://www.joshwcomeau.com/css/rules-of-margin-collapse/" target="_blank">Подробное
+                            объяснение</a>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Что такое схлопывание margin (margin collapsing)? конец-->
+            </div>
+            <!-- ************************************************************************************ -->
+            <!-- Блочная модель (Box Model) конец-->
         </div>
         <!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
         <!-- CSS конец -->
@@ -5259,7 +5717,132 @@
         <div class="accordion-header level-1">JS</div>
         <!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
         <div class="accordion-content">
+            <!-- Основы JavaScript -->
+            <div class="accordion-header level-2">Основы JavaScript</div>
+            <!-- ************************************************************************************ -->
+            <div class="accordion-content">
+                <!-- Что такое JavaScript? Чем он отличается от Java? -->
+                <div class="accordion-header level-3">Что такое JavaScript? Чем он отличается от Java?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h3>Что такое JavaScript?</h3>
+                        <p><strong>JavaScript (JS)</strong> — это высокоуровневый, интерпретируемый язык
+                            программирования, который
+                            используется для создания интерактивных веб-страниц. Он выполняется на стороне клиента (в
+                            браузере), но также
+                            может работать на сервере (Node.js).</p>
 
+                        <h3>Основные особенности JavaScript:</h3>
+                        <ul>
+                            <li><strong>Динамическая типизация</strong> (типы данных определяются автоматически)</li>
+                            <li><strong>Поддержка ООП и функционального программирования</strong></li>
+                            <li><strong>Асинхронность</strong> (работа с событиями, промисами, <code>async/await</code>)
+                            </li>
+                            <li><strong>Интеграция с HTML/CSS</strong> (может изменять структуру и стили страницы)</li>
+                            <li><strong>Кроссплатформенность</strong> (работает во всех современных браузерах)</li>
+                        </ul>
+
+                        <h3>Чем JavaScript отличается от Java?</h3>
+                        <p>Несмотря на схожие названия, это совершенно разные языки:</p>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Критерий</th>
+                                    <th>JavaScript</th>
+                                    <th>Java</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Тип языка</strong></td>
+                                    <td>Интерпретируемый (JIT-компиляция в браузере)</td>
+                                    <td>Компилируемый (в байт-код для JVM)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Типизация</strong></td>
+                                    <td>Динамическая (типы проверяются в runtime)</td>
+                                    <td>Статическая (типы задаются явно)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Запуск</strong></td>
+                                    <td>В браузере или Node.js</td>
+                                    <td>В JVM (Java Virtual Machine)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>ООП</strong></td>
+                                    <td>Прототипное наследование</td>
+                                    <td>Классовое наследование</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Потоки</strong></td>
+                                    <td>Однопоточный (Event Loop)</td>
+                                    <td>Многопоточность</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Применение</strong></td>
+                                    <td>Веб-фронтенд, сервер (Node.js)</td>
+                                    <td>Серверные приложения, Android, десктоп</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Синтаксис</strong></td>
+                                    <td><code>function foo() { ... }</code></td>
+                                    <td><code>public void foo() { ... }</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Пример кода для сравнения:</h3>
+
+                        <p><strong>JavaScript:</strong></p>
+                        <code>
+                                                function greet(name) {<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;return "Hello, " + name;<br>
+                                                }<br>
+                                                console.log(greet("World")); // "Hello, World"
+                                            </code>
+
+                        <p><strong>Java:</strong></p>
+                        <code>
+                                                public class Main {<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;public static String greet(String name) {<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return "Hello, " + name;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args) {<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(greet("World")); // "Hello, World"<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                                }
+                                            </code>
+
+                        <h3>Ключевые выводы:</h3>
+                        <ol>
+                            <li><strong>JavaScript</strong> — для веба, <strong>Java</strong> — универсальный язык
+                                (сервер, мобильные
+                                приложения)</li>
+                            <li><strong>JS</strong> динамический, <strong>Java</strong> строго типизированный</li>
+                            <li><strong>JS</strong> работает в браузере, <strong>Java</strong> требует JVM</li>
+                            <li><strong>Название</strong> «JavaScript» было маркетинговым ходом (изначально язык
+                                назывался LiveScript)</li>
+                        </ol>
+
+                        <h3>Полезные ресурсы:</h3>
+                        <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript" target="_blank">MDN
+                            JavaScript</a> |
+                        <a href="https://learn.javascript.ru/" target="_blank">Современный учебник JavaScript</a> |
+                        <a href="https://javascript.info/" target="_blank">JavaScript.info</a> |
+                        <a href="https://eloquentjavascript.net/" target="_blank">Eloquent JavaScript</a> |
+                        <a href="https://github.com/getify/You-Dont-Know-JS" target="_blank">You Don't Know JS</a> |
+                        <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/"
+                            target="_blank">freeCodeCamp JavaScript</a> |
+                        <a href="https://www.codewars.com/" target="_blank">CodeWars</a>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Что такое JavaScript? Чем он отличается от Java? конец-->
+            </div>
+            <!-- ************************************************************************************ -->
+            <!-- Основы JavaScript конец-->
         </div>
         <!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
         <!-- JS конец -->

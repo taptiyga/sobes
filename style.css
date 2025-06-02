@@ -82,7 +82,7 @@ p {
         margin: 8px 0;
         border-radius: 4px;
         font-family: 'Consolas', monospace;
-        border: 1px solid #000;
+        border: 1px solid #ddd;
     }
 }
 
