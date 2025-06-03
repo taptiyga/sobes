@@ -8342,6 +8342,667 @@
             </div>
             <!-- ************************************************************************************ -->
             <!-- Области видимости (Scope) и Hoisting конец-->
+            <!-- Объекты и Прототипы -->
+            <div class="accordion-header level-2">Объекты и Прототипы</div>
+            <!-- ************************************************************************************ -->
+            <div class="accordion-content">
+                <!-- Как создать объект в JavaScript? -->
+                <div class="accordion-header level-3">Как создать объект в JavaScript?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Создание объектов в JavaScript</h2>
+
+                        <h3>1. Литерал объекта (наиболее распространённый способ)</h3>
+                        <code>
+                                                          const user = {<br>
+                                                          &nbsp;&nbsp;name: 'Иван',<br>
+                                                          &nbsp;&nbsp;age: 30,<br>
+                                                          &nbsp;&nbsp;isAdmin: false<br>
+                                                          };
+                                                        </code>
+
+                        <h3>2. Конструктор Object()</h3>
+                        <code>
+                                                          const book = new Object();<br>
+                                                          book.title = 'JavaScript';<br>
+                                                          book.author = 'Петров';
+                                                        </code>
+
+                        <h3>3. Функция-конструктор</h3>
+                        <code>
+                                                          function Person(name, age) {<br>
+                                                          &nbsp;&nbsp;this.name = name;<br>
+                                                          &nbsp;&nbsp;this.age = age;<br>
+                                                          }<br>
+                                                          const person = new Person('Мария', 25);
+                                                        </code>
+
+                        <h3>4. Object.create()</h3>
+                        <code>
+                                                          const proto = { greet() { console.log('Привет!'); } };<br>
+                                                          const obj = Object.create(proto);<br>
+                                                          obj.name = 'Сергей';
+                                                        </code>
+
+                        <h3>5. Классы (ES6+)</h3>
+                        <code>
+                                                          class Animal {<br>
+                                                          &nbsp;&nbsp;constructor(name) {<br>
+                                                          &nbsp;&nbsp;&nbsp;&nbsp;this.name = name;<br>
+                                                          &nbsp;&nbsp;}<br>
+                                                          }<br>
+                                                          const cat = new Animal('Мурзик');
+                                                        </code>
+
+                        <h3>6. Фабричные функции</h3>
+                        <code>
+                                                          function createUser(name) {<br>
+                                                          &nbsp;&nbsp;return {<br>
+                                                          &nbsp;&nbsp;&nbsp;&nbsp;name,<br>
+                                                          &nbsp;&nbsp;&nbsp;&nbsp;sayHi() { console.log(`Привет, ${name}!`); }<br>
+                                                          &nbsp;&nbsp;};<br>
+                                                          }<br>
+                                                          const user = createUser('Анна');
+                                                        </code>
+
+                        <h3>Особенности объектов:</h3>
+                        <ul>
+                            <li>Объекты хранят данные в виде пар <strong>ключ:значение</strong></li>
+                            <li>Ключи называют <strong>свойствами</strong> объекта</li>
+                            <li>Методы - это свойства, содержащие функции</li>
+                            <li>Объекты передаются <strong>по ссылке</strong></li>
+                        </ul>
+
+                        <h3>Полезные ресурсы:</h3>
+                        <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Working_with_Objects"
+                            target="_blank">Документация MDN</a> |
+                        <a href="https://learn.javascript.ru/object" target="_blank">Учебник JavaScript</a> |
+                        <a href="https://javascript.info/object" target="_blank">JavaScript.info</a> |
+                        <a href="https://www.digitalocean.com/community/tutorials/how-to-work-with-objects-in-javascript"
+                            target="_blank">DigitalOcean</a>
+
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Как создать объект в JavaScript? конец-->
+                <!-- Что такое this в JavaScript? Как определяется его значение? -->
+                <div class="accordion-header level-3">Что такое this в JavaScript? Как определяется его значение?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Ключевое слово this в JavaScript</h2>
+
+                        <p><strong>this</strong> - это специальная переменная, которая ссылается на контекст выполнения
+                            функции. Значение
+                            <code>this</code> определяется тем, <em>как</em> вызывается функция, а не где она объявлена.
+                        </p>
+
+                        <h3>Как определяется значение this:</h3>
+                        <table>
+                            <tr>
+                                <th>Контекст вызова</th>
+                                <th>Значение this</th>
+                                <th>Пример</th>
+                            </tr>
+                            <tr>
+                                <td>Глобальный контекст</td>
+                                <td>Глобальный объект (window в браузере)</td>
+                                <td><code>console.log(this); // window</code></td>
+                            </tr>
+                            <tr>
+                                <td>Метод объекта</td>
+                                <td>Сам объект</td>
+                                <td><code>obj.method() // this = obj</code></td>
+                            </tr>
+                            <tr>
+                                <td>Обычная функция</td>
+                                <td>Глобальный объект (в нестрогом режиме) или undefined (в строгом)</td>
+                                <td><code>function f() { console.log(this) }</code></td>
+                            </tr>
+                            <tr>
+                                <td>Конструктор (new)</td>
+                                <td>Новый созданный объект</td>
+                                <td><code>new F() // this = новый объект</code></td>
+                            </tr>
+                            <tr>
+                                <td>call/apply/bind</td>
+                                <td>Явно указанный объект</td>
+                                <td><code>func.call(obj) // this = obj</code></td>
+                            </tr>
+                            <tr>
+                                <td>Стрелочная функция</td>
+                                <td>Берется из внешнего контекста (лексическое this)</td>
+                                <td><code>() => { console.log(this) }</code></td>
+                            </tr>
+                        </table>
+
+                        <h3>Практические примеры:</h3>
+                        <ul>
+                            <li>
+                                <code>
+                                              // 1. Метод объекта<br>
+                                              const user = {<br>
+                                              &nbsp;&nbsp;name: 'Alex',<br>
+                                              &nbsp;&nbsp;sayHi() { console.log(this.name) }<br>
+                                              };<br>
+                                              user.sayHi(); // Alex
+                                            </code>
+                            </li>
+                            <br>
+                            <li><code>
+                                            // 2. Потеря контекста<br>
+                                              const hi = user.sayHi;<br>
+                                              hi(); // undefined (в строгом режиме)
+                                          </code></li>
+                            <br>
+                            <li><code>
+                                             // 3. Явное указание this<br>
+                                              hi.call(user); // Alex
+                                          </code></li>
+                            <br>
+                            <li><code>
+                                                 // 4. Стрелочная функция<br>
+                                              const group = {<br>
+                                              &nbsp;&nbsp;title: "Наш класс",<br>
+                                              &nbsp;&nbsp;students: ["Вася", "Петя"],<br>
+                                              &nbsp;&nbsp;showList() {<br>
+                                              &nbsp;&nbsp;&nbsp;&nbsp;this.students.forEach(<br>
+                                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;student => console.log(this.title + ': ' + student)<br>
+                                              &nbsp;&nbsp;&nbsp;&nbsp;);<br>
+                                              &nbsp;&nbsp;}<br>
+                                              };
+                                          </code></li>
+
+
+                        </ul>
+
+
+                        <h3>Основные правила:</h3>
+                        <ul>
+                            <li>Значение <code>this</code> определяется в момент вызова функции</li>
+                            <li>Стрелочные функции не имеют своего <code>this</code></li>
+                            <li>Можно явно задать <code>this</code> через <code>call/apply/bind</code></li>
+                            <li>В классах <code>this</code> ссылается на экземпляр класса</li>
+                        </ul>
+
+                        <h3>Полезные ресурсы:</h3>
+
+                        <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/this"
+                            target="_blank">Документация MDN</a> |
+                        <a href="https://learn.javascript.ru/object-methods" target="_blank">Учебник JavaScript</a>
+                        |
+                        <a href="https://javascript.info/object-methods" target="_blank">JavaScript.info</a> |
+                        <a href="https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/"
+                            target="_blank">Подробное
+                            объяснение</a>
+
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Что такое this в JavaScript? Как определяется его значение? конец-->
+                <!-- Разница между call, apply и bind. -->
+                <div class="accordion-header level-3">Разница между call, apply и bind.</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Разница между call, apply и bind в JavaScript</h2>
+
+                        <p>Все три метода используются для управления значением <code>this</code> в функциях, но
+                            работают по-разному:</p>
+
+                        <table>
+                            <tr>
+                                <th>Метод</th>
+                                <th>Описание</th>
+                                <th>Передача аргументов</th>
+                                <th>Момент вызова</th>
+                            </tr>
+                            <tr>
+                                <td><code>call()</code></td>
+                                <td>Вызывает функцию с указанным <code>this</code> и аргументами</td>
+                                <td>Через запятую</td>
+                                <td>Немедленно</td>
+                            </tr>
+                            <tr>
+                                <td><code>apply()</code></td>
+                                <td>Вызывает функцию с указанным <code>this</code> и массивом аргументов</td>
+                                <td>Массивом</td>
+                                <td>Немедленно</td>
+                            </tr>
+                            <tr>
+                                <td><code>bind()</code></td>
+                                <td>Создает новую функцию с привязанным <code>this</code> (и аргументами, если нужно)
+                                </td>
+                                <td>Через запятую</td>
+                                <td>Позже</td>
+                            </tr>
+                        </table>
+
+                        <h3>Примеры использования:</h3>
+
+                        <h4>1. Метод call()</h4>
+                        <p>
+                            <code>
+                                              function greet(greeting, punctuation) {<br>
+                                              &nbsp;&nbsp;console.log(`${greeting}, ${this.name}${punctuation}`);<br>
+                                              }<br><br>
+                                              
+                                              const person = { name: 'Анна' };<br>
+                                              greet.call(person, 'Привет', '!'); // Привет, Анна!
+                                            </code>
+                        </p>
+
+
+                        <h4>2. Метод apply()</h4>
+                        <p>
+                            <code>
+                                              function introduce(age, profession) {<br>
+                                              &nbsp;&nbsp;console.log(`Меня зовут ${this.name}, мне ${age}, я ${profession}`);<br>
+                                              }<br><br>
+                                              
+                                              const person = { name: 'Иван' };<br>
+                                              introduce.apply(person, [30, 'разработчик']); // Меня зовут Иван, мне 30, я разработчик
+                                            </code>
+                        </p>
+
+
+                        <h4>3. Метод bind()</h4>
+                        <p>
+                            <code>
+                                              function logThis() {<br>
+                                              &nbsp;&nbsp;console.log(this);<br>
+                                              }<br><br>
+                                              
+                                              const boundFunc = logThis.bind({ id: 42 });<br>
+                                              boundFunc(); // { id: 42 }<br><br>
+                                              
+                                              // Частичное применение
+                                              function multiply(a, b) { return a * b; }<br>
+                                              const double = multiply.bind(null, 2);<br>
+                                              console.log(double(5)); // 10
+                                            </code>
+                        </p>
+
+
+                        <h3>Ключевые различия:</h3>
+                        <ul>
+                            <li><strong>call/apply</strong> вызывают функцию сразу, <strong>bind</strong> создает новую
+                                функцию</li>
+                            <li><strong>call</strong> принимает аргументы через запятую, <strong>apply</strong> -
+                                массивом</li>
+                            <li><strong>bind</strong> позволяет делать частичное применение (каррирование)</li>
+                            <li>Все три метода первым аргументом принимают контекст (<code>this</code>)</li>
+                        </ul>
+
+                        <h3>Когда использовать:</h3>
+                        <ul>
+                            <li><strong>call</strong> - когда известны все аргументы на момент вызова</li>
+                            <li><strong>apply</strong> - когда аргументы динамические или в виде массива</li>
+                            <li><strong>bind</strong> - когда нужно создать функцию с фиксированным контекстом для
+                                последующего вызова</li>
+                        </ul>
+
+                        <h3>Полезные ресурсы:</h3>
+                        <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Function/call"
+                            target="_blank">MDN call()</a> |
+                        <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"
+                            target="_blank">MDN apply()</a> |
+                        <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Function/bind"
+                            target="_blank">MDN bind()</a> |
+                        <a href="https://learn.javascript.ru/call-apply-decorators" target="_blank">Учебник
+                            JavaScript</a>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Разница между call, apply и bind. конец-->
+                <!-- Что такое прототипное наследование? -->
+                <div class="accordion-header level-3">Что такое прототипное наследование?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Прототипное наследование в JavaScript</h2>
+
+                        <p><strong>Прототипное наследование</strong> - это механизм в JavaScript, при котором объекты
+                            могут наследовать
+                            свойства и методы от других объектов через цепочку прототипов.</p>
+
+                        <h3>Основные понятия:</h3>
+                        <ul>
+                            <li><strong>Прототип (__proto__)</strong> - объект, от которого наследуются свойства</li>
+                            <li><strong>prototype</strong> - свойство функций-конструкторов, содержащее объект для
+                                наследования</li>
+                            <li><strong>Цепочка прототипов</strong> - последовательность объектов, по которой движется
+                                поиск свойства</li>
+                        </ul>
+
+                        <h3>Как работает прототипное наследование:</h3>
+                        <p>
+                            <code>
+                                              // Базовый объект (прототип)<br>
+                                              const animal = {<br>
+                                              &nbsp;&nbsp;eats: true,<br>
+                                              &nbsp;&nbsp;walk() { console.log("Гуляет"); }<br>
+                                              };<br><br>
+                                          
+                                              // Создаем объект, наследующий от animal<br>
+                                              const rabbit = {<br>
+                                              &nbsp;&nbsp;jumps: true,<br>
+                                              &nbsp;&nbsp;__proto__: animal  // устанавливаем прототип<br>
+                                              };<br><br>
+                                          
+                                              console.log(rabbit.eats); // true (из прототипа)<br>
+                                              rabbit.walk(); // "Гуляет" (из прототипа)
+                                            </code>
+                        </p>
+
+
+                        <h3>Прототипы в функциях-конструкторах:</h3>
+                        <p>
+                            <code>
+                                              function Animal(name) {<br>
+                                              &nbsp;&nbsp;this.name = name;<br>
+                                              }<br><br>
+                                          
+                                              // Добавляем метод в прототип<br>
+                                              Animal.prototype.sayName = function() {<br>
+                                              &nbsp;&nbsp;console.log(this.name);<br>
+                                              };<br><br>
+                                          
+                                              const cat = new Animal("Мурзик");<br>
+                                              cat.sayName(); // "Мурзик"
+                                            </code>
+                        </p>
+
+
+                        <h3>Цепочка прототипов:</h3>
+                        <p>При обращении к свойству объекта JavaScript:</p>
+                        <ol>
+                            <li>Ищет свойство в самом объекте</li>
+                            <li>Если не находит, ищет в прототипе (__proto__)</li>
+                            <li>Продолжает поиск по цепочке прототипов</li>
+                            <li>Возвращает undefined, если свойство не найдено</li>
+                        </ol>
+
+                        <h3>Современные методы работы с прототипами:</h3>
+                        <p>
+                            <code>
+                                              // Получение прототипа<br>
+                                              Object.getPrototypeOf(rabbit); // animal<br><br>
+                                          
+                                              // Установка прототипа<br>
+                                              Object.setPrototypeOf(rabbit, animal);<br><br>
+                                          
+                                              // Создание объекта с указанным прототипом<br>
+                                              const newRabbit = Object.create(animal);
+                                            </code>
+                        </p>
+
+
+                        <h3>Отличия от классического наследования:</h3>
+                        <ul>
+                            <li>Нет классов (до ES6), только объекты</li>
+                            <li>Наследование реализуется через ссылки между объектами</li>
+                            <li>Динамическое изменение прототипов влияет на все экземпляры</li>
+                        </ul>
+
+                        <h3>Полезные ресурсы:</h3>
+                        <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Inheritance_and_the_prototype_chain"
+                            target="_blank">Документация MDN</a> |
+                        <a href="https://learn.javascript.ru/prototype-inheritance" target="_blank">Учебник
+                            JavaScript</a> |
+                        <a href="https://javascript.info/prototype-inheritance" target="_blank">JavaScript.info</a> |
+                        <a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9"
+                            target="_blank">Подробное сравнение</a>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Что такое прототипное наследование? конец-->
+                <!-- Как работает Object.create()? -->
+                <div class="accordion-header level-3">Как работает Object.create()?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Метод Object.create() в JavaScript</h2>
+
+                        <p><strong>Object.create()</strong> создаёт новый объект, используя существующий объект в
+                            качестве прототипа нового
+                            создаваемого объекта.</p>
+
+                        <h3>Синтаксис:</h3>
+                        <p>
+                            <code>
+                                              Object.create(proto, [propertiesObject])
+                                            </code>
+                        </p>
+
+
+                        <h3>Параметры:</h3>
+                        <ul>
+                            <li><strong>proto</strong> - объект, который должен быть прототипом создаваемого объекта
+                            </li>
+                            <li><strong>propertiesObject</strong> (необязательный) - объект со свойствами, которые будут
+                                добавлены к новому
+                                объекту</li>
+                        </ul>
+
+                        <h3>Примеры использования:</h3>
+
+                        <h4>1. Простое создание объекта с прототипом</h4>
+                        <p>
+                            <code>
+                                              const animal = {<br>
+                                              &nbsp;&nbsp;eats: true,<br>
+                                              &nbsp;&nbsp;walk() { console.log("Гуляет"); }<br>
+                                              };<br><br>
+                                              
+                                              const rabbit = Object.create(animal);<br>
+                                              rabbit.jumps = true;<br><br>
+                                              
+                                              console.log(rabbit.eats); // true (из прототипа)<br>
+                                              rabbit.walk(); // "Гуляет" (из прототипа)
+                                            </code>
+                        </p>
+
+
+                        <h4>2. Создание с дополнительными свойствами</h4>
+                        <p>
+                            <code>
+                                              const person = Object.create(null, {<br>
+                                              &nbsp;&nbsp;name: {<br>
+                                              &nbsp;&nbsp;&nbsp;&nbsp;value: "Иван",<br>
+                                              &nbsp;&nbsp;&nbsp;&nbsp;writable: true,<br>
+                                              &nbsp;&nbsp;&nbsp;&nbsp;enumerable: true,<br>
+                                              &nbsp;&nbsp;&nbsp;&nbsp;configurable: true<br>
+                                              &nbsp;&nbsp;},<br>
+                                              &nbsp;&nbsp;age: {<br>
+                                              &nbsp;&nbsp;&nbsp;&nbsp;value: 30,<br>
+                                              &nbsp;&nbsp;&nbsp;&nbsp;writable: true<br>
+                                              &nbsp;&nbsp;}<br>
+                                              });
+                                            </code>
+                        </p>
+
+
+                        <h4>3. Создание "чистого" объекта без прототипа</h4>
+                        <p>
+                            <code>
+                                              const dict = Object.create(null); // Без прототипа<br>
+                                              console.log("toString" in dict); // false
+                                            </code>
+                        </p>
+
+
+                        <h3>Отличия от других способов:</h3>
+                        <ul>
+                            <li><strong>От {}:</strong> Object.create() позволяет явно задать прототип</li>
+                            <li><strong>От конструкторов:</strong> Не требует создания функции-конструктора</li>
+                            <li><strong>От __proto__:</strong> Более стандартизированный способ</li>
+                        </ul>
+
+                        <h3>Применение:</h3>
+                        <ul>
+                            <li>Чистое прототипное наследование</li>
+                            <li>Создание объектов без стандартных методов (например, для словарей)</li>
+                            <li>Паттерн "Фабрика объектов"</li>
+                            <li>Полифилы для новых возможностей JavaScript</li>
+                        </ul>
+
+                        <h3>Под капотом:</h3>
+                        <div>Object.create() фактически выполняет:</div>
+                        <p>
+                            <code>
+                                              function create(proto) {<br>
+                                              &nbsp;&nbsp;function F() {}<br>
+                                              &nbsp;&nbsp;F.prototype = proto;<br>
+                                              &nbsp;&nbsp;return new F();<br>
+                                              }
+                                            </code>
+                        </p>
+
+
+                        <h3>Полезные ресурсы:</h3>
+                        <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/create"
+                            target="_blank">Документация MDN</a> |
+                        <a href="https://learn.javascript.ru/prototype-methods#object-create" target="_blank">Учебник
+                            JavaScript</a> |
+                        <a href="https://javascript.info/prototype-methods#object-create"
+                            target="_blank">JavaScript.info</a>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Как работает Object.create()? конец-->
+                <!-- Разница между __proto__ и prototype. -->
+                <div class="accordion-header level-3">Разница между __proto__ и prototype.</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Разница между __proto__ и prototype в JavaScript</h2>
+
+                        <p>В JavaScript <code>__proto__</code> и <code>prototype</code> связаны с прототипным
+                            наследованием, но служат
+                            разным целям:</p>
+
+                        <table>
+                            <tr>
+                                <th></th>
+                                <th><code>__proto__</code></th>
+                                <th><code>prototype</code></th>
+                            </tr>
+                            <tr>
+                                <td><strong>Тип</strong></td>
+                                <td>Свойство экземпляра объекта</td>
+                                <td>Свойство функции-конструктора</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Назначение</strong></td>
+                                <td>Ссылка на прототип объекта</td>
+                                <td>Объект-прототип для будущих экземпляров</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Когда используется</strong></td>
+                                <td>У всех объектов</td>
+                                <td>Только у функций (кроме стрелочных)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Стандарт</strong></td>
+                                <td>Устаревшее (но широко поддерживаемое)</td>
+                                <td>Стандартное</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Рекомендуемая альтернатива</strong></td>
+                                <td>Object. getPrototypeOf() / Object. setPrototypeOf()</td>
+                                <td>Нет альтернативы (основной механизм)</td>
+                            </tr>
+                        </table>
+
+                        <h3>Примеры:</h3>
+
+                        <h4>1. prototype в функциях-конструкторах</h4>
+                        <p>
+                            <code>
+                                              function Animal(name) {<br>
+                                              &nbsp;&nbsp;this.name = name;<br>
+                                              }<br><br>
+                                              
+                                              // Добавляем метод в prototype<br>
+                                              Animal.prototype.sayName = function() {<br>
+                                              &nbsp;&nbsp;console.log(this.name);<br>
+                                              };<br><br>
+                                              
+                                              const cat = new Animal("Мурзик");<br>
+                                              // __proto__ кота ссылается на Animal.prototype<br>
+                                              console.log(cat.__proto__ === Animal.prototype); // true
+                                            </code>
+                        </p>
+
+
+                        <h4>2. Цепочка прототипов</h4>
+                        <p>
+                            <code>
+                                              const animal = { eats: true };<br>
+                                              const rabbit = { jumps: true };<br><br>
+                                              
+                                              // Устанавливаем прототип через __proto__<br>
+                                              rabbit.__proto__ = animal;<br><br>
+                                              
+                                              console.log(rabbit.eats); // true (из прототипа)<br>
+                                              console.log(rabbit.__proto__ === animal); // true
+                                            </code>
+                        </p>
+
+
+                        <h3>Основные отличия:</h3>
+                        <ul>
+                            <li><code>prototype</code> есть только у функций и используется при вызове через
+                                <code>new</code>
+                            </li>
+                            <li><code>__proto__</code> есть у всех объектов и указывает на их прототип</li>
+                            <li>При создании объекта через <code>new</code>, <code>__proto__</code> нового объекта
+                                ссылается на
+                                <code>prototype</code> конструктора
+                            </li>
+                        </ul>
+
+                        <h3>Современные аналоги:</h3>
+                        <ul>
+                            <li>Вместо <code>obj.__proto__</code> используйте <code>Object.getPrototypeOf(obj)</code>
+                            </li>
+                            <li>Вместо <code>obj.__proto__ = newProto</code> используйте
+                                <code>Object.setPrototypeOf(obj, newProto)</code>
+                            </li>
+                            <li>Для создания объектов с нужным прототипом используйте <code>Object.create()</code></li>
+                        </ul>
+
+                        <h3>Визуализация связи:</h3>
+                        <p>
+                            <code>
+                                              function Foo() {}<br>
+                                              const bar = new Foo();<br><br>
+                                              
+                                              // Связь между ними:<br>
+                                              bar.__proto__ === Foo.prototype // true<br>
+                                              Foo.prototype.__proto__ === Object.prototype // true<br>
+                                              Object.prototype.__proto__ === null // true
+                                            </code>
+                        </p>
+
+
+                        <h3>Полезные ресурсы:</h3>
+                        <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/proto"
+                            target="_blank">MDN __proto__</a> |
+                        <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Function/prototype"
+                            target="_blank">MDN prototype</a> |
+                        <a href="https://learn.javascript.ru/prototype-inheritance" target="_blank">Учебник
+                            JavaScript</a> |
+                        <a href="https://javascript.info/prototype-inheritance" target="_blank">JavaScript.info</a>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Разница между __proto__ и prototype. конец-->
+            </div>
+            <!-- ************************************************************************************ -->
+            <!-- Объекты и Прототипы конец-->
         </div>
         <!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
         <!-- JS конец -->
