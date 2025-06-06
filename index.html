@@ -9697,6 +9697,405 @@
             </div>
             <!-- ************************************************************************************ -->
             <!-- Асинхронность конец-->
+            <!-- Работа с DOM -->
+            <div class="accordion-header level-2">Работа с DOM</div>
+            <!-- ************************************************************************************ -->
+            <div class="accordion-content">
+                <!-- Что такое DOM? Как JavaScript взаимодействует с DOM? -->
+                <div class="accordion-header level-3">Что такое DOM? Как JavaScript взаимодействует с DOM?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Что такое DOM?</h2>
+                        <p>
+                            <strong>DOM (Document Object Model)</strong> – это программный интерфейс, который
+                            представляет HTML-документ
+                            в виде древовидной структуры. Каждый элемент, атрибут и текстовый фрагмент становятся узлами
+                            этого дерева,
+                            что позволяет JavaScript взаимодействовать с содержимым страницы.
+                        </p>
+
+                        <h2>Основные методы работы с DOM в JavaScript</h2>
+                        <p>JavaScript предоставляет множество способов для манипуляции DOM-деревом:</p>
+
+                        <h3>1. Выбор элементов</h3>
+                        <ul>
+                            <li><code>document.getElementById('id')</code> – выбор элемента по уникальному
+                                идентификатору</li>
+                            <li><code>document.querySelector('.class')</code> – выбор первого элемента по CSS-селектору
+                            </li>
+                            <li><code>document.querySelectorAll('div')</code> – выбор всех элементов по селектору</li>
+                        </ul>
+
+                        <h3>2. Изменение содержимого</h3>
+                        <ul>
+                            <li><code>element.textContent</code> – работа с текстовым содержимым</li>
+                            <li><code>element.innerHTML</code> – работа с HTML-содержимым</li>
+                            <li><code>element.setAttribute()</code> – управление атрибутами элемента</li>
+                        </ul>
+
+                        <h3>3. Управление стилями</h3>
+                        <p><code>element.style.color = 'red'</code> – изменение CSS-свойств напрямую</p>
+
+                        <h3>4. Создание и удаление элементов</h3>
+                        <ul>
+                            <li><code>document.createElement('div')</code> – создание нового элемента</li>
+                            <li><code>parentElement.appendChild()</code> – добавление элемента в DOM</li>
+                            <li><code>element.remove()</code> – удаление элемента из DOM</li>
+                        </ul>
+
+                        <h3>5. Работа с событиями</h3>
+                        <p><code>element.addEventListener('click', function() { ... })</code> – обработка
+                            пользовательских действий</p>
+
+                        <h3>Практический пример</h3>
+                        <p>
+                            <code>
+                                                    const btn = document.querySelector('#myButton');<br>
+                                                    btn.addEventListener('click', () => {<br>
+                                                    &nbsp;&nbsp;document.body.style.backgroundColor = 'lightblue';<br>
+                                                    });
+                                                </code>
+                        </p>
+
+                        <h3>Полезные ресурсы</h3>
+                        <a href="https://developer.mozilla.org/ru/docs/Web/API/Document_Object_Model"
+                            target="_blank">MDN</a> |
+                        <a href="https://learn.javascript.ru/document" target="_blank">LearnJS</a> |
+                        <a href="https://www.w3schools.com/js/js_htmldom.asp" target="_blank">W3Schools</a>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Что такое DOM? Как JavaScript взаимодействует с DOM? конец-->
+                <!-- Методы поиска элементов (getElementById, querySelector и др.). -->
+                <div class="accordion-header level-3">Методы поиска элементов (getElementById, querySelector и др.).
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Методы поиска элементов в DOM</h2>
+                        <p>JavaScript предоставляет несколько методов для поиска элементов в DOM-дереве:</p>
+
+                        <h3>1. Поиск по идентификатору</h3>
+                        <p><code>document.getElementById('elementId')</code></p>
+                        <ul>
+                            <li>Возвращает один элемент с указанным ID</li>
+                            <li>Самый быстрый метод поиска</li>
+                            <li>Пример: <code>const header = document.getElementById('header')</code></li>
+                        </ul>
+
+                        <h3>2. Поиск по имени тега</h3>
+                        <p><code>document.getElementsByTagName('div')</code></p>
+                        <ul>
+                            <li>Возвращает коллекцию элементов с указанным тегом</li>
+                            <li>Коллекция "живая" - автоматически обновляется при изменении DOM</li>
+                            <li>Пример: <code>const divs = document.getElementsByTagName('div')</code></li>
+                        </ul>
+
+                        <h3>3. Поиск по классу</h3>
+                        <p><code>document.getElementsByClassName ('className')</code></p>
+                        <ul>
+                            <li>Возвращает коллекцию элементов с указанным классом</li>
+                            <li>Также является "живой" коллекцией</li>
+                            <li>Пример: <code>const items = document.getElementsByClassName('menu-item')</code></li>
+                        </ul>
+
+                        <h3>4. Универсальные селекторы</h3>
+                        <p><code>document.querySelector('.class')</code></p>
+                        <p><code>document.querySelectorAll('div.class')</code></p>
+                        <ul>
+                            <li><code>querySelector()</code> возвращает первый подходящий элемент</li>
+                            <li><code>querySelectorAll()</code> возвращает статичную коллекцию всех подходящих элементов
+                            </li>
+                            <li>Поддерживают сложные CSS-селекторы</li>
+                            <li>Примеры:
+                                <code>const btn = document.querySelector('#submit-btn')</code><br>
+                                <code>const images = document.querySelectorAll ('img.thumbnail')</code>
+                            </li>
+                        </ul>
+
+                        <h3>5. Поиск по имени атрибута</h3>
+                        <p><code>document.getElementsByName('username')</code></p>
+                        <ul>
+                            <li>Используется для поиска элементов с атрибутом name</li>
+                            <li>Часто применяется для работы с формами</li>
+                            <li>Пример: <code>const inputs = document.getElementsByName('email')</code></li>
+                        </ul>
+
+                        <h3>Сравнение производительности</h3>
+                        <p>Скорость работы методов (от быстрого к медленному):</p>
+                        <ol>
+                            <li><code>getElementById()</code></li>
+                            <li><code>getElementsByClassName()</code></li>
+                            <li><code>getElementsByTagName()</code></li>
+                            <li><code>querySelector()</code></li>
+                            <li><code>querySelectorAll()</code></li>
+                        </ol>
+
+                        <h3>Полезные ресурсы</h3>
+                        <a href="https://developer.mozilla.org/ru/docs/Web/API/Document_Object_Model/Locating_DOM_elements_using_selectors"
+                            target="_blank">MDN</a> |
+                        <a href="https://learn.javascript.ru/searching-elements-dom" target="_blank">LearnJS</a> |
+                        <a href="https://www.w3schools.com/js/js_htmldom_elements.asp" target="_blank">W3Schools</a>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Методы поиска элементов (getElementById, querySelector и др.). конец-->
+                <!-- Как добавить/удалить класс у элемента? -->
+                <div class="accordion-header level-3">Как добавить/удалить класс у элемента?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Добавление и удаление классов у элементов</h2>
+                        <p>В JavaScript есть несколько способов управления классами элементов DOM:</p>
+
+                        <h3>1. Основные методы classList</h3>
+                        <ul>
+                            <li>
+                                <code>element.classList.add('className')</code> - добавляет класс
+                                <div>Пример: <code>document.getElementById('myDiv'). classList.add('active')</code>
+                                </div>
+                            </li>
+                            <li>
+                                <code>element.classList.remove('className')</code> - удаляет класс
+                                <div>Пример: <code>document.querySelector('.item'). classList.remove('hidden')</code>
+                                </div>
+                            </li>
+                            <li>
+                                <code>element.classList.toggle('className')</code> - переключает класс (добавляет, если
+                                отсутствует, и
+                                удаляет, если присутствует)
+                                <div>Пример: <code>button.classList.toggle('collapsed')</code></div>
+                            </li>
+                            <li>
+                                <code>element.classList.contains('className')</code> - проверяет наличие класса
+                                (возвращает true/false)
+                                <div>Пример: <code>if (div.classList.contains('active')) {...}</code></div>
+                            </li>
+                        </ul>
+
+                        <h3>2. Альтернативные способы</h3>
+                        <ul>
+                            <li>
+                                <strong>Через className:</strong>
+                                <div><code>element.className = 'class1 class2'</code> - полностью перезаписывает все
+                                    классы</div>
+                                <div><code>element.className += ' newClass'</code> - добавляет класс (не
+                                    рекомендуется)
+                                </div>
+                            </li>
+                            <li>
+                                <strong>Через setAttribute:</strong>
+                                <div><code>element.setAttribute('class', 'newClass')</code></div>
+                            </li>
+                        </ul>
+
+                        <h3>3. Добавление/удаление нескольких классов</h3>
+                        <p><code>element.classList.add('class1', 'class2', 'class3')</code></p>
+                        <p><code>element.classList.remove('class1', 'class2')</code></p>
+                        <p>Пример:
+                            <code>
+                                                    const modal = document.getElementById('modal');
+                                                    modal.classList.add('open', 'visible', 'large');
+                                                </code>
+                        </p>
+
+                        <h3>4. Практический пример</h3>
+                        <p>
+                            <code>
+                                                    // Переключение активного состояния кнопки<br>
+                                                    const button = document.querySelector('.toggle-btn');<br>
+                                                    button.addEventListener('click', function() {<br>
+                                                    &nbsp;&nbsp;this.classList.toggle('active');<br>
+                                                    });
+                                                </code>
+                        </p>
+
+                        <h3>Важные нюансы</h3>
+                        <ul>
+                            <li>Методы classList работают начиная с IE10</li>
+                            <li>Для старых браузеров можно использовать polyfill или работу через className</li>
+                            <li>classList обеспечивает лучшую производительность, чем манипуляции с className</li>
+                        </ul>
+
+                        <h3>Полезные ресурсы</h3>
+                        <a href="https://developer.mozilla.org/ru/docs/Web/API/Element/classList" target="_blank">MDN
+                            classList</a> |
+                        <a href="https://learn.javascript.ru/styles-and-classes" target="_blank">LearnJS</a> |
+                        <a href="https://www.w3schools.com/jsref/prop_element_classlist.asp"
+                            target="_blank">W3Schools</a>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Как добавить/удалить класс у элемента? конец-->
+                <!-- Как создать и добавить элемент в DOM? -->
+                <div class="accordion-header level-3">Как создать и добавить элемент в DOM?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Создание и добавление элементов в DOM</h2>
+                        <p>JavaScript предоставляет несколько способов создания новых элементов и их добавления в
+                            документ:</p>
+
+                        <h3>1. Создание нового элемента</h3>
+                        <p><code>document.createElement('tagName')</code> - создает новый элемент</p>
+                        <p>Пример: <code>const newDiv = document.createElement('div')</code></p>
+
+                        <h3>2. Добавление элемента в DOM</h3>
+                        <ul>
+                            <li>
+                                <code>parentElement.appendChild(newElement)</code> - добавляет элемент в конец родителя
+                                <div>Пример: <code>document.body.appendChild(newDiv)</code></div>
+                            </li>
+                            <li>
+                                <code>parentElement.insertBefore(newElement, referenceElement)</code> - вставляет
+                                элемент перед указанным
+                                <div>Пример: <code>list.insertBefore(newItem, list.firstChild)</code></div>
+                            </li>
+                            <li>
+                                <code>parentElement.append(...nodes)</code> - добавляет несколько элементов или
+                                текстовых узлов
+                                <div>Пример: <code>container.append(div1, div2, "Текст")</code></div>
+                            </li>
+                            <li>
+                                <code>parentElement.prepend(...nodes)</code> - добавляет элементы в начало родителя
+                                <div>Пример: <code>list.prepend(newFirstItem)</code></div>
+                            </li>
+                        </ul>
+
+                        <h3>3. Добавление содержимого и атрибутов</h3>
+                        <ul>
+                            <li><code>element.textContent = 'Текст'</code> - добавляет текстовое содержимое</li>
+                            <li><code>element.innerHTML = '&lt;span&gt;HTML&lt;/span&gt;'</code> - добавляет
+                                HTML-содержимое</li>
+                            <li><code>element.setAttribute('attr', 'value')</code> - добавляет атрибут</li>
+                            <li><code>element.classList.add('class')</code> - добавляет класс</li>
+                        </ul>
+
+                        <h3>4. Полный пример создания элемента</h3>
+                        <p>
+                            <code>
+                                                    // Создаем новый элемент<br>
+                                                    const newParagraph = document.createElement('p');<br>
+                                                    newParagraph.textContent = 'Это новый параграф';<br>
+                                                    newParagraph.classList.add('highlight');<br>
+                                                    newParagraph.setAttribute('id', 'p1');<br><br>
+                                                    
+                                                    // Добавляем в документ<br>
+                                                    document.querySelector('.content'). appendChild(newParagraph);
+                                                </code>
+                        </p>
+
+                        <h3>5. Альтернативные методы</h3>
+                        <ul>
+                            <li>
+                                <strong>Через innerHTML:</strong>
+                                <div><code>container.innerHTML += '&lt;div&gt;Новый элемент&lt;/div&gt;'</code></div>
+                                <div class="note">Не рекомендуется - перезаписывает все содержимое и может вызвать
+                                    проблемы с
+                                    производительностью</div>
+                            </li>
+                            <li>
+                                <strong>insertAdjacentHTML:</strong>
+                                <div>
+                                    <code>element.insertAdjacentHTML('beforeend', '&lt;div&gt;Новый&lt;/div&gt;')</code>
+                                </div>
+                                <div>Позиции: 'beforebegin', 'afterbegin', 'beforeend', 'afterend'</div>
+                            </li>
+                        </ul>
+
+                        <h3>6. Удаление элементов</h3>
+                        <ul>
+                            <li><code>element.remove()</code> - удаляет элемент из DOM</li>
+                            <li><code>parent.removeChild(child)</code> - альтернативный способ удаления</li>
+                        </ul>
+
+                        <h3>Полезные ресурсы</h3>
+                        <a href="https://developer.mozilla.org/ru/docs/Web/API/Document/createElement"
+                            target="_blank">MDN createElement</a>
+                        |
+                        <a href="https://learn.javascript.ru/modifying-document" target="_blank">LearnJS</a> |
+                        <a href="https://www.w3schools.com/js/js_htmldom_nodes.asp" target="_blank">W3Schools</a>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Как создать и добавить элемент в DOM? конец-->
+                <!-- Что такое Event Delegation? -->
+                <div class="accordion-header level-3">Что такое Event Delegation?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Что такое Event Delegation (Делегирование событий)?</h2>
+                        <p><strong>Event Delegation</strong> — это паттерн в JavaScript, при котором обработчики событий
+                            назначаются
+                            родительскому элементу, а не каждому дочернему элементу отдельно. События от дочерних
+                            элементов "всплывают"
+                            (bubble up) и обрабатываются родителем.</p>
+
+                        <h3>Как это работает?</h3>
+                        <p>Вместо того чтобы вешать обработчик на каждый элемент:</p>
+                        <p><code>
+                                                // Плохой подход (для каждого элемента отдельный обработчик)<br>
+                                                document.querySelectorAll('.item'). forEach(item => {<br>
+                                                &nbsp;&nbsp;item.addEventListener('click', handleClick);<br>
+                                                });
+                                            </code></p>
+
+                        <p>Мы вешаем один обработчик на родителя:</p>
+                        <p><code>
+                                                // Хороший подход (делегирование событий)<br>
+                                                document.querySelector('.list'). addEventListener('click', function(event) {<br>
+                                                &nbsp;&nbsp;if (event.target.classList.contains('item')) {<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;// Обработка клика по .item<br>
+                                                &nbsp;&nbsp;}<br>
+                                                });
+                                            </code></p>
+
+                        <h3>Преимущества делегирования событий</h3>
+                        <ul>
+                            <li><strong>Экономия памяти:</strong> Используется меньше обработчиков</li>
+                            <li><strong>Динамические элементы:</strong> Работает для элементов, добавленных позже</li>
+                            <li><strong>Производительность:</strong> Меньше нагрузки при инициализации</li>
+                            <li><strong>Упрощение кода:</strong> Меньше дублирования</li>
+                        </ul>
+
+                        <h3>Когда использовать?</h3>
+                        <ul>
+                            <li>Для списков и таблиц с множеством элементов</li>
+                            <li>При работе с динамически добавляемыми элементами</li>
+                            <li>Когда нужно обрабатывать одинаковые события на группе элементов</li>
+                        </ul>
+
+                        <h3>Практический пример</h3>
+                        <p><code>
+                                                // Делегирование для выпадающего меню<br>
+                                                document.querySelector('.dropdown'). addEventListener('click', function(e) {<br>
+                                                &nbsp;&nbsp;if (e.target.tagName === 'BUTTON') {<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;e.target.classList.toggle('active');<br>
+                                                &nbsp;&nbsp;}<br>
+                                                });
+                                            </code></p>
+
+                        <h3>Важные нюансы</h3>
+                        <ul>
+                            <li>Используйте <code>event.target</code> для определения исходного элемента</li>
+                            <li>Можно проверять <code>event.target.matches(selector)</code></li>
+                            <li>Работает только для событий, которые всплывают (click, change и др.)</li>
+                            <li>Не работает для событий, которые не всплывают (focus, blur и др.)</li>
+                        </ul>
+
+                        <h3>Полезные ресурсы</h3>
+                        <a href="https://learn.javascript.ru/event-delegation" target="_blank">LearnJS</a> |
+                        <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#event_delegation"
+                            target="_blank">MDN</a> |
+                        <a href="https://davidwalsh.name/event-delegate" target="_blank">David Walsh Blog</a>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Что такое Event Delegation? конец-->
+            </div>
+            <!-- ************************************************************************************ -->
+            <!-- Работа с DOM конец-->
         </div>
         <!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
         <!-- JS конец -->
