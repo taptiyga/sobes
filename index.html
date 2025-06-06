@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Трехуровневый Аккордеон</title>
+    <title>Список вопросов по Frontend</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -9003,6 +9003,700 @@
             </div>
             <!-- ************************************************************************************ -->
             <!-- Объекты и Прототипы конец-->
+            <!-- Асинхронность -->
+            <div class="accordion-header level-2">Асинхронность</div>
+            <!-- ************************************************************************************ -->
+            <div class="accordion-content">
+                <!-- Что такое Event Loop? Как работает асинхронность в JS? -->
+                <div class="accordion-header level-3">Что такое Event Loop? Как работает асинхронность в JS?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Event Loop и асинхронность в JavaScript</h2>
+
+                        <p><strong>Event Loop</strong> - это механизм, который позволяет JavaScript обрабатывать
+                            асинхронные
+                            операции,
+                            несмотря на однопоточную природу языка.</p>
+
+                        <h3>Как работает Event Loop:</h3>
+                        <ol>
+                            <li>JavaScript выполняет код <strong>синхронно</strong>, строка за строкой</li>
+                            <li>Когда встречается асинхронная операция (setTimeout, запрос и т.д.), она передается в
+                                <strong>Web
+                                    API</strong> браузера
+                            </li>
+                            <li>После завершения асинхронной операции её callback помещается в <strong>Callback
+                                    Queue</strong> (очередь)
+                            </li>
+                            <li><strong>Event Loop</strong> постоянно проверяет, пуст ли Call Stack (стек вызовов)</li>
+                            <li>Когда Call Stack пуст, Event Loop берет первую задачу из Callback Queue и помещает её в
+                                Call
+                                Stack</li>
+                        </ol>
+
+                        <h3>Компоненты системы:</h3>
+                        <ul>
+                            <li><strong>Call Stack</strong> - стек вызовов, где выполняются синхронные операции</li>
+                            <li><strong>Web APIs</strong> - API браузера для обработки таймеров, запросов и т.д.</li>
+                            <li><strong>Callback Queue</strong> - очередь callback'ов готовых к выполнению</li>
+                            <li><strong>Microtask Queue</strong> - очередь для промисов (приоритетнее Callback Queue)
+                            </li>
+                            <li><strong>Event Loop</strong> - механизм координации всего процесса</li>
+                        </ul>
+
+                        <h3>Пример работы:</h3>
+                        <p>
+                            <code>
+                                          console.log('Start'); // 1. Синхронный вызов<br><br>
+                                      
+                                          setTimeout(() => {<br>
+                                          &nbsp;&nbsp;console.log('Timeout'); // 4. Попадет в Callback Queue<br>
+                                          }, 0);<br><br>
+                                      
+                                          Promise.resolve()<br>
+                                          &nbsp;&nbsp;.then(() => console.log('Promise')); // 3. Микрозадача<br><br>
+                                      
+                                          console.log('End'); // 2. Синхронный вызов<br><br>
+                                      
+                                          // Результат:<br>
+                                          // Start<br>
+                                          // End<br>
+                                          // Promise<br>
+                                          // Timeout
+                                        </code>
+                        </p>
+
+
+                        <h3>Приоритеты очередей:</h3>
+                        <ol>
+                            <li>Синхронный код (Call Stack)</li>
+                            <li>Микрозадачи (Promise, queueMicrotask, process.nextTick в Node.js)</li>
+                            <li>Макрозадачи (setTimeout, setInterval, события)</li>
+                            <li>Анимации (requestAnimationFrame)</li>
+                        </ol>
+
+                        <h3>Как работает асинхронность:</h3>
+                        <ul>
+                            <li>JavaScript <strong>не блокирует</strong> основной поток на время асинхронных операций
+                            </li>
+                            <li>Асинхронные API браузера/Node.js работают <strong>параллельно</strong> в своих потоках
+                            </li>
+                            <li>Когда операция завершена, callback ставится в очередь и выполняется, когда стек пуст
+                            </li>
+                            <li>Промисы и async/await используют микрозадачи, что дает им приоритет</li>
+                        </ul>
+
+                        <h3>Визуализация Event Loop:</h3>
+                        <p>Call Stack → Web APIs → Callback Queue/Microtask Queue → Event Loop → Call Stack</p>
+
+                        <h3>Полезные ресурсы:/h3>
+                            <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/EventLoop"
+                                target="_blank">Документация MDN</a> |
+                            <a href="https://learn.javascript.ru/event-loop" target="_blank">Учебник JavaScript</a> |
+                            <a href="https://javascript.info/event-loop" target="_blank">JavaScript.info</a> |
+                            <a href="https://www.youtube.com/watch?v=8aGhZQkoFbQ" target="_blank">Отличное
+                                видео-объяснение</a>
+
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Что такое Event Loop? Как работает асинхронность в JS? конец-->
+                <!-- Разница между setTimeout, setInterval и requestAnimationFrame. -->
+                <div class="accordion-header level-3">Разница между setTimeout, setInterval и requestAnimationFrame.
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Разница между setTimeout, setInterval и requestAnimationFrame</h2>
+
+                        <p>
+                            В JavaScript существует несколько методов для выполнения кода с задержкой или периодически.
+                            Основные различия между ними касаются точности, производительности и сценариев
+                            использования.
+                        </p>
+
+                        <table>
+                            <tr>
+                                <th></th>
+                                <th>setTimeout</th>
+                                <th>setInterval</th>
+                            </tr>
+                            <tr>
+                                <td><strong>Назначение</strong></td>
+                                <td>Однократный вызов с задержкой</td>
+                                <td>Периодический вызов с интервалом</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Точность</strong></td>
+                                <td>Нет гарантии точного времени</td>
+                                <td>Нет гарантии точного интервала</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Производ-сть</strong></td>
+                                <td>Средняя</td>
+                                <td>Низкая при частых вызовах</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Отмена</strong></td>
+                                <td>clearTimeout</td>
+                                <td>clearInterval</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Частота</strong></td>
+                                <td>Один раз</td>
+                                <td>Повторяется</td>
+                            </tr>
+                        </table>
+                        <table>
+                            <tr>
+                                <th></th>
+                                <th>requestAnimationFrame</th>
+                            </tr>
+                            <tr>
+                                <td><strong>Назначение</strong></td>
+                                <td>Анимации, синхронизированные с кадром браузера</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Точность</strong></td>
+                                <td>Синхронизирован с частотой обновления экрана</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Производ-сть</strong></td>
+                                <td>Оптимизирована для анимаций</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Отмена</strong></td>
+                                <td>cancelAnimationFrame</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Частота</strong></td>
+                                <td>60fps (обычно)</td>
+                            </tr>
+                        </table>
+
+                        <h3>Примеры использования:</h3>
+
+                        <p>
+                            // setTimeout - выполнить один раз через 1 секунду<br>
+                            const timeoutId = setTimeout(() => {<br>
+                            &nbsp;&nbsp;console.log('Выполнено через 1 секунду');<br>
+                            }, 1000);<br>
+                            <br>
+                            // setInterval - выполнять каждые 500ms<br>
+                            const intervalId = setInterval(() => {<br>
+                            &nbsp;&nbsp;console.log('Повторяюсь каждые 500ms');<br>
+                            }, 500);<br>
+                            <br>
+                            // requestAnimationFrame - анимация<br>
+                            function animate() {<br>
+                            &nbsp;&nbsp;// Логика анимации<br>
+                            &nbsp;&nbsp;requestAnimationFrame(animate);<br>
+                            }<br>
+                            &nbsp;&nbsp;animate();
+                        </p>
+
+                        <h3>Ключевые рекомендации:</h3>
+                        <ul>
+                            <li><strong>Для анимаций:</strong> всегда используйте requestAnimationFrame</li>
+                            <li><strong>Для однократных задач:</strong> setTimeout</li>
+                            <li><strong>Для периодических задач:</strong> setInterval (но лучше рекурсивный setTimeout)
+                            </li>
+                            <li><strong>Для ресурсоемких операций:</strong> избегайте частых setInterval</li>
+                        </ul>
+
+                        <h3>Особенности requestAnimationFrame:</h3>
+                        <ul>
+                            <li>Автоматически останавливается при скрытии вкладки</li>
+                            <li>Синхронизирован с частотой обновления экрана</li>
+                            <li>Передает метку времени выполнения колбэка</li>
+                            <li>Более эффективен для визуальных обновлений</li>
+                        </ul>
+
+                        <h3>Дополнительные материалы:</h3>
+                        <div>
+                            <a href="https://developer.mozilla.org/ru/docs/Web/API/setTimeout" target="_blank">MDN:
+                                setTimeout</a>
+                            <span> | </span>
+                            <a href="https://developer.mozilla.org/ru/docs/Web/API/Window/requestAnimationFrame"
+                                target="_blank">MDN:
+                                requestAnimationFrame</a>
+                            <span> | </span>
+                            <a href="https://learn.javascript.ru/settimeout-setinterval" target="_blank">Учебник
+                                JavaScript</a>
+                        </div>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Разница между setTimeout, setInterval и requestAnimationFrame. конец-->
+                <!-- Что такое Promise? Как работает цепочка .then() и .catch()? -->
+                <div class="accordion-header level-3">Что такое Promise? Как работает цепочка .then() и .catch()?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Что такое Promise?</h2>
+
+                        <p>
+                            <strong>Promise (Обещание)</strong> — это объект в JavaScript, представляющий результат
+                            асинхронной операции,
+                            который может быть доступен сразу или в будущем. Promise может находиться в одном из трёх
+                            состояний:
+                        </p>
+
+                        <ul>
+                            <li><strong>pending (ожидание)</strong> - начальное состояние</li>
+                            <li><strong>fulfilled (выполнено успешно)</strong> - операция завершена успешно</li>
+                            <li><strong>rejected (отклонено)</strong> - операция завершена с ошибкой</li>
+                        </ul>
+
+                        <h3>Создание Promise:</h3>
+
+                        <p>
+                            const myPromise = new Promise((resolve, reject) => {<br>
+                            &nbsp;&nbsp;// Асинхронная операция<br>
+                            &nbsp;&nbsp;if (/* успех */) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;resolve('Успешный результат');<br>
+                            &nbsp;&nbsp;} else {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;reject(new Error('Ошибка'));<br>
+                            &nbsp;&nbsp;}<br>
+                            });
+                        </p>
+
+                        <h3>Цепочка .then() и .catch():</h3>
+
+                        <p>
+                            Методы <strong>.then()</strong> и <strong>.catch()</strong> позволяют обрабатывать
+                            результаты Promise:
+                        </p>
+
+                        <p>
+                            myPromise<br>
+                            &nbsp;&nbsp;.then(result => {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;// Обработка успешного результата<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;console.log(result);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;return modifiedResult;<br>
+                            &nbsp;&nbsp;})<br>
+                            &nbsp;&nbsp;.then(nextResult => {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;// Следующий шаг обработки<br>
+                            &nbsp;&nbsp;})<br>
+                            &nbsp;&nbsp;.catch(error => {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;// Обработка всех ошибок в цепочке<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;console.error(error);<br>
+                            &nbsp;&nbsp;})<br>
+                            &nbsp;&nbsp;.finally(() => {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;// Выполнится в любом случае<br>
+                            &nbsp;&nbsp;});
+                        </p>
+
+                        <h3>Особенности цепочки Promise:</h3>
+
+                        <ul>
+                            <li>Каждый <strong>.then()</strong> возвращает новый Promise</li>
+                            <li>Если возвращается значение - оно оборачивается в Promise</li>
+                            <li>Если возвращается Promise - цепочка ждёт его выполнения</li>
+                            <li><strong>.catch()</strong> перехватывает любые ошибки выше по цепочке</li>
+                            <li><strong>.finally()</strong> выполняется в любом случае (успех/ошибка)</li>
+                        </ul>
+
+                        <h3>Практические примеры:</h3>
+
+                        <p>
+                            // Пример с асинхронным запросом<br>
+                            function fetchData(url) {<br>
+                            &nbsp;&nbsp;return fetch(url)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.then(response => {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (!response.ok) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw new Error('Ошибка сети');<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return response.json();<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;})<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.catch(error => {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.error('Ошибка:', error);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw error; // Пробрасываем дальше<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;});<br>
+                            }
+                        </p>
+
+                        <h3>Дополнительные материалы:</h3>
+                        <div>
+                            <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Promise"
+                                target="_blank">MDN: Promise</a>
+                            <span> | </span>
+                            <a href="https://learn.javascript.ru/promise-basics" target="_blank">Учебник JavaScript</a>
+                            <span> | </span>
+                            <a href="https://habr.com/ru/company/ruvds/blog/337042/" target="_blank">Подробное
+                                руководство</a>
+                        </div>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Что такое Promise? Как работает цепочка .then() и .catch()? конец-->
+                <!-- Разница между Promise.all, Promise.race, Promise.allSettled. -->
+                <div class="accordion-header level-3">Разница между Promise.all, Promise.race, Promise.allSettled.</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Разница между Promise.all, Promise.race, Promise.allSettled</h2>
+
+                        <p>
+                            В JavaScript существуют несколько методов для работы с коллекциями промисов, каждый из
+                            которых имеет
+                            особое поведение при обработке нескольких асинхронных операций.
+                        </p>
+
+                        <table>
+                            <tr>
+                                <th>Метод</th>
+                                <th>Поведение</th>
+                                <th>Когда завершается</th>
+                                <th>Результат</th>
+                            </tr>
+                            <tr>
+                                <td><strong>Promise. all</strong></td>
+                                <td>Ожидает выполнения всех промисов</td>
+                                <td>Когда все успешны или один отклонён</td>
+                                <td>Массив результатов или первая ошибка</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Promise. race</strong></td>
+                                <td>Ожидает первый завершённый промис</td>
+                                <td>Когда любой промис завершён</td>
+                                <td>Первый результат или ошибка</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Promise. allSettled</strong></td>
+                                <td>Ожидает завершения всех промисов</td>
+                                <td>Когда все промисы завершены</td>
+                                <td>Массив объектов с статусом и результатом/ошибкой</td>
+                            </tr>
+                        </table>
+
+                        <h3>Примеры использования:</h3>
+
+                        <div class="code-example">
+                            // Promise.all - все или ничего<br>
+                            Promise.all([<br>
+                            &nbsp;&nbsp;fetch('/api/data1'),<br>
+                            &nbsp;&nbsp;fetch('/api/data2')<br>
+                            ])<br>
+                            .then(([res1, res2]) => {<br>
+                            &nbsp;&nbsp;// Оба запроса успешны<br>
+                            })<br>
+                            .catch(error => {<br>
+                            &nbsp;&nbsp;// Хотя бы один запрос провален<br>
+                            });<br>
+                            <br>
+                            // Promise.race - гонка промисов<br>
+                            Promise.race([<br>
+                            &nbsp;&nbsp;fetch('/api/data'),<br>
+                            &nbsp;&nbsp;new Promise((_, reject) => {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;setTimeout(() => reject(new Error('Timeout')), 5000)<br>
+                            &nbsp;&nbsp;})<br>
+                            ])<br>
+                            .then(data => {<br>
+                            &nbsp;&nbsp;// Первый успешный ответ<br>
+                            })<br>
+                            .catch(error => {<br>
+                            &nbsp;&nbsp;// Первая ошибка (например таймаут)<br>
+                            });<br>
+                            <br>
+                            // Promise.allSettled - все результаты<br>
+                            Promise.allSettled([<br>
+                            &nbsp;&nbsp;Promise.resolve('Успех'),<br>
+                            &nbsp;&nbsp;Promise.reject('Ошибка')<br>
+                            ])<br>
+                            .then(results => {<br>
+                            &nbsp;&nbsp;results.forEach(result => {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;if (result.status === 'fulfilled') {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('Успех:', result.value);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;} else {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('Ошибка:', result.reason);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            &nbsp;&nbsp;});<br>
+                            });
+                        </div>
+
+                        <h3>Ключевые различия:</h3>
+                        <ul>
+                            <li><strong>Promise.all</strong> - когда нужны все результаты и важно, чтобы не было ошибок
+                            </li>
+                            <li><strong>Promise.race</strong> - когда важен первый ответ (например, для таймаутов)</li>
+                            <li><strong>Promise.allSettled</strong> - когда нужно обработать все результаты, независимо
+                                от успешности</li>
+                            <li><strong>Promise.any</strong> (не показан) - ожидает первый успешный промис</li>
+                        </ul>
+
+                        <h3>Рекомендации по использованию:</h3>
+                        <ul>
+                            <li>Для параллельных независимых запросов - <strong>Promise.allSettled</strong></li>
+                            <li>Для критически важных операций - <strong>Promise.all</strong></li>
+                            <li>Для реализации таймаутов - <strong>Promise.race</strong></li>
+                            <li>Всегда обрабатывайте возможные ошибки в цепочках промисов</li>
+                        </ul>
+
+                        <h3>Дополнительные материалы:</h3>
+                        <div>
+                            <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Promise/all"
+                                target="_blank">MDN: Promise.all</a>
+                            <span> | </span>
+                            <a href="https://learn.javascript.ru/promise-api" target="_blank">Учебник JavaScript</a>
+                            <span> | </span>
+                            <a href="https://habr.com/ru/company/ruvds/blog/417461/" target="_blank">Подробное
+                                сравнение</a>
+                        </div>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Разница между Promise.all, Promise.race, Promise.allSettled. конец-->
+                <!-- Что такое async/await? Как это работает? -->
+                <div class="accordion-header level-3">Что такое async/await? Как это работает?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Что такое async/await?</h2>
+
+                        <p>
+                            <strong>async/await</strong> — это синтаксический сахар в JavaScript для работы с Promise,
+                            который позволяет писать асинхронный код в более привычном синхронном стиле.
+                        </p>
+
+                        <h3>Основные принципы:</h3>
+
+                        <ul>
+                            <li><strong>async</strong> - ключевое слово для объявления асинхронной функции</li>
+                            <li><strong>await</strong> - оператор ожидания выполнения Promise</li>
+                            <li>Async-функция всегда возвращает Promise</li>
+                            <li>Код после await не выполняется, пока Promise не разрешится</li>
+                            <li>Ошибки можно обрабатывать с помощью try/catch</li>
+                        </ul>
+
+                        <h3>Как это работает:</h3>
+
+                        <p>
+                            // Обычная функция с Promise<br>
+                            function fetchData() {<br>
+                            &nbsp;&nbsp;return fetch('https://api.example.com/data')<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.then(response => response.json())<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.catch(error => console.error(error));<br>
+                            }<br>
+                            <br>
+                            // Тот же код с async/await<br>
+                            async function fetchData() {<br>
+                            &nbsp;&nbsp;try {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;const response = await fetch('https://api.example.com/data');<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;return await response.json();<br>
+                            &nbsp;&nbsp;} catch (error) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;console.error(error);<br>
+                            &nbsp;&nbsp;}<br>
+                            }
+                        </p>
+
+                        <h3>Преимущества async/await:</h3>
+
+                        <ul>
+                            <li>Более чистый и читаемый код</li>
+                            <li>Позволяет избежать "адского колбэка" (callback hell)</li>
+                            <li>Естественная обработка ошибок через try/catch</li>
+                            <li>Возможность использовать синхронные конструкции (циклы, условия)</li>
+                        </ul>
+
+                        <h3>Особенности работы:</h3>
+
+                        <p>
+                            // Async-функция всегда возвращает Promise<br>
+                            async function getNumber() {<br>
+                            &nbsp;&nbsp;return 42; // Автоматически оборачивается в Promise<br>
+                            }<br>
+                            <br>
+                            // Эквивалентно:<br>
+                            function getNumber() {<br>
+                            &nbsp;&nbsp;return Promise.resolve(42);<br>
+                            }<br>
+                            <br>
+                            // Последовательные await<br>
+                            async function processData() {<br>
+                            &nbsp;&nbsp;const user = await getUser();<br>
+                            &nbsp;&nbsp;const posts = await getPosts(user.id);<br>
+                            &nbsp;&nbsp;return processPosts(posts);<br>
+                            }
+                        </p>
+
+                        <h3>Параллельное выполнение:</h3>
+
+                        <p>
+                            // Неоптимальный вариант (последовательное выполнение)<br>
+                            async function slowExample() {<br>
+                            &nbsp;&nbsp;const a = await fetchA(); // Ждём<br>
+                            &nbsp;&nbsp;const b = await fetchB(); // Ждём<br>
+                            &nbsp;&nbsp;return a + b;<br>
+                            }<br>
+                            <br>
+                            // Оптимальный вариант (параллельное выполнение)<br>
+                            async function fastExample() {<br>
+                            &nbsp;&nbsp;const [a, b] = await Promise.all([fetchA(), fetchB()]);<br>
+                            &nbsp;&nbsp;return a + b;<br>
+                            }
+                        </p>
+
+                        <h3>Ограничения и подводные камни:</h3>
+
+                        <ul>
+                            <li>await можно использовать только внутри async-функций</li>
+                            <li>Избыточное использование await может замедлить выполнение</li>
+                            <li>Нельзя использовать await на верхнем уровне модулей (без обёртки)</li>
+                            <li>В циклах нужно быть внимательным с последовательным/параллельным выполнением</li>
+                        </ul>
+
+                        <h3>Дополнительные материалы:</h3>
+                        <div>
+                            <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/async_function"
+                                target="_blank">MDN: async/await</a>
+                            <span> | </span>
+                            <a href="https://learn.javascript.ru/async-await" target="_blank">Учебник JavaScript</a>
+                            <span> | </span>
+                            <a href="https://habr.com/ru/company/ruvds/blog/414373/" target="_blank">Подробное
+                                руководство</a>
+                        </div>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Что такое async/await? Как это работает? конец-->
+                <!-- Как обрабатывать ошибки в async/await? -->
+                <div class="accordion-header level-3">Как обрабатывать ошибки в async/await?</div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <div class="accordion-content">
+                    <section>
+                        <h2>Как обрабатывать ошибки в async/await?</h2>
+
+                        <p>
+                            В async/await ошибки можно обрабатывать несколькими способами, сохраняя при этом читаемость
+                            кода.
+                            Вот основные подходы к обработке ошибок в асинхронных функциях.
+                        </p>
+
+                        <h3>1. try/catch - основной способ</h3>
+
+                        <p>
+                            async function fetchData() {
+                            &nbsp;&nbsp;try {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;const response = await fetch('https://api.example.com/data');<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;if (!response.ok) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw new Error('Ошибка HTTP: ' + response.status);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;return await response.json();<br>
+                            &nbsp;&nbsp;} catch (error) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;console.error('Произошла ошибка:', error.message);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;// Можно пробросить ошибку дальше<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;throw error;<br>
+                            &nbsp;&nbsp;}<br>
+                            }
+                        </p>
+
+                        <h3>2. Обработка через .catch()</h3>
+
+                        <p>
+                            async function fetchData() {<br>
+                            &nbsp;&nbsp;const response = await fetch('https://api.example.com/data')<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;.catch(error => {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.error('Ошибка сети:', error);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw error; // Пробрасываем для дальнейшей
+                            обработки<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;});<br>
+                            &nbsp;&nbsp;// Дальнейшая обработка<br>
+                            }
+                        </p>
+
+                        <h3>3. Обертка для повторного использования</h3>
+
+                        <p>
+                            async function withErrorHandling(promise) {<br>
+                            &nbsp;&nbsp;try {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;return [null, await promise];<br>
+                            &nbsp;&nbsp;} catch (error) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;return [error, null];<br>
+                            &nbsp;&nbsp;}<br>
+                            }
+                            <br>
+                            // Использование:
+                            async function getUser() {<br>
+                            &nbsp;&nbsp;const [error, data] = await withErrorHandling(fetch('/api/user'));<br>
+                            &nbsp;&nbsp;if (error) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;// Обработка ошибки<br>
+                            &nbsp;&nbsp;}<br>
+                            &nbsp;&nbsp;// Работа с данными<br>
+                            }
+                        </p>
+
+                        <h3>4. Глобальная обработка ошибок</h3>
+
+                        <p>
+                            // Для обработки не пойманных ошибок в async функциях<br>
+                            window.addEventListener('unhandledrejection', event => {<br>
+                            &nbsp;&nbsp;console.error('Необработанная ошибка промиса:', event.reason);<br>
+                            &nbsp;&nbsp;event.preventDefault(); // Предотвращаем вывод в консоль<br>
+                            });
+                        </p>
+
+                        <h3>Лучшие практики:</h3>
+
+                        <ul>
+                            <li>Всегда обрабатывайте ошибки, не оставляйте их необработанными</li>
+                            <li>Используйте конкретные типы ошибок для разных случаев</li>
+                            <li>Логируйте ошибки для последующего анализа</li>
+                            <li>Пробрасывайте ошибки наверх, если не можете обработать на текущем уровне</li>
+                            <li>Для параллельных операций обрабатывайте ошибки для каждого Promise отдельно</li>
+                        </ul>
+
+                        <h3>Пример комплексной обработки:</h3>
+
+                        <p>
+                            async function complexExample() {
+                            &nbsp;&nbsp;try {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;const user = await getUser().catch(error => {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.error('Ошибка получения пользователя:',
+                            error);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return null; // Возвращаем значение по умолчанию<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;});<br>
+                            <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;if (!user) throw new Error('Пользователь не найден');<br>
+                            <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;const [ordersError, orders] = await<br>
+                            withErrorHandling(getOrders(user.id));<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;if (ordersError) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Специфическая обработка ошибки заказов<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;return { user, orders };<br>
+                            &nbsp;&nbsp;} catch (error) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;if (error instanceof TypeError) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Обработка ошибок типа<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;} else {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Общая обработка ошибок<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sendErrorToServer(error);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw error;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            &nbsp;&nbsp;}<br>
+                            }
+                        </p>
+
+                        <h3>Дополнительные материалы:</h3>
+                        <div>
+                            <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/try...catch"
+                                target="_blank">MDN: try/catch</a>
+                            <span> | </span>
+                            <a href="https://blog.grossman.io/how-to-write-async-await-without-try-catch-blocks-in-javascript/"
+                                target="_blank">Альтернативные подходы</a>
+                            <span> | </span>
+                            <a href="https://javascript.info/async-await#error-handling" target="_blank">Обработка
+                                ошибок в async/await</a>
+                        </div>
+                    </section>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------->
+                <!-- Как обрабатывать ошибки в async/await? конец-->
+            </div>
+            <!-- ************************************************************************************ -->
+            <!-- Асинхронность конец-->
         </div>
         <!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
         <!-- JS конец -->
